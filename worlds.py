@@ -11,6 +11,7 @@ import os, random
 from PIL import Image
 from io import BytesIO
 import base64
+import requests
 
 class DrawerOnboardingWorld(MTurkOnboardWorld):
     def parley(self):
@@ -63,7 +64,13 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
     def selectImageForTask(self):        
         path_ext = "/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/landscape_target/"
         self.image_file = random.choice(os.listdir(path_ext))
-        print(self.image_file)       
+        print(self.image_file)    
+
+    def get_scores(self):
+        r = requests.post('https://language.cs.ucdavis.edu/get_score', data={'unique_id':self.unique_task_id, "turn_idx":self.turn_idx})
+        print(r.status_code, r.reason)        
+        data = r.json()
+        return "Pixel Accuracy: "+str(data["pixel_acc"])+", Mean Accuracy: "+str(data["mean_acc"])+", Mean IOU: "+str(data["mean_iou"])+", Mean Class IOU: "+str(data["mean_iou_class"])
 
     def try_finish_task(self, teller_act):
         if "done" in validate(teller_act)['text'].lower():
@@ -71,6 +78,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
             # save data?
             ad = {'id': 'System', 'text': "The task has been completed. Thank you for your time."}
             self.teller.observe(ad)
+            ad['text'] += ' Your automatic score on the task is: ' + self.get_scores()
             self.drawer.observe(ad)
             self.shutdown()
 
