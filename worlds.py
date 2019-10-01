@@ -70,7 +70,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         r = requests.post('https://language.cs.ucdavis.edu/get_score', data={'unique_id':self.unique_task_id, "turn_idx":self.turn_idx})
         print(r.status_code, r.reason)        
         data = r.json()
-        return "Pixel Accuracy: "+str(data["pixel_acc"])+", Mean Accuracy: "+str(data["mean_acc"])+", Mean IOU: "+str(data["mean_iou"])+", Mean Class IOU: "+str(data["mean_iou_class"])
+        return str(int(data["mean_iou"])*100)+"%"
 
     def try_finish_task(self, teller_act):
         if "done" in validate(teller_act)['text'].lower():
@@ -85,12 +85,17 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
     def parley(self):
         # Inform the teller to start drawer & also how to end the task
         if self.turn_idx == 0:
+            # Tell the drawer to do what he does best, draw
+            ad = {'id': 'System', 'text': "Welcome to the task. After the other turker begins describing the image, please try to draw it to the best of your ability. Please ASK QUESTIONS ANYTIME you are UNCERTAIN about the INSTRUCTION, otherwise, after you finish drawing, please ask the other turker for the next instruction.", "task_data":self.taskData()}
+            self.drawer.observe(ad)
+
             ad = {'id': 'System', 'text': "Please begin describing the image to your left. Once during the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. Please think about the right time to use it carefully.", "task_data":self.taskData()}
             self.teller.observe(ad)
+
         elif self.turn_idx > 3:
             pass
-            # ad = {'id': 'System', 'text': "Remember, once there is nothing left to say about the image, please send a message saying \"done\". Otherwise, please continue describing the image.", "task_data":self.taskData()}
-            # self.teller.observe(ad)
+            ad = {'id': 'System', 'text': "Remember, once there is nothing left to say about the image, please send a message saying \"done\". Otherwise, please continue describing the image.", "task_data":self.taskData()}
+            self.teller.observe(ad)
         
         # Get the tellers description
         teller_act = self.teller.act()
@@ -98,11 +103,11 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
         # Optionally end the task
         self.try_finish_task(teller_act)
-        
+                
         # Let drawer see what the teller said
         self.drawer.observe(validate(teller_act))        
 
-        # Tell the drawer to do what he does best, draw
+        # # Tell the drawer to do what he does best, draw
         # ad = {'id': 'System', 'text': "Please draw what the Turker described above. When you've finished drawing, please either send a message saying \"done\", or ask a question about the image.", "task_data":self.taskData()}
         # self.drawer.observe(ad)
 
@@ -122,7 +127,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
     def save_data(self):     
         with open("/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/saved_data/"+self.unique_task_id+'.json', 'w', encoding='utf-8') as f:
-            json.dump(self.dialog, f, ensure_ascii=False, indent=4)
+            json.dump({"dialog":self.dialog, "taskData":self.taskData()}, f, ensure_ascii=False, indent=4)
 
     def episode_done(self):
         return self.episodeDone
