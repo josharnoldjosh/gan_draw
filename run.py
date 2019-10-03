@@ -66,6 +66,11 @@ def main():
     # with set_onboard_function(onboard_function=run_onboard)
     mturk_manager.set_onboard_function(onboard_function=run_onboard)
 
+    agent_qualifications = [
+        {'QualificationTypeId': '00000000000000000060','Comparator': 'Exists','RequiredToPreview': True}, # adult qualification
+        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [95], 'RequiredToPreview': True} # percent assignments approved
+    ]     
+
     try:
         # Initialize run information
         mturk_manager.start_new_run()
@@ -74,7 +79,7 @@ def main():
         mturk_manager.ready_to_accept_workers()
 
         # Create the hits as specified by command line arguments
-        mturk_manager.create_hits()
+        mturk_manager.create_hits(qualifications=agent_qualifications)
 
         # Check workers eligiblity acts as a filter, and should return
         # the list of all workers currently eligible to work on the task

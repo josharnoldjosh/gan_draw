@@ -12,6 +12,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 import requests
+import parlai.mturk.core.mturk_utils as mturk_utils
 
 class DrawerOnboardingWorld(MTurkOnboardWorld):
     def parley(self):
@@ -19,10 +20,13 @@ class DrawerOnboardingWorld(MTurkOnboardWorld):
         ad['id'] = 'System'
         ad['text'] = (
             "Welcome onboard! You'll be playing the role of the Drawer."
-            " Please take the time to get familar with the canvas to the left."
-            " Once you are comfortable with drawing, please send any message"
-            " to continue. After that, please remember to always click \"convert\""
-            " before sending a message to end your turn. Note: you can end your turn by typing \"done\" in the chat."
+            " Please watch the video to the left."
+            " Once you think you are comfortable with how to use the canvas to draw, please send any message"
+            " to continue. After that, please REMEMBER to ALWAYS CLICK \"CONVERT\""
+            " before sending a message to end your turn."
+            " NOTE: If you and your partner can successfully work together to draw an image that is similar enough"
+            " to the one being described by your partner, you will BOTH RECEIVE A $1 BONUS. It is in your best"
+            " interest to ask questions to draw what the other turker describes well."
         )
 
         self.mturk_agent.observe(ad)
@@ -34,7 +38,7 @@ class TellerOnboardingWorld(MTurkOnboardWorld):
         ad = {}
         ad['id'] = 'System'
         ad['text'] = (
-            "Welcome onboard! You'll be playing the role of the Teller. You will see an image to your left. Please sequentially describe it to the drawer in a way in which it can be step-by-step recreated. For example, \"there is a mountain in the background\" then on your next turn, \"there is the ocean in the foreground\", then in your next turn, \"there is a tree to the left\", and so on. Please send any message to continue."
+            "Welcome onboard! You'll be playing the role of the Teller. You will see an image to your left. Please sequentially describe it to the drawer in a way in which it can be step-by-step recreated. For example, \"there is a mountain in the background\" then on your next turn, \"there is the ocean in the foreground\", then in your next turn, \"there is a tree to the left\", and so on. Please send any message to continue. NOTE: If you and your partner can successfully work together to draw an image that is similar enough to the one on your left, you will BOTH RECEIVE A $1 BONUS. It is in your best interest to assist your partner to draw the image well."
         )
         self.mturk_agent.observe(ad)
         self.mturk_agent.act()
@@ -42,9 +46,16 @@ class TellerOnboardingWorld(MTurkOnboardWorld):
 
 class MultiRoleAgentWorld(MTurkTaskWorld):
 
-    def __init__(self, opt, mturk_agents):
+    def __init__(self, opt, mturk_agents):        
+        mturk_utils.setup_aws_credentials()
+        is_sandbox = True
+        self.client = mturk_utils.get_mturk_client(is_sandbox)
+        self.bonus_amount = 1.0
+
         self.mturk_agents = mturk_agents
         for agent in mturk_agents:
+            self.assignment_id = agent.assignment_id
+            print(agent.assignment_id)
             if agent.demo_role == 'Drawer':
                 self.drawer = agent
             elif agent.demo_role == 'Teller':
@@ -64,37 +75,47 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
     def selectImageForTask(self):        
         path_ext = "/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/landscape_target/"
         self.image_file = random.choice(os.listdir(path_ext))
-        print(self.image_file)    
+        print(self.image_file)
+
+    def pay_bonus(self):        
+         with open("/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/saved_data/bonus/"+self.unique_task_id+'_bonus.json', 'w', encoding='utf-8') as f:
+            json.dump({"assignment_id":self.assignment_id, "worker_id":[self.drawer.worker_id, self.teller.worker_id]}, f, ensure_ascii=False, indent=4)   
 
     def get_scores(self):
         r = requests.post('https://language.cs.ucdavis.edu/get_score', data={'unique_id':self.unique_task_id, "turn_idx":self.turn_idx})
         print(r.status_code, r.reason)        
         data = r.json()
-        return str(int(data["mean_iou"])*100)+"%"
+        score_result = int(data["mean_iou"]*100)
+        if score_result >= 40:
+            self.pay_bonus()
+            return str(score_result)+"%. Congradulations, you qualify for the bonus! The bonus will be paid within the next 24 hours!" 
+        return str(score_result)+"% Unfortunately you did not qualify for the bonus."
+
+    def force_finish_task(self):
+        self.episodeDone = True        
+        ad = {'id': 'System', 'text': "The task has been completed. Thank you for your time."}
+        self.teller.observe(ad)
+        ad['text'] += ' Your automatic score on the task is: ' + self.get_scores()
+        self.drawer.observe(ad)
+        self.shutdown()
 
     def try_finish_task(self, teller_act):
         if "done" in validate(teller_act)['text'].lower():
-            self.episodeDone = True
-            # save data?
-            ad = {'id': 'System', 'text': "The task has been completed. Thank you for your time."}
-            self.teller.observe(ad)
-            ad['text'] += ' Your automatic score on the task is: ' + self.get_scores()
-            self.drawer.observe(ad)
-            self.shutdown()
+            self.force_finish_task()        
 
     def parley(self):
         # Inform the teller to start drawer & also how to end the task
         if self.turn_idx == 0:
             # Tell the drawer to do what he does best, draw
-            ad = {'id': 'System', 'text': "Welcome to the task. After the other turker begins describing the image, please try to draw it to the best of your ability. Please ASK QUESTIONS ANYTIME you are UNCERTAIN about the INSTRUCTION, otherwise, after you finish drawing, please ask the other turker for the next instruction.", "task_data":self.taskData()}
+            ad = {'id': 'System', 'text': "Welcome to the task. After the other turker begins describing the image, please try to draw it to the best of your ability. Please ASK QUESTIONS ANYTIME you want CLARIFICATION about the INSTRUCTION, otherwise, after you finish drawing, please ask the other turker for the next instruction. It is in your best interest to ask clarifying questions as you will receive a bonus if you do well.", "task_data":self.taskData()}
             self.drawer.observe(ad)
 
-            ad = {'id': 'System', 'text': "Please begin describing the image to your left. Once during the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. Please think about the right time to use it carefully.", "task_data":self.taskData()}
+            ad = {'id': 'System', 'text': "Please click LOAD IMAGE and then begin describing the image to your left. Once during the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. Please think about the right time to use it carefully. It is in your best interest to describe the image clearly in detail as you will receive a bonus if you do well!", "task_data":self.taskData()}
             self.teller.observe(ad)
 
         elif self.turn_idx > 3:
             pass
-            ad = {'id': 'System', 'text': "Remember, once there is nothing left to say about the image, please send a message saying \"done\". Otherwise, please continue describing the image.", "task_data":self.taskData()}
+            ad = {'id': 'System', 'text': "Remember, if there is nothing left to say about the image, please send a message saying \"done\". However, please describe the image in as much detail as possible.", "task_data":self.taskData()}
             self.teller.observe(ad)
         
         # Get the tellers description
@@ -124,6 +145,9 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.turn_idx += 1
 
         self.save_data()
+
+        if self.turn_idx >= 20:
+            self.force_finish_task()
 
     def save_data(self):     
         with open("/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/saved_data/"+self.unique_task_id+'.json', 'w', encoding='utf-8') as f:
