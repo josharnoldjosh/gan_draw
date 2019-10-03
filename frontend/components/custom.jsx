@@ -10,111 +10,6 @@ import React from 'react';
 import axios from 'axios';
 import {Tools, SketchField} from './index.js';
 
-class TextResponse extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { textval: '', sending: false };
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    // Only change in the active status of this component should cause a
-    // focus event. Not having this would make the focus occur on every
-    // state update (including things like volume changes)
-    if (this.props.active && !prevProps.active) {
-      $('input#id_text_input').focus();
-    }
-    this.props.onInputResize();
-  }
-
-  tryMessageSend() {
-    if (this.state.textval != '' && this.props.active && !this.state.sending) {
-      this.setState({ sending: true });
-      this.props.onMessageSend(this.state.textval, {}, () =>
-        this.setState({ textval: '', sending: false })
-      );
-    }
-  }
-
-  handleKeyPress(e) {
-    if (e.key === 'Enter') {
-      this.tryMessageSend();
-      e.stopPropagation();
-      e.nativeEvent.stopImmediatePropagation();
-    }
-  }
-
-  render() {
-    // TODO maybe move to CSS?
-    let pane_style = {
-      paddingLeft: '25px',
-      paddingTop: '20px',
-      paddingBottom: '20px',
-      paddingRight: '25px',
-      float: 'left',
-      width: '100%',
-    };
-    let input_style = {
-      height: '50px',
-      width: '100%',
-      display: 'block',
-      float: 'left',
-    };
-    let submit_style = {
-      width: '100px',
-      height: '100%',
-      fontSize: '16px',
-      float: 'left',
-      marginLeft: '10px',
-      padding: '0px',
-    };
-
-    let text_input = (
-      <FormControl
-        type="text"
-        id="id_text_input"
-        style={{
-          width: '80%',
-          height: '100%',
-          float: 'left',
-          fontSize: '16px',
-        }}
-        value={this.state.textval}
-        placeholder="Please enter here..."
-        onKeyPress={e => this.handleKeyPress(e)}
-        onChange={e => this.setState({ textval: e.target.value })}
-        disabled={!this.props.active || this.state.sending}
-      />
-    );
-
-    let submit_button = (
-      <Button
-        className="btn btn-primary"
-        style={submit_style}
-        id="id_send_msg_button"
-        disabled={
-          this.state.textval == '' || !this.props.active || this.state.sending
-        }
-        onClick={() => this.tryMessageSend()}
-      >
-        Send
-      </Button>
-    );
-
-    return (
-      <div
-        id="response-type-text-input"
-        className="response-type-module"
-        style={pane_style}
-      >
-        <div style={input_style}>
-          {text_input}
-          {submit_button}
-        </div>
-      </div>
-    );
-  }
-}
-
 class Title extends React.Component {
     render() {
         return (
@@ -306,6 +201,7 @@ class DrawerUI extends React.Component {
         data.append('file', image);
         data.append('unique_id', this.props.task_data["task_id"])   
         data.append('turn_idx', this.props.task_data["turn_idx"]) 
+        data.append('image_name', this.props.task_data["image_name"])
 
         // Show the "Is loading" text
         this.setState({loading:"Loading image please be patient", disableConvert:true})
@@ -321,12 +217,12 @@ class DrawerUI extends React.Component {
             this.setState({image:response['data'], loading:"", disableConvert:false})
         });  
         
-        // Save our image physically on our server
-        axios.post("https://language.cs.ucdavis.edu/save_image", data, {
-          headers: {
-            'Content-Type': image.type
-          }
-        })  
+        // // Save our image physically on our server
+        // axios.post("https://language.cs.ucdavis.edu/save_image", data, {
+        //   headers: {
+        //     'Content-Type': image.type
+        //   }
+        // })  
     }
 
     render() {
@@ -389,7 +285,7 @@ class TellerUI extends React.Component {
         this.setState({imageLoading:'Loading image'})
 
         let data = new FormData();        
-        data.append('image_name', this.props.task_data["image_name"])   
+        data.append('image_name', this.props.task_data["image_name"])
 
         // alert(this.props.task_data["image_name"]);
 
@@ -404,6 +300,7 @@ class TellerUI extends React.Component {
         let data = new FormData();        
         data.append('unique_id', this.props.task_data["task_id"])   
         data.append('turn_idx', this.props.task_data["turn_idx"])
+        data.append('image_name', this.props.task_data["image_name"])
 
         axios.post("https://language.cs.ucdavis.edu/peek", data).then((response) => {            
             this.setState({peekImage:response['data'], loading:"Image at turn "+this.props.task_data["turn_idx"], peeked:true})
