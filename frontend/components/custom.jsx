@@ -248,6 +248,34 @@ class DrawerUI extends React.Component {
     }
 }
 
+class OnboardingDrawerUI extends React.Component {
+    render() {
+        let frame_height = this.props.frame_height;
+        let frame_style = {
+                height: frame_height + 'px',
+                backgroundColor: 'white',
+                padding: '30px',
+                overflow: 'auto',
+                width:'1100px'
+            };        
+        let pane_size = this.props.is_cover_page ? 'col-xs-12' : 'col-xs-4';
+
+        return (
+            <div style={frame_style} id="left-pane" className={pane_size}>
+                <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>                    
+                    <iframe src="https://drive.google.com/file/d/1YiFGsaPaVaUGrkyhTKSA99f_AB7HV_HK/preview" width="900" height="600"></iframe>                               
+                </div>
+            </div>
+        );
+    }
+}
+
+/** 
+<video width="800" height="600" controls>
+                        <source src="https://drive.google.com/file/d/1YiFGsaPaVaUGrkyhTKSA99f_AB7HV_HK/view?usp=sharing" type="video/mp4"></source>
+                    </video>
+*/
+
 class TellerImageView extends React.Component {
     render() {
         return (
@@ -339,7 +367,7 @@ var LeftPaneHolder = {
   Teller:TellerUI,
   'Onboarding Teller':EmptyUI,
   Drawer:DrawerUI,
-  'Onboarding Drawer':DrawerUI
+  'Onboarding Drawer':OnboardingDrawerUI
 };
 
 export default {  
