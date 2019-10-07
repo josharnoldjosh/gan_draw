@@ -63,6 +63,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.episodeDone = False
         self.turn_idx = 0
         self.dialog = []
+        self.should_pay_bonus = False
 
         self.selectImageForTask()
 
@@ -77,8 +78,9 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.image_file = random.choice(os.listdir(path_ext))
         print(self.image_file)
 
-    def pay_bonus(self):        
-         with open("/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/saved_data/bonus/"+self.unique_task_id+'_bonus.json', 'w', encoding='utf-8') as f:
+    def pay_bonus(self):
+        self.should_pay_bonus = True        
+        with open("/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/saved_data/bonus/"+self.unique_task_id+'_bonus.json', 'w', encoding='utf-8') as f:
             json.dump({"assignment_id":self.assignment_id, "worker_id":[self.drawer.worker_id, self.teller.worker_id]}, f, ensure_ascii=False, indent=4)   
 
     def get_scores(self):
@@ -86,9 +88,9 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         print(r.status_code, r.reason)        
         data = r.json()
         score_result = int(data["mean_iou"]*100)
-        if score_result >= 40:
+        if score_result >= 20:
             self.pay_bonus()
-            return str(score_result)+"%. Congradulations, you qualify for the bonus! The bonus will be paid within the next 24 hours!" 
+            return str(score_result)+"%. Congradulations, you qualify for the bonus! The $1 bonus should be paid instantly! Great work!" 
         return str(score_result)+"% Unfortunately you did not qualify for the bonus."
 
     def force_finish_task(self):
@@ -101,19 +103,24 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
     def try_finish_task(self, teller_act):
         if "done" in validate(teller_act)['text'].lower():
+            self.dialog.append({"system":"TASK COMPLETE", "turn_idx":self.turn_idx})
             self.force_finish_task()        
 
     def parley(self):
         # Inform the teller to start drawer & also how to end the task
         if self.turn_idx == 0:
             # Tell the drawer to do what he does best, draw
-            ad = {'id': 'System', 'text': "Welcome to the task. After the other turker begins describing the image, please try to draw it to the best of your ability. Please ASK QUESTIONS ANYTIME you want CLARIFICATION about the INSTRUCTION, otherwise, after you finish drawing, please ask the other turker for the next instruction. It is in your best interest to ask clarifying questions as you will receive a bonus if you do well.", "task_data":self.taskData()}
+            ad = {'id': 'System', 'text': "Welcome to the task. Your goal is to collaborate with another turker to redraw an image as accurately as possible.", "task_data":self.taskData()}
+            self.drawer.observe(ad)
+            ad = {'id': 'System', 'text': "After the other turker begins describing the image, please try to draw it to the best of your ability. Please ASK QUESTIONS ANYTIME you want CLARIFICATION about the DESCRIPTION, otherwise, after you finish drawing, please ask the other turker for the next instruction. It is in your best interest to ask clarifying questions as you will receive an instant $1 bonus if you can redraw the image accurately.", "task_data":self.taskData()}
             self.drawer.observe(ad)
 
-            ad = {'id': 'System', 'text': "Please click LOAD IMAGE and then begin describing the image to your left. Once during the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. Please think about the right time to use it carefully. It is in your best interest to describe the image clearly in detail as you will receive a bonus if you do well!", "task_data":self.taskData()}
+            ad = {'id': 'System', 'text': "Welcome to the task. Your goal is to collaborate with another turker to redraw an image as accurately as possible.", "task_data":self.taskData()}
+            self.teller.observe(ad)
+            ad = {'id': 'System', 'text': "Please click LOAD IMAGE and then begin describing the image to your left. During the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. It is in your best interest to describe the image clearly in detail as you will receive an instant $1 bonus if you do well! FINALLY, type \"DONE\" at anytime to end & complete the task. However, please only end the task once you believe the image has been drawn accurately by the other turker in order to receive the instant bonus.", "task_data":self.taskData()}
             self.teller.observe(ad)
 
-        elif self.turn_idx > 3:
+        elif self.turn_idx == 4:
             pass
             ad = {'id': 'System', 'text': "Remember, if there is nothing left to say about the image, please send a message saying \"done\". However, please describe the image in as much detail as possible.", "task_data":self.taskData()}
             self.teller.observe(ad)
@@ -124,7 +131,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
         # Optionally end the task
         self.try_finish_task(teller_act)
-                
+
         # Let drawer see what the teller said
         self.drawer.observe(validate(teller_act))        
 
@@ -144,7 +151,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         # update turns
         self.turn_idx += 1
 
-        self.save_data()
+        self.save_data()        
 
         if self.turn_idx >= 20:
             self.force_finish_task()
@@ -172,9 +179,14 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         for t in threads:
             t.join()
 
-    def review_work(self):
-        # Can review the work here to accept or reject it
-        pass
+    def review_work(self):        
+        global review_agent
+        def review_agent(ag):           
+            if hasattr(ag, 'not_approve'):
+                pass
+            else:
+                ag.approve_work()
+        Parallel(n_jobs=len(self.mturk_agents), backend='threading')(delayed(review_agent)(agent) for agent in self.mturk_agents)
 
     def get_custom_task_data(self):
         return       

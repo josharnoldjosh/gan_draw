@@ -13,6 +13,8 @@ from parlai.mturk.core.mturk_manager import MTurkManager
 from task_config import task_config
 import os
 
+BONUS_PAY_AMOUNT = 1.0
+
 def main():
     """Handles setting up and running a ParlAI-MTurk task by instantiating
     an MTurk manager and configuring it for the qa_data_collection task
@@ -69,7 +71,10 @@ def main():
     agent_qualifications = [
         {'QualificationTypeId': '00000000000000000060','Comparator': 'Exists','RequiredToPreview': True}, # adult qualification
         {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [95], 'RequiredToPreview': True} # percent assignments approved
-    ]     
+    ]
+
+    if opt["is_sandbox"] == True:
+        agent_qualifications = []
 
     try:
         # Initialize run information
@@ -79,7 +84,7 @@ def main():
         mturk_manager.ready_to_accept_workers()
 
         # Create the hits as specified by command line arguments
-        mturk_manager.create_hits(qualifications=agent_qualifications)
+        mturk_manager.create_hits(qualifications=agent_qualifications)        
 
         # Check workers eligiblity acts as a filter, and should return
         # the list of all workers currently eligible to work on the task
@@ -114,6 +119,13 @@ def main():
             # run the world to completion
             while not world.episode_done():
                 world.parley()
+
+            if (world.should_pay_bonus == True):
+                print("Image threshold met! Paying bonus!")
+                for ag in workers:
+                    mturk_manager.pay_bonus(ag.worker_id, BONUS_PAY_AMOUNT, ag.assignment_id, "Successfully recreated an image to a high enough quality.", ag.assignment_id)
+            else:
+                print("Failed to create the image to a high enough quality.")
 
             # shutdown and review the work
             world.shutdown()

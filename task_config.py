@@ -13,7 +13,7 @@ task_config['frontend_version'] = 1
 On the Amazon Mechanical Turk web site, the HIT title appears in search results,
 and everywhere the HIT is mentioned.
 """
-task_config['hit_title'] = 'Drawing Game Task'
+task_config['hit_title'] = 'Drawing Game Task: INSTANT $1 BONUS ON TASK SUCCESS'
 
 
 """A description includes detailed information about the kind of task the HIT contains.
@@ -45,6 +45,8 @@ Once you have finished describing the image, type "done" in the chat to end the 
 <br>
 
 <b>As the drawer:</b> You will be drawing what the teller describes on a canvas, step by step. For example, on your first turn, you might draw a mountain in the background, and on your second turn you might draw the ocean in front of the mountain.<br>
+
+If you can redraw the image with a high enough accuracy, you will be granted an INSTANT $1 Bonus.
 
 If you are ready, please click "Accept HIT" to start this task.
 '''
