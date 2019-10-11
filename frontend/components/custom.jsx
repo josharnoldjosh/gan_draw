@@ -9,6 +9,136 @@
 import React from 'react';
 import axios from 'axios';
 import {Tools, SketchField} from './index.js';
+import ReactDOM from 'react-dom';
+import {
+  FormControl,
+  Button,
+  ButtonGroup,
+  InputGroup,
+  FormGroup,
+  MenuItem,
+  DropdownButton,
+  Badge,
+  Popover,
+  Overlay,
+  Nav,
+  NavItem,
+  Col,
+  ControlLabel,
+  Form,
+} from 'react-bootstrap';
+import $ from 'jquery';
+
+class CustomTextResponse extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { textval: '', sending: false };
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // Only change in the active status of this component should cause a
+    // focus event. Not having this would make the focus occur on every
+    // state update (including things like volume changes)
+    if (this.props.active && !prevProps.active) {
+      $('input#id_text_input').focus();
+    }
+    this.props.onInputResize();
+  }
+
+  tryMessageSend() {
+    if (this.state.textval.length > 140) {
+        alert("Your answer is too long! Please type an answer that is less than 140 characters.");
+    }else if (this.state.textval != '' && this.props.active && !this.state.sending) {
+
+        // try to call function
+
+
+      this.setState({ sending: true });
+      this.props.onMessageSend(this.state.textval, {}, () =>
+        this.setState({ textval: '', sending: false })
+      );
+    }
+  }
+
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.tryMessageSend();
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
+    }
+  }
+
+  render() {
+    // TODO maybe move to CSS?
+    let pane_style = {
+      paddingLeft: '25px',
+      paddingTop: '20px',
+      paddingBottom: '20px',
+      paddingRight: '25px',
+      float: 'left',
+      width: '100%',
+    };
+    let input_style = {
+      height: '50px',
+      width: '100%',
+      display: 'block',
+      float: 'left',
+    };
+    let submit_style = {
+      width: '100px',
+      height: '100%',
+      fontSize: '16px',
+      float: 'left',
+      marginLeft: '10px',
+      padding: '0px',
+    };
+
+    let text_input = (
+      <FormControl
+        type="text"
+        id="id_text_input"
+        style={{
+          width: '80%',
+          height: '100%',
+          float: 'left',
+          fontSize: '16px',
+        }}
+        value={this.state.textval}
+        placeholder="Please enter here..."
+        onKeyPress={e => this.handleKeyPress(e)}
+        onChange={e => this.setState({ textval: e.target.value })}
+        disabled={!this.props.active || this.state.sending}
+      />
+    );
+
+    let submit_button = (
+      <Button
+        className="btn btn-primary"
+        style={submit_style}
+        id="id_send_msg_button"
+        disabled={
+          this.state.textval == '' || !this.props.active || this.state.sending
+        }
+        onClick={() => this.tryMessageSend()}
+      >
+        Send
+      </Button>
+    );
+
+    return (
+      <div
+        id="response-type-text-input"
+        className="response-type-module"
+        style={pane_style}
+      >
+        <div style={input_style}>
+          {text_input}
+          {submit_button}
+        </div>
+      </div>
+    );
+  }
+}
 
 class Title extends React.Component {
     render() {
@@ -263,7 +393,7 @@ class OnboardingDrawerUI extends React.Component {
         return (
             <div style={frame_style} id="left-pane" className={pane_size}>
                 <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>                    
-                    <iframe src="https://drive.google.com/file/d/1YiFGsaPaVaUGrkyhTKSA99f_AB7HV_HK/preview" width="900" height="600"></iframe>                               
+                    <iframe src="https://drive.google.com/file/d/1ibp4C7JtNFJ_CiEtdCSnav85E3Y8yvGV/preview" width="700" height="550"></iframe>
                 </div>
             </div>
         );
@@ -281,14 +411,16 @@ class TellerImageView extends React.Component {
         return (
             <div style={{display:'flex', justifyContent:'center', flexDirection:'column', alignItems:'center', marginLeft:'30px'}}>
                 <Title text={"Peek Image"} />
-                <Subtitle text={"You can only peek once during the task."} />
+                <Subtitle text={"If nothing loads, the other turker hasn't drawn anything yet."} />
                 <p>{this.props.loading}</p>
                 <img src={this.props.image} style={{width:'300px', height:'300px', backgroundColor:'#f9f9f9', marginBottom:'20px'}} />                
-                <button style={{width:'100px', marginBottom:'100px'}} onClick={() => this.props.peek()} disabled={this.props.peeked}>Peek</button>
+                <button style={{width:'100px', marginBottom:'100px'}} onClick={() => this.props.peek()} disabled={false}>Peek</button>
             </div>
         );
     }
 }
+
+//<button style={{width:'100px', marginBottom:'100px'}} onClick={() => this.props.peek()} disabled={this.props.peeked}>Peek</button>
 
 class TellerDescribeImageView extends React.Component {
     render() {
@@ -370,6 +502,12 @@ var LeftPaneHolder = {
   'Onboarding Drawer':OnboardingDrawerUI
 };
 
+var CustomTextResponseHolder = {
+    Drawer: CustomTextResponse,
+    Teller: CustomTextResponse
+};
+
 export default {  
-  XLeftPane: LeftPaneHolder
+  XLeftPane: LeftPaneHolder,
+  XTextResponse: CustomTextResponseHolder
 };
