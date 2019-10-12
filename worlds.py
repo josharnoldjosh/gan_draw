@@ -75,7 +75,9 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
     def selectImageForTask(self):        
         path_ext = "/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/landscape_target/"
-        self.image_file = random.choice(os.listdir(path_ext))
+        self.image_file = "semantic"
+        while "semantic" in self.image_file:
+            self.image_file = random.choice(os.listdir(path_ext))
         print(self.image_file)
 
     def pay_bonus(self):
@@ -85,7 +87,8 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
     def get_scores(self):
         r = requests.post('https://language.cs.ucdavis.edu/get_score', data={'unique_id':self.unique_task_id, "turn_idx":self.turn_idx})
-        print(r.status_code, r.reason)        
+        print(r.status_code, r.reason)
+        if r.status_code != 200: return "0% Unfortunately you did not qualify for the bonus."              
         data = r.json()
         score_result = int(data["mean_iou"]*100)
         if score_result >= 20:
@@ -104,6 +107,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
     def try_finish_task(self, teller_act):
         if "done" in validate(teller_act)['text'].lower():
             self.dialog.append({"system":"TASK COMPLETE", "turn_idx":self.turn_idx})
+            self.save_data()
             self.force_finish_task()        
 
     def parley(self):
@@ -117,12 +121,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
             ad = {'id': 'System', 'text': "Welcome to the task. Your goal is to collaborate with another turker to redraw an image as accurately as possible.", "task_data":self.taskData()}
             self.teller.observe(ad)
-            ad = {'id': 'System', 'text': "Please click LOAD IMAGE and then begin describing the image to your left. During the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. It is in your best interest to describe the image clearly in detail as you will receive an instant $1 bonus if you do well! FINALLY, type \"DONE\" at anytime to end & complete the task. However, please only end the task once you believe the image has been drawn accurately by the other turker in order to receive the instant bonus.", "task_data":self.taskData()}
-            self.teller.observe(ad)
-
-        elif self.turn_idx == 4:
-            pass
-            ad = {'id': 'System', 'text': "Remember, if there is nothing left to say about the image, please send a message saying \"done\". However, please describe the image in as much detail as possible.", "task_data":self.taskData()}
+            ad = {'id': 'System', 'text': "Please click LOAD IMAGE and then begin describing the image to your left. During the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. It is in your best interest to describe the image clearly in detail as you will receive an instant $1 bonus if you do well! FINALLY, press the \"FINISH TASK\" button at anytime to end & complete the task. However, please only end the task once you believe the image has been drawn accurately by the other turker in order to receive the instant bonus.", "task_data":self.taskData()}
             self.teller.observe(ad)
         
         # Get the tellers description
