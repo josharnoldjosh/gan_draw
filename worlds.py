@@ -13,6 +13,7 @@ from io import BytesIO
 import base64
 import requests
 import parlai.mturk.core.mturk_utils as mturk_utils
+from joblib import Parallel, delayed
 
 class DrawerOnboardingWorld(MTurkOnboardWorld):
     def parley(self):
@@ -126,7 +127,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         
         # Get the tellers description
         teller_act = self.teller.act()
-        teller_act["task_data"] = self.taskData()
+        teller_act["task_data"] = self.taskData()        
 
         # Optionally end the task
         self.try_finish_task(teller_act)
@@ -134,13 +135,9 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         # Let drawer see what the teller said
         self.drawer.observe(validate(teller_act))        
 
-        # # Tell the drawer to do what he does best, draw
-        # ad = {'id': 'System', 'text': "Please draw what the Turker described above. When you've finished drawing, please either send a message saying \"done\", or ask a question about the image.", "task_data":self.taskData()}
-        # self.drawer.observe(ad)
-
         # get the drawer message & image
         drawer_act = self.drawer.act()
-        drawer_act["task_data"] = self.taskData()
+        drawer_act["task_data"] = self.taskData()        
 
         self.teller.observe(validate(drawer_act))
 
