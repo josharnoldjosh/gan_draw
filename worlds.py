@@ -31,7 +31,7 @@ class DrawerOnboardingWorld(MTurkOnboardWorld):
         )
 
         self.mturk_agent.observe(ad)
-        self.mturk_agent.act()
+        self.mturk_agent.act()        
         self.episodeDone = True
         
 class TellerOnboardingWorld(MTurkOnboardWorld):
@@ -91,10 +91,10 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         print(r.status_code, r.reason)
         if r.status_code != 200: return "0% Unfortunately you did not qualify for the bonus."              
         data = r.json()
-        score_result = int(data["mean_iou"]*100)
-        if score_result >= 20:
+        score_result = data["co_draw"]
+        if score_result >= 2:
             self.pay_bonus()
-            return str(score_result)+"%. Congradulations, you qualify for the bonus! The $1 bonus should be paid instantly! Great work!" 
+            return str(score_result)+" out of 5. Congradulations, you qualify for the bonus! The $1 bonus should be paid instantly! Great work!" 
         return str(score_result)+"% Unfortunately you did not qualify for the bonus."
 
     def force_finish_task(self):
