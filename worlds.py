@@ -20,14 +20,11 @@ class DrawerOnboardingWorld(MTurkOnboardWorld):
         ad = {}
         ad['id'] = 'System'
         ad['text'] = (
-            "Welcome onboard! You'll be playing the role of the Drawer."
-            " Please watch the video to the left."
-            " Once you think you are comfortable with how to use the canvas to draw, please send any message"
-            " to continue. After that, please REMEMBER to ALWAYS CLICK \"CONVERT\""
-            " before sending a message to end your turn."
-            " NOTE: If you and your partner can successfully work together to draw an image that is similar enough"
-            " to the one being described by your partner, you will BOTH RECEIVE A $1 BONUS. It is in your best"
-            " interest to ask questions to draw what the other turker describes well."
+            "Welcome onboard! You'll be playing the role of the Drawer.\n"            
+            "Please scroll down and watch the video to the left. After, please test out drawing on the canvas to the left.\n"
+            "If it is hard to see, please zoom out on your web browser.\n"
+            "Once you think you are comfortable with how to use the canvas to draw, please send any message"
+            " to continue. "            
         )
 
         self.mturk_agent.observe(ad)
@@ -77,8 +74,10 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
     def selectImageForTask(self):        
         path_ext = "/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/landscape_target/"
         self.image_file = "semantic"
-        while "semantic" in self.image_file:
+        while True:
             self.image_file = random.choice(os.listdir(path_ext))
+            if "semantic" not in self.image_file and "_o" in self.image_file and "DS_Store" not in self.image_file:
+                break
         print(self.image_file)
 
     def pay_bonus(self):
@@ -92,7 +91,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         if r.status_code != 200: return "0% Unfortunately you did not qualify for the bonus."              
         data = r.json()
         score_result = data["co_draw"]
-        if score_result >= 2:
+        if score_result >= 1.75:
             self.pay_bonus()
             return str(score_result)+" out of 5. Congradulations, you qualify for the bonus! The $1 bonus should be paid instantly! Great work!" 
         return str(score_result)+"% Unfortunately you did not qualify for the bonus."

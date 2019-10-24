@@ -202,21 +202,29 @@ class Palate extends React.Component {
             <div  style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'flex-start', marginBottom:'100px'}} >    
 
                 <div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'center', width:'100px', margin:'20px'}}>                                
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 5 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#f2dae3'); this.setState({selectedButton:5})}} >Clouds</button>
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#6eb4e8', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 0 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#6eb4e8'); this.setState({selectedButton:0})}} >Sky</button>
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#3c53a3', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 1 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#3c53a3'); this.setState({selectedButton:1})}} >Sea</button>
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#807761', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 2 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#807761'); this.setState({selectedButton:2})}} >Mountain</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#635f5d', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 3 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#635f5d'); this.setState({selectedButton:3})}} >Rock</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#6c9460', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 4 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#6c9460'); this.setState({selectedButton:4})}} >Hill</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 5 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#f2dae3'); this.setState({selectedButton:5})}} >Clouds</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#d6c77c', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 6 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#d6c77c'); this.setState({selectedButton:6})}} >Sand</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#918491', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 7 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#918491'); this.setState({selectedButton:7})}} >Gravel</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#ededed', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 8 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#ededed'); this.setState({selectedButton:8})}} >Snow</button>                                                                                
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#65a398', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 9 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#65a398'); this.setState({selectedButton:9})}} >River</button>                                                                                                
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#469632', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 10 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#469632'); this.setState({selectedButton:10})}} >Bush</button>                                                                        
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#71cc2b', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 21 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#71cc2b'); this.setState({selectedButton:21})}} >Grass</button>                                                         
                 </div>                    
 
+            </div>
+            </div>
+        );
+    }
+}
+
+/* 
+
                 <div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'flex-start', width:'100px', margin:'20px'}}>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#87ab6f', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 11 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#87ab6f'); this.setState({selectedButton:11})}} >Tree</button>
+                  
+
+
+
+                </div>          
+
+  <button style={{width:'100px', margin:'5px', backgroundColor:'#87ab6f', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 11 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#87ab6f'); this.setState({selectedButton:11})}} >Tree</button>
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#414a4a', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 12 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#414a4a'); this.setState({selectedButton:12})}} >Road</button>   
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#d160cb', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 13 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#d160cb'); this.setState({selectedButton:13})}} >Platform</button>
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#967e54', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 14 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#967e54'); this.setState({selectedButton:14})}} >Dirt</button>
@@ -225,15 +233,19 @@ class Palate extends React.Component {
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#8d9fb8', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 17 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#8d9fb8'); this.setState({selectedButton:17})}} >Fog</button>
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#9c9c9c', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 18 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#9c9c9c'); this.setState({selectedButton:18})}} >Stone</button>
                     <button style={{width:'100px', margin:'5px', backgroundColor:'#526bd9', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 19 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#526bd9'); this.setState({selectedButton:19})}} >Water</button>  
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#e6be30', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 20 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e6be30'); this.setState({selectedButton:20})}} >Flower</button>                    
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#71cc2b', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 21 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#71cc2b'); this.setState({selectedButton:21})}} >Grass</button>               
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#e8d423', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 22 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e8d423'); this.setState({selectedButton:22})}} >Straw</button>                               
-                </div>                
-            </div>
-            </div>
-        );
-    }
-}
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#e6be30', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 20 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e6be30'); this.setState({selectedButton:20})}} >Flower</button> 
+
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#e8d423', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 22 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e8d423'); this.setState({selectedButton:22})}} >Straw</button>  
+
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#d6c77c', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 6 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#d6c77c'); this.setState({selectedButton:6})}} >Sand</button>
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#918491', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 7 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#918491'); this.setState({selectedButton:7})}} >Gravel</button>
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#ededed', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 8 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#ededed'); this.setState({selectedButton:8})}} >Snow</button>                                                                                
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#65a398', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 9 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#65a398'); this.setState({selectedButton:9})}} >River</button>                                                                                                
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#469632', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 10 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#469632'); this.setState({selectedButton:10})}} >Bush</button>   
+
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#635f5d', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 3 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#635f5d'); this.setState({selectedButton:3})}} >Rock</button>
+                    <button style={{width:'100px', margin:'5px', backgroundColor:'#6c9460', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 4 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#6c9460'); this.setState({selectedButton:4})}} >Hill</button> 
+*/
 
 class Canvas extends React.Component {
 
@@ -376,6 +388,40 @@ class DrawerUI extends React.Component {
 }
 
 class OnboardingDrawerUI extends React.Component {
+
+        state = {color:'#3c53a3', image:undefined, loading:"", disableConvert:false}
+
+    changeColor = (color) => {
+        this.setState({color:color})
+    }
+
+    updateImage = () => {
+
+        // Get image
+        var image = this._canvas._sketch.toDataURL();
+
+        // Create form data to send
+        let data = new FormData();
+        data.append('file', image);
+        data.append('unique_id', this.props.task_data["task_id"])   
+        data.append('turn_idx', this.props.task_data["turn_idx"]) 
+        data.append('image_name', this.props.task_data["image_name"])
+
+        // Show the "Is loading" text
+        this.setState({loading:"Loading image please be patient", disableConvert:true})
+
+        // Send image        
+        axios.post("https://language.cs.ucdavis.edu/sandbox", data, {
+          headers: {
+            'Content-Type': image.type
+          }
+        }).then((response) => {      
+            // Show the image to the user      
+            console.log(response['data']);
+            this.setState({image:response['data'], loading:"", disableConvert:false})
+        });   
+    }
+
     render() {
         let frame_height = this.props.frame_height;
         let frame_style = {
@@ -389,12 +435,35 @@ class OnboardingDrawerUI extends React.Component {
 
         return (
             <div style={frame_style} id="left-pane" className={pane_size}>
-                <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>                    
-                    <iframe src="https://drive.google.com/file/d/1ibp4C7JtNFJ_CiEtdCSnav85E3Y8yvGV/preview" width="700" height="550"></iframe>
+                <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>
+                    <Palate changeColor={this.changeColor} />
+                    <Canvas color={this.state.color} ref={c => (this._canvas = c)} />       
+                    <Preview image={this.state.image} convertImage={this.updateImage} loading={this.state.loading} disableConvert={this.state.disableConvert}/>                                 
+                    <iframe src="https://drive.google.com/file/d/1ibp4C7JtNFJ_CiEtdCSnav85E3Y8yvGV/preview" width="1000" height="800"></iframe>
                 </div>
             </div>
         );
     }
+
+    // render() {
+    //     let frame_height = this.props.frame_height;
+    //     let frame_style = {
+    //             height: frame_height + 'px',
+    //             backgroundColor: 'white',
+    //             padding: '30px',
+    //             overflow: 'auto',
+    //             width:'1100px'
+    //         };        
+    //     let pane_size = this.props.is_cover_page ? 'col-xs-12' : 'col-xs-4';
+
+    //     return (
+    //         <div style={frame_style} id="left-pane" className={pane_size}>
+    //             <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>                    
+                    
+    //             </div>
+    //         </div>
+    //     );
+    // }
 }
 
 class TellerImageView extends React.Component {
@@ -459,17 +528,12 @@ class TellerUI extends React.Component {
     }
 
     tryToFinishTask = () => {
-        if (this.state.alertShown == false) {
-            this.state.alertShown = true
-            alert("Note: Please only end the task when you have worked with the other turker to make the drawn image as accurate to the original as possible. If you are ready to end the task, please click the 'finish task' button again, otherwise, please continue chatting with the other turker.");
+        if (this.props.task_data["turn_idx"] < 3) {
+            alert("Please complete at least 3 turns of dialog before ending the task.");
         }else{
-            if (this.props.task_data["turn_idx"] < 4) {
-                alert("Please complete at least 5 turns of dialog before ending the task.");
-            }else{
-                this.props.onMessageSend("done", {});    
-                alert("If the task has not ended yet, it will end as soon as the Drawer (the other turker) sends the final message. Please be patient.");
-            }            
-        }
+            this.props.onMessageSend("done", {});    
+            alert("If the task has not ended yet, it will end as soon as the Drawer (the other turker) sends the final message. Please be patient.");
+        }            
     }
 
     render() {
