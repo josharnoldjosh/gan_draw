@@ -76,7 +76,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.image_file = "semantic"
         while True:
             self.image_file = random.choice(os.listdir(path_ext))
-            if "semantic" not in self.image_file and "_o" in self.image_file and "DS_Store" not in self.image_file:
+            if "semantic" not in self.image_file and "DS_Store" not in self.image_file:
                 break
         print(self.image_file)
 
