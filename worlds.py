@@ -91,7 +91,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         if r.status_code != 200: return "0% Unfortunately you did not qualify for the bonus."              
         data = r.json()
         score_result = data["co_draw"]
-        if score_result >= 1.75:
+        if score_result >= 2.0:
             self.pay_bonus()
             return str(score_result)+" out of 5. Congradulations, you qualify for the bonus! The $1 bonus should be paid instantly! Great work!" 
         return str(score_result)+"% Unfortunately you did not qualify for the bonus."
