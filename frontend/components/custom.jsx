@@ -47,21 +47,154 @@ class CustomTextResponse extends React.Component {
 
   tryMessageSend() {
 
-    this.props.triggerSaveImage();
+    let data = new FormData();
+    data.append('utt', this.state.textval);
+
+    axios.post("https://language.cs.ucdavis.edu/english", data).then((response) => {      
+        // Show the image to the user      
+        var result = response['data'];
+
+        if (result['can_send'] == true) {
+            this.props.triggerSaveImage();
     
 
-    if (this.state.textval.length > 140) {
-        alert("Your answer is too long! Please type an answer that is less than 140 characters.");
-    }else if (this.state.textval != '' && this.props.active && !this.state.sending) {
+            if (this.state.textval.length > 140) {
+                alert("Your answer is too long! Please type an answer that is less than 140 characters.");
+            }else if (this.state.textval != '' && this.props.active && !this.state.sending) {
 
-        // try to call function
+                // try to call function
 
 
-      this.setState({ sending: true });
-      this.props.onMessageSend(this.state.textval, {}, () =>
-        this.setState({ textval: '', sending: false })
-      );
+              this.setState({ sending: true });
+              this.props.onMessageSend(this.state.textval, {}, () =>
+                this.setState({ textval: '', sending: false })
+              );
+            }
+        }else{
+            alert(result['info'])
+        }
+    }); 
+  }
+
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.tryMessageSend();
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
     }
+  }
+
+  render() {
+    // TODO maybe move to CSS?
+    let pane_style = {
+      paddingLeft: '25px',
+      paddingTop: '20px',
+      paddingBottom: '20px',
+      paddingRight: '25px',
+      float: 'left',
+      width: '100%',
+    };
+    let input_style = {
+      height: '50px',
+      width: '100%',
+      display: 'block',
+      float: 'left',
+    };
+    let submit_style = {
+      width: '100px',
+      height: '100%',
+      fontSize: '16px',
+      float: 'left',
+      marginLeft: '10px',
+      padding: '0px',
+    };
+
+    let text_input = (
+      <FormControl
+        type="text"
+        id="id_text_input"
+        style={{
+          width: '80%',
+          height: '100%',
+          float: 'left',
+          fontSize: '16px',
+        }}
+        value={this.state.textval}
+        placeholder="Please enter here..."
+        onKeyPress={e => this.handleKeyPress(e)}
+        onChange={e => this.setState({ textval: e.target.value })}
+        disabled={!this.props.active || this.state.sending}
+      />
+    );
+
+    let submit_button = (
+      <Button
+        className="btn btn-primary"
+        style={submit_style}
+        id="id_send_msg_button"
+        disabled={
+          this.state.textval == '' || !this.props.active || this.state.sending
+        }
+        onClick={() => this.tryMessageSend()}
+      >
+        Send
+      </Button>
+    );
+
+    return (
+      <div
+        id="response-type-text-input"
+        className="response-type-module"
+        style={pane_style}
+      >
+        <div style={input_style}>
+          {text_input}
+          {submit_button}
+        </div>
+      </div>
+    );
+  }
+}
+
+class CustomTextResponseTeller extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { textval: '', sending: false };
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // Only change in the active status of this component should cause a
+    // focus event. Not having this would make the focus occur on every
+    // state update (including things like volume changes)
+    if (this.props.active && !prevProps.active) {
+      $('input#id_text_input').focus();
+    }
+    this.props.onInputResize();
+  }
+
+  tryMessageSend() {
+
+    let data = new FormData();
+    data.append('utt', this.state.textval);
+
+    axios.post("https://language.cs.ucdavis.edu/english", data).then((response) => {      
+        // Show the image to the user      
+        var result = response['data'];
+
+        if (result['can_send'] == true) {
+            
+            if (this.state.textval.length > 140) {
+                alert("Your answer is too long! Please type an answer that is less than 140 characters.");
+            }else if (this.state.textval != '' && this.props.active && !this.state.sending) {
+              this.setState({ sending: true });
+              this.props.onMessageSend(this.state.textval, {}, () =>
+                this.setState({ textval: '', sending: false })
+              );
+            }
+        }else{
+            alert(result['info'])
+        }
+    }); 
   }
 
   handleKeyPress(e) {
@@ -226,30 +359,6 @@ class Palate extends React.Component {
         );
     }
 }
-
-/* 
-
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#414a4a', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 12 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#414a4a'); this.setState({selectedButton:12})}} >Road</button>   
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#d160cb', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 13 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#d160cb'); this.setState({selectedButton:13})}} >Platform</button>
-                    
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#53634e', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 15 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#53634e'); this.setState({selectedButton:15})}} >Ground-other</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#784b26', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 16 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#784b26'); this.setState({selectedButton:16})}} >Mud</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#8d9fb8', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 17 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#8d9fb8'); this.setState({selectedButton:17})}} >Fog</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#9c9c9c', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 18 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#9c9c9c'); this.setState({selectedButton:18})}} >Stone</button>
-                      
-                     
-
-                      
-
-                    
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#918491', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 7 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#918491'); this.setState({selectedButton:7})}} >Gravel</button>
-                                                                                                    
-                                                                                                                    
-                    
-
-                    
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#6c9460', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 4 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#6c9460'); this.setState({selectedButton:4})}} >Hill</button> 
-*/
 
 class Canvas extends React.Component {
 
@@ -515,8 +624,6 @@ class TellerImageView extends React.Component {
         );
     }
 }
-
-//<button style={{width:'100px', marginBottom:'100px'}} onClick={() => this.props.peek()} disabled={this.props.peeked}>Peek</button>
 
 class TellerDescribeImageView extends React.Component {
     render() {
@@ -1684,7 +1791,13 @@ var LeftPaneHolder = {
   'Onboarding Drawer':OnboardingDrawerUI
 };
 
+var TextResponseHolder = {
+    Teller:CustomTextResponseTeller
+};
+
 export default {  
   XLeftPane: LeftPaneHolder,
-  XContentLayout : ContentLayoutHolder  
+  XContentLayout : ContentLayoutHolder,
+  XTextResponse : TextResponseHolder
+
 };
