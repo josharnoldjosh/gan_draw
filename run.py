@@ -70,7 +70,7 @@ def main():
 
     agent_qualifications = [
         {'QualificationTypeId': '00000000000000000060','Comparator': 'Exists','RequiredToPreview': True}, # adult qualification
-        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [96], 'RequiredToPreview': True}, # percent assignments approved
+        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [95], 'RequiredToPreview': True}, # percent assignments approved
         # {'QualificationTypeId':'2F1QJWKUDD8XADTFD2Q0G6UTO95ALH', 'Comparator':'Exists', "ActionsGuarded":"DiscoverPreviewAndAccept", 'RequiredToPreview': True},
         # {'QualificationTypeId':'00000000000000000040', 'Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [20], 'RequiredToPreview': True, 'RequiredToPreview': True}
     ]
