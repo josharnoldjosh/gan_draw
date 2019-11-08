@@ -1,0 +1,77 @@
+14:25:27,485 git.cmd DEBUG Popen(['git', 'rev-parse', 'HEAD'], cwd=/home/jarnold9/ParlAI, universal_newlines=False, shell=None)
+14:25:27,496 git.cmd DEBUG Popen(['git', 'rev-parse', 'HEAD'], cwd=/home/jarnold9/ParlAI/parlai_internal, universal_newlines=False, shell=None)
+14:25:28,804 botocore.session DEBUG Setting config variable for profile to 'parlai_mturk'
+14:25:28,805 botocore.session DEBUG Loading variable profile from instance vars with value 'parlai_mturk'.
+14:25:28,805 botocore.session DEBUG Loading variable config_file from defaults.
+14:25:28,807 botocore.session DEBUG Loading variable credentials_file from defaults.
+14:25:28,808 botocore.session DEBUG Loading variable data_path from defaults.
+14:25:28,814 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,814 botocore.session DEBUG Loading variable config_file from defaults.
+14:25:28,815 botocore.session DEBUG Loading variable credentials_file from defaults.
+14:25:28,815 botocore.session DEBUG Loading variable data_path from defaults.
+14:25:28,816 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,816 botocore.session DEBUG Loading variable ca_bundle from defaults.
+14:25:28,816 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,816 botocore.session DEBUG Loading variable api_versions from defaults.
+14:25:28,816 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,816 botocore.session DEBUG Loading variable credentials_file from defaults.
+14:25:28,816 botocore.session DEBUG Loading variable config_file from defaults.
+14:25:28,817 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,817 botocore.session DEBUG Loading variable metadata_service_timeout from defaults.
+14:25:28,817 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,817 botocore.session DEBUG Loading variable metadata_service_num_attempts from defaults.
+14:25:28,818 botocore.session DEBUG Loading variable profile from defaults.
+14:25:28,818 botocore.credentials DEBUG Looking for credentials via: env
+14:25:28,818 botocore.credentials DEBUG Looking for credentials via: assume-role
+14:25:28,818 botocore.credentials DEBUG Looking for credentials via: shared-credentials-file
+14:25:28,819 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+14:25:28,819 botocore.loaders DEBUG Loading JSON file: /usr/local/lib/python3.6/site-packages/botocore/data/endpoints.json
+14:25:28,825 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,826 botocore.hooks DEBUG Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f6d786fa510>
+14:25:28,833 botocore.loaders DEBUG Loading JSON file: /usr/local/lib/python3.6/site-packages/botocore/data/mturk/2017-01-17/service-2.json
+14:25:28,842 botocore.hooks DEBUG Event creating-client-class.mturk: calling handler <function add_generate_presigned_url at 0x7f6d78734ea0>
+14:25:28,842 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+14:25:28,847 botocore.endpoint DEBUG Setting mturk-requester timeout as (60, 60)
+14:25:28,847 botocore.loaders DEBUG Loading JSON file: /usr/local/lib/python3.6/site-packages/botocore/data/_retry.json
+14:25:28,848 botocore.client DEBUG Registering retry handlers for service: mturk
+14:25:28,849 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,849 botocore.session DEBUG Loading variable ca_bundle from defaults.
+14:25:28,849 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,849 botocore.session DEBUG Loading variable api_versions from defaults.
+14:25:28,849 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:25:28,849 botocore.hooks DEBUG Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f6d786fa510>
+14:25:28,850 botocore.hooks DEBUG Event creating-client-class.mturk: calling handler <function add_generate_presigned_url at 0x7f6d78734ea0>
+14:25:28,850 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+14:25:28,852 botocore.endpoint DEBUG Setting mturk-requester timeout as (60, 60)
+14:25:28,853 botocore.client DEBUG Registering retry handlers for service: mturk
+14:25:28,853 botocore.hooks DEBUG Event before-parameter-build.mturk-requester.GetAccountBalance: calling handler <function generate_idempotent_uuid at 0x7f6d7870ba60>
+14:25:28,853 botocore.endpoint DEBUG Making request for OperationModel(name=GetAccountBalance) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'X-Amz-Target': 'MTurkRequesterServiceV20170117.GetAccountBalance', 'Content-Type': 'application/x-amz-json-1.1', 'User-Agent': 'Boto3/1.7.19 Python/3.6.5 Linux/4.4.0-154-generic Botocore/1.10.19'}, 'body': b'{}', 'url': 'https://mturk-requester.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f6d7416be48>, 'has_streaming_input': False, 'auth_type': None}}
+14:25:28,854 botocore.hooks DEBUG Event request-created.mturk-requester.GetAccountBalance: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f6d7416be10>>
+14:25:28,854 botocore.hooks DEBUG Event choose-signer.mturk-requester.GetAccountBalance: calling handler <function set_operation_specific_signer at 0x7f6d7870b950>
+14:25:28,854 botocore.auth DEBUG Calculating signature using v4 auth.
+14:25:28,854 botocore.auth DEBUG CanonicalRequest:
+POST
+/
+
+content-type:application/x-amz-json-1.1
+host:mturk-requester.us-east-1.amazonaws.com
+x-amz-date:20191103T222528Z
+x-amz-target:MTurkRequesterServiceV20170117.GetAccountBalance
+
+content-type;host;x-amz-date;x-amz-target
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+14:25:28,855 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20191103T222528Z
+20191103/us-east-1/mturk-requester/aws4_request
+3621d8c05f7269435a9edf620c47ee3d53860973c1f056ad25efbb7b81f59507
+14:25:28,855 botocore.auth DEBUG Signature:
+233fc221e46555e8390ade7a715f95b8aed68439fd4776ed5b8695806e5b999c
+14:25:28,856 botocore.endpoint DEBUG Sending http request: <PreparedRequest [POST]>
+14:25:28,857 botocore.vendored.requests.packages.urllib3.connectionpool INFO Starting new HTTPS connection (1): mturk-requester.us-east-1.amazonaws.com
+14:25:29,319 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "POST / HTTP/1.1" 200 30
+14:25:29,321 botocore.parsers DEBUG Response headers: {'x-amzn-requestid': '05faddba-5de0-41d2-9bc6-17ab1dc7d66e', 'content-type': 'application/x-amz-json-1.1', 'content-length': '30', 'date': 'Sun, 03 Nov 2019 22:23:10 GMT'}
+14:25:29,321 botocore.parsers DEBUG Response body:
+b'{"AvailableBalance":"1225.10"}'
+14:25:29,322 botocore.hooks DEBUG Event needs-retry.mturk-requester.GetAccountBalance: calling handler <botocore.retryhandler.RetryHandler object at 0x7f6d7410f160>
+14:25:29,322 botocore.retryhandler DEBUG No retry needed.

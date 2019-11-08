@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "the bottom lower two thirds are all pine trees",
+            "drawer": "Hows that",
+            "turn_idx": 0
+        },
+        {
+            "teller": "good. the rest is just sky and mountains. the mountains are two more of the fifths above the trees",
+            "drawer": "It looks strange but I did it ",
+            "turn_idx": 1
+        },
+        {
+            "teller": "it needs more mountains. go higher with them but leave some sky at the top",
+            "drawer": "What about like this",
+            "turn_idx": 2
+        },
+        {
+            "teller": "looks good, but fill in the two left gaps between mountains. leave the gap on the right, it's perfect",
+            "drawer": "Hows this?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "good. now just add a peak in between that left side of the mountains towards the middle of them",
+            "drawer": "like this?",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA1ZE52NWZPN85P3WETL7AQWT83MMRHZ0KWUIP3SMZ5383E13VNJ1NNVJO78HJGP7VYEBZOR1IM",
+        "turn_idx": 5,
+        "image_name": "e17f68e1.jpg"
+    }
+}

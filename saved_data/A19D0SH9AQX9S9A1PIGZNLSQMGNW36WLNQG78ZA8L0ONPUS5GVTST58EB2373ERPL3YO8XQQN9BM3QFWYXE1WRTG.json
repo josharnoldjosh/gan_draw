@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "There is water on the bottom of the picture that extends up only about half an inch from the bottom.",
+            "drawer": "what else is there?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "There is a tiny white cabin in the middle of the lake off in the distance.  It's only about a quarter inch high and a half inch wide.",
+            "drawer": "got that ",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The cabin is surrounded by many pine trees.  They extend up the shore about half an inch.  There is another smaller cabin upper left.",
+            "drawer": "anything else",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Blue sky and clouds up on the top and then a mountain in the upper right that extends almost to the top of the page.",
+            "drawer": "any other details",
+            "turn_idx": 3
+        },
+        {
+            "teller": "I think that's about it.  Thanks - good luck!",
+            "drawer": "thanks you too",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A19D0SH9AQX9S9A1PIGZNLSQMGNW36WLNQG78ZA8L0ONPUS5GVTST58EB2373ERPL3YO8XQQN9BM3QFWYXE1WRTG",
+        "turn_idx": 5,
+        "image_name": "de7b47ff.jpg"
+    }
+}

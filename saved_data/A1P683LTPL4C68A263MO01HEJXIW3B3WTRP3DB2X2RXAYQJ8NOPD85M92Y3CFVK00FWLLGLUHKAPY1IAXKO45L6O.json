@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "bottom half is grass, with a small tree line above that",
+            "drawer": "How tall are the trees?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "try 10 percent image size",
+            "drawer": "Okay done!",
+            "turn_idx": 1
+        },
+        {
+            "teller": "That's good, make them go from that height on the left and down to half that size on right. ",
+            "drawer": "So more skyline along the right side?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "correct, except there's actually a small mountain on that side",
+            "drawer": "Okay, how much room does the mountain take up?",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A1P683LTPL4C68A263MO01HEJXIW3B3WTRP3DB2X2RXAYQJ8NOPD85M92Y3CFVK00FWLLGLUHKAPY1IAXKO45L6O",
+        "turn_idx": 4,
+        "image_name": "08dccf7d.jpg"
+    }
+}

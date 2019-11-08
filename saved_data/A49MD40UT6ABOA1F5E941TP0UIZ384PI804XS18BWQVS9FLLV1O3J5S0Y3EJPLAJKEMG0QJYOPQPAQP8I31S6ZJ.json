@@ -1,0 +1,48 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a snowy mountain in the back",
+            "drawer": "where in the back?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "behind some pine trees.",
+            "drawer": "am i doing okay?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The picture isn't loading very well. The is a large grassy field in from of the trees will fuchsia flowers. like a colorful carpet.",
+            "drawer": "i've got mountain on top, some grass, then some flowers about equally",
+            "turn_idx": 2
+        },
+        {
+            "teller": "pretty good. the mountain is off to the right side and the pine tree are many different heights",
+            "drawer": "is the sky visible? any clouds? water?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "No clouds only blue sky. spread the flowers out a bit more randomly.",
+            "drawer": "okay, i added spots of grass and some sky along the top and off to the left. what next?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "looks pretty good. thin out the trees a bit. I think you have too many.",
+            "drawer": "[RETURNED]",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        },
+        {
+            "teller": "done",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A49MD40UT6ABOA1F5E941TP0UIZ384PI804XS18BWQVS9FLLV1O3J5S0Y3EJPLAJKEMG0QJYOPQPAQP8I31S6ZJ",
+        "turn_idx": 7,
+        "image_name": "4189ce00.jpg"
+    }
+}

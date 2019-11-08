@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a big mountain range in the background with at least six peaks",
+            "drawer": "OKay",
+            "turn_idx": 0
+        },
+        {
+            "teller": "In front of the mountains there is a body of water that is blue that reaches from the base of the mountains to the front of the page. ",
+            "drawer": "Very wet",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Yes, the water covers from the bottom of the mountains to the front of the page. ",
+            "drawer": "yes I did that, what now",
+            "turn_idx": 2
+        },
+        {
+            "teller": "In the foreground of the photo there are a few tall and skinny pine trees but you can only see the tops of them. ",
+            "drawer": "Okay I added those",
+            "turn_idx": 3
+        },
+        {
+            "teller": "At the base of the two mountains on the right side there is some greenery like shrubs",
+            "drawer": "added them",
+            "turn_idx": 4
+        },
+        {
+            "teller": "Last at the bottom of the mountains on the left there are a few short pine trees that are skinny",
+            "drawer": "done",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A1ZE52NWZPN85PA1OZ5IWGMT5WNR3KGTPGBS6XLVMJLDW1EZJKCRLPQ2UA3RRCEFRB7MCQTYRU0OGS79H1GIF4BR",
+        "turn_idx": 6,
+        "image_name": "bade37f3.jpg"
+    }
+}

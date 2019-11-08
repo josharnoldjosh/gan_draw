@@ -1,0 +1,48 @@
+{
+    "dialog": [
+        {
+            "teller": "the bottom half is entirely ocean. the whole bottom, from left to right.",
+            "drawer": "Is there anything in the ocean, or just water?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "just water. then in the top half is several mountains. they go a little more than half way up on left and are lower on right",
+            "drawer": "Got it, any clouds?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "no clouds. on the right hand side is the sun. it is very bright and the entire sky is kind of orange from the sunlight",
+            "drawer": "Is there anything else worth noting?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "no, but I don't see the sun in the picture ",
+            "drawer": "There's no option for drawing the sun, just sky and clouds",
+            "turn_idx": 3
+        },
+        {
+            "teller": "well thats weird. No thats it. It's very basic. Just the ocean mountains and sky",
+            "drawer": "Just to clarify on the right, how low relative to the ocean would you say the mountains are?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "probably just a little lower than you have them but not much. ",
+            "drawer": "Okay great, i think we're good then. Click the finish button if you're ready.",
+            "turn_idx": 5
+        },
+        {
+            "teller": "sounds good. hope you get your bonus",
+            "drawer": "Thank you!",
+            "turn_idx": 6
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 7
+        }
+    ],
+    "taskData": {
+        "task_id": "AZ00V6VV2DFXAA8ZUM922CBH6S3IAS3U3I0FGGQKC7WAX4EUK3W5Q2B23M0NZ3JDP1Y47FYAK7F5YJUI7I35ZC",
+        "turn_idx": 7,
+        "image_name": "d763dbcc.jpg"
+    }
+}

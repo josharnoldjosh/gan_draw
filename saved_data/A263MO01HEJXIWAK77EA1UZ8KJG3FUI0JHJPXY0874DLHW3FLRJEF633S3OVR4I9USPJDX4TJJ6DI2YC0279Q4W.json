@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "there is a ocean",
+            "drawer": "\\what else",
+            "turn_idx": 0
+        },
+        {
+            "teller": "there are mountains in the background",
+            "drawer": "hows this",
+            "turn_idx": 1
+        },
+        {
+            "teller": "there are also some clouds over the mountain",
+            "drawer": "hows those",
+            "turn_idx": 2
+        },
+        {
+            "teller": "good",
+            "drawer": "alright what else",
+            "turn_idx": 3
+        },
+        {
+            "teller": "more blue water",
+            "drawer": "I changed up the water, should I remove that grass?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "yes add sand and more clouds",
+            "drawer": "added some sand, made it look strange, tried messing with the clouds",
+            "turn_idx": 5
+        },
+        {
+            "teller": "i see",
+            "drawer": "What else?",
+            "turn_idx": 6
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 7
+        },
+        {
+            "teller": "done",
+            "drawer": "[RETURNED]",
+            "turn_idx": 7
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWAK77EA1UZ8KJG3FUI0JHJPXY0874DLHW3FLRJEF633S3OVR4I9USPJDX4TJJ6DI2YC0279Q4W",
+        "turn_idx": 8,
+        "image_name": "fc7d0279.jpg"
+    }
+}

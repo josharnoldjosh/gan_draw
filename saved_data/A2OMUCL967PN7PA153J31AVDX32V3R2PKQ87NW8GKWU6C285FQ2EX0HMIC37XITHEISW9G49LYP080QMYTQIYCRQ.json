@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "IT WAS A NATURE FALLS PICTURE UNDER THE MOUNTAIN",
+            "drawer": "Where and how big is the mountain?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "bottom 30 percentage have lake next 20 percent have nature falls backside of the falls have mountain",
+            "drawer": "It looks bad, but do you have any ideas?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Top of the 20 percentage have blue and white sky present",
+            "drawer": "Okay. What goes behind the nature falls?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "bro it like mountain to trees and the water flow through the trees then come down the lake or pond",
+            "drawer": "Okay, is this too much water falls in the middle? What else?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "it was too much and the mountain is not separate it was single mountain.",
+            "drawer": "Okay, anything else?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "mountain is too big and the color of the water is blue,tree and mountain is green,sky also blue color.",
+            "drawer": "I don't think I can improve the color, is everything in the right position and size?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "okay",
+            "drawer": "Do I move the falls?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "no shall i finish task",
+            "drawer": "Okay thanks!",
+            "turn_idx": 7
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 8
+        }
+    ],
+    "taskData": {
+        "task_id": "A2OMUCL967PN7PA153J31AVDX32V3R2PKQ87NW8GKWU6C285FQ2EX0HMIC37XITHEISW9G49LYP080QMYTQIYCRQ",
+        "turn_idx": 8,
+        "image_name": "251e79f4.jpg"
+    }
+}

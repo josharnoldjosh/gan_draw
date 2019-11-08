@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "the bottom three fifths of the image is ALL water",
+            "drawer": "Understood. Proceed. ",
+            "turn_idx": 0
+        },
+        {
+            "teller": "There is only mountains and sky behind. The mountains cover most of the back with a sky at the top",
+            "drawer": "So the sky is about five percent of the picture at the top? Are the mountains angled diagonally or straight?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Mountains start at very top left corner and come down one 5th of the way. Move along right and then back up to right corner",
+            "drawer": "So both the top left corner and top right corner have mountain. Where is the rise back up, how far from the center of the photo?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "You almost have it perfect, just make the left mountain come at a diagonal angle and then it slowly rises to the right top corner",
+            "drawer": "Any trees or sand or anything else to draw in?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "Just mountain. You have to make the left one come down diagonal a little more, like it's sloping toward the bottom right corner",
+            "drawer": "Is that any better?",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A3PXCRGJZE1QC3A1ZE52NWZPN85P3X1FV8S5JXRLESIK069THA8B9F3GVV3H7Z272LX77OV0ZPPLXAOAO1J8OPLP",
+        "turn_idx": 5,
+        "image_name": "093f2ca7.jpg"
+    }
+}

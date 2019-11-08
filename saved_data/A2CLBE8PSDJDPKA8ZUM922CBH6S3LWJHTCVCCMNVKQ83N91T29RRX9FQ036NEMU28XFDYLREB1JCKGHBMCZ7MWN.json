@@ -1,0 +1,88 @@
+{
+    "dialog": [
+        {
+            "teller": "the top half of the picture has a large mountain. ",
+            "drawer": "One single in the center?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "It takes up all of the left top, but on the right side it slopes down so that there is sky to be seen",
+            "drawer": "Okay is there anything else on the right side of the image",
+            "turn_idx": 1
+        },
+        {
+            "teller": "not now. now on the bottom half of picture draw water from full left to right",
+            "drawer": "Okay how far up from the bottom of the photo does the water go",
+            "turn_idx": 2
+        },
+        {
+            "teller": "from bottom to the middle",
+            "drawer": "Okay I have the water, is there any clouds in the sky?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "no. stretch your mountain more so it slopes almost to all the way to the right edge",
+            "drawer": "Okay is that slope good enough?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "yeah. now on the right have one small mountain peeking up behind the big one",
+            "drawer": "Okay is the the right size?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "yeah, now all the blue sky should be white",
+            "drawer": "What is white? Do you mean snow?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "the sky is white. Like one big cloud I guess. no blue",
+            "drawer": "Okay how is that looking for you.",
+            "turn_idx": 7
+        },
+        {
+            "teller": "good. I don't know how perfect this is supposed to look? the large mountain should have lots of green trees",
+            "drawer": "Okay is that enough trees for the large mountain",
+            "turn_idx": 8
+        },
+        {
+            "teller": "yeah, there are large rocks in the water in the bottom half of the water",
+            "drawer": "Do they need to be larger?",
+            "turn_idx": 9
+        },
+        {
+            "teller": "thats fine. the only other thing I would add is putting a patch of grass on the left right under the mountain, in the water. small",
+            "drawer": "how far to the right does the grass go",
+            "turn_idx": 10
+        },
+        {
+            "teller": "its like a triangle of grass that goes out about one fourth of the way",
+            "drawer": "How is that more or less",
+            "turn_idx": 11
+        },
+        {
+            "teller": "not exactly. it's in your mountain. it should be below the mountain in the water. half size",
+            "drawer": "Okay I placed it below the mountain",
+            "turn_idx": 12
+        },
+        {
+            "teller": "i think we did a reasonably good job. the basics are there.",
+            "drawer": "Okay you are free to submit it if you think its okay to do so. Had fun",
+            "turn_idx": 13
+        },
+        {
+            "teller": "okay. hope you get to see it!",
+            "drawer": "Thanks see yea ",
+            "turn_idx": 14
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 15
+        }
+    ],
+    "taskData": {
+        "task_id": "A2CLBE8PSDJDPKA8ZUM922CBH6S3LWJHTCVCCMNVKQ83N91T29RRX9FQ036NEMU28XFDYLREB1JCKGHBMCZ7MWN",
+        "turn_idx": 15,
+        "image_name": "36217606.jpg"
+    }
+}

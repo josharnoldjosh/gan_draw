@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "mountain on the right side, goes from half the image to half the image",
+            "drawer": "Half to half?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "yea like the bottom right quarter is mountain",
+            "drawer": "Done... what else?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "good like that, but on the right side instead, make that left side trees. add a very thin bit of snow on the bottom",
+            "drawer": "Okay. What else?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "great, add a bit more snow at the bottom, make the trees on the left rise as they get to the edge. add clouds to the sky",
+            "drawer": "Okay.",
+            "turn_idx": 3
+        },
+        {
+            "teller": "looks great going to give it try",
+            "drawer": "Great thanks.",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A2OMUCL967PN7PA263MO01HEJXIW39JEC7537U18XG2FYKDARJNWBO8CVG3WT783CTPBHTO249T3MAQ7TP8WTCBB",
+        "turn_idx": 5,
+        "image_name": "807ae277.jpg"
+    }
+}

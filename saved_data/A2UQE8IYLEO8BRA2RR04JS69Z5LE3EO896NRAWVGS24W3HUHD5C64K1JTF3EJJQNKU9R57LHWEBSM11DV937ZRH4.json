@@ -1,0 +1,28 @@
+{
+    "dialog": [
+        {
+            "teller": "There are lots of trees",
+            "drawer": "okay",
+            "turn_idx": 0
+        },
+        {
+            "teller": "there is a river in the middle",
+            "drawer": "okay",
+            "turn_idx": 1
+        },
+        {
+            "teller": "It is sunny outside",
+            "drawer": "okay",
+            "turn_idx": 2
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 3
+        }
+    ],
+    "taskData": {
+        "task_id": "A2UQE8IYLEO8BRA2RR04JS69Z5LE3EO896NRAWVGS24W3HUHD5C64K1JTF3EJJQNKU9R57LHWEBSM11DV937ZRH4",
+        "turn_idx": 3,
+        "image_name": "b4c24203.jpg"
+    }
+}

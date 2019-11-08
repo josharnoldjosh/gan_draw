@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "Half the page is a field in the foreground",
+            "drawer": "is it sky or mountain in background ",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Mostly sky very. Very small mountain range on the left half of the image",
+            "drawer": "added what you said",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Much smaller it is far in the distance, and the range is all the same height, about the size of the slope at the bottom right",
+            "drawer": "what should i add next",
+            "turn_idx": 2
+        },
+        {
+            "teller": "A small hill in the field on the right where the mountain ends, and thats it.",
+            "drawer": "any size alterations",
+            "turn_idx": 3
+        },
+        {
+            "teller": "nope it looks good. We'll get the bonus..",
+            "drawer": "thanks",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A30G9A7OE5S846A2SVNXNMD7E7EH37WLF8U1WPQ51OZ2PPM03AK5ZSKK6G3K3R2QNK8B36M36CHATET7K5RKQU9Y",
+        "turn_idx": 5,
+        "image_name": "14d65466.jpg"
+    }
+}

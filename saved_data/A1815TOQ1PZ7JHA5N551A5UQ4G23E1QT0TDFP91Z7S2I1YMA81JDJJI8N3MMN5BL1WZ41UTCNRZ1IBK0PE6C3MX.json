@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "Lake with a mountaintop next to it ",
+            "drawer": "Snow on the mountain? Look at what I drew tell me if the measurements are off",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Mountain is smaller with snow",
+            "drawer": "Sky above it?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "yes",
+            "drawer": "Snow all over it?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "yes",
+            "drawer": "Proper size now?",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A1815TOQ1PZ7JHA5N551A5UQ4G23E1QT0TDFP91Z7S2I1YMA81JDJJI8N3MMN5BL1WZ41UTCNRZ1IBK0PE6C3MX",
+        "turn_idx": 4,
+        "image_name": "3afc3831.jpg"
+    }
+}

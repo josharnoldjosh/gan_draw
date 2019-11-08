@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "there's a mountain on top",
+            "drawer": "okay hows that",
+            "turn_idx": 0
+        },
+        {
+            "teller": "there's water on the ground though, a lake",
+            "drawer": "hows this",
+            "turn_idx": 1
+        },
+        {
+            "teller": "there's snow on the mountain",
+            "drawer": "alright covered it in snow now",
+            "turn_idx": 2
+        },
+        {
+            "teller": "make sure the lake is visible though. oh and there a bunch of trees between the mountain and lake",
+            "drawer": "Believe it or not theres trees there",
+            "turn_idx": 3
+        },
+        {
+            "teller": "the mountain covers more of the top left side, the trees are green",
+            "drawer": "hows that",
+            "turn_idx": 4
+        },
+        {
+            "teller": "a little better, but try to cover the top left side more with mountain",
+            "drawer": "like that?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "yeah perfect, but a little more!",
+            "drawer": "try now",
+            "turn_idx": 6
+        },
+        {
+            "teller": "That's perfect. Now can you put more trees? Make them more green, too.",
+            "drawer": "My times almost up can you accept please!",
+            "turn_idx": 7
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 8
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA3HF3Q18JSCVRY3V26SBZTBDE2ETIZRVMLNN1D8HZZZ13BF51CHDTVAJLNCFHF3MHHUMUKZH01",
+        "turn_idx": 8,
+        "image_name": "b0afa469.jpg"
+    }
+}

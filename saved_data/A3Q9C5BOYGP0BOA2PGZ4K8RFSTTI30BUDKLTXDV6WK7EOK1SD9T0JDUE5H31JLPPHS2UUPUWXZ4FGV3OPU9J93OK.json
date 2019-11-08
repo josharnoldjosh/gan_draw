@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "The sky is filled with blue and white clouds above a jagged green mountain skyline",
+            "drawer": "is there anything in the foreground? ",
+            "turn_idx": 0
+        },
+        {
+            "teller": "It's covered in green, with a single small bush towards the left hand side and a very small dark green bush on the far right hand side.",
+            "drawer": "Alright. I think i'm done. You can hit finish task now",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Mountains are smaller in size and green",
+            "drawer": "You're not able to change the color of the mountains and the instructions say don't worry if the color isn't correct ",
+            "turn_idx": 2
+        },
+        {
+            "teller": "are you able to add a bush on the left hand side?",
+            "drawer": "There should be one. It's showing one on the left hand side and one on the right ",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A3Q9C5BOYGP0BOA2PGZ4K8RFSTTI30BUDKLTXDV6WK7EOK1SD9T0JDUE5H31JLPPHS2UUPUWXZ4FGV3OPU9J93OK",
+        "turn_idx": 4,
+        "image_name": "8f1d68e3.jpg"
+    }
+}

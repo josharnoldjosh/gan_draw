@@ -1,0 +1,48 @@
+{
+    "dialog": [
+        {
+            "teller": "The bottom half of the image is a lake.  It's VERY slightly curved so that the middle is higher than the sides.",
+            "drawer": "Okay thanks, is there grass by the lake?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "There's a very thin strip of grass above the edge of the lake.",
+            "drawer": "is there anything above the lake?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Yes, there's a line of pine trees.  They take up about one eighth the height of the image, starting just above the strip of grass.",
+            "drawer": "okay what's in the background?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "There are a few mountains, but let's fix the lake and trees first.  The grass strip is the right height, but the lake has too much curve.",
+            "drawer": "alright how's that",
+            "turn_idx": 3
+        },
+        {
+            "teller": "It's a bit blurry.  In the image there are three peaks, with the leftmost peak aligned with the center of the image.",
+            "drawer": "yeah I'm not going to be able to do that at this point, there's no way to erase",
+            "turn_idx": 4
+        },
+        {
+            "teller": "Damn, this is annoying.  There's a 140 character limit so I can't be specific.",
+            "drawer": "That's okay, I think you should just finish the task, this is good as it can get",
+            "turn_idx": 5
+        },
+        {
+            "teller": "How much time left?",
+            "drawer": "seven minutes.",
+            "turn_idx": 6
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 7
+        }
+    ],
+    "taskData": {
+        "task_id": "A2QAS9E29H1UCPAV8T375ESPPPS3A4NIXBJ76ZIAX2CX55I76U6E1DLML337RC3OW05210KWLBX69U2DJ5UPVLC",
+        "turn_idx": 7,
+        "image_name": "50fe3b44.jpg"
+    }
+}

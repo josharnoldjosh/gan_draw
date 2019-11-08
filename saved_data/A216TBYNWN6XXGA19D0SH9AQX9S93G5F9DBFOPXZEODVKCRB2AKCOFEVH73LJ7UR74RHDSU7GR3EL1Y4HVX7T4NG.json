@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "there is still water going about three quarters of the way from the top to the bottom",
+            "drawer": "and then a shore on the bottom? like water on top, land on bottom?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "sorry no the bottom starts with water and then meets a mountain towards the top of the picture",
+            "drawer": "how many peaks does the mountain have?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "only one but its really wide peak and takes up more than half the page going horizontally",
+            "drawer": "can you see sky behind it or is there any snow?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "there is a little snow that is sprinkled all over the mountain and just a tiny bit of sky above it",
+            "drawer": "okay any other details?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "you can see a little reflection of the mountain in the water",
+            "drawer": "any clouds?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "no",
+            "drawer": "okay i'm done hit finish task thanks",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A216TBYNWN6XXGA19D0SH9AQX9S93G5F9DBFOPXZEODVKCRB2AKCOFEVH73LJ7UR74RHDSU7GR3EL1Y4HVX7T4NG",
+        "turn_idx": 6,
+        "image_name": "da637255.jpg"
+    }
+}

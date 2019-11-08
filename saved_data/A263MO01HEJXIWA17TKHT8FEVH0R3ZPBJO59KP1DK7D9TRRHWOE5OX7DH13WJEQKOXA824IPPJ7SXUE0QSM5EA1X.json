@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "The top two thirds should be a blue sky with fluffy clouds over it. There should be mountains just below the clouds.",
+            "drawer": " I made the bottom two third mountain for now",
+            "turn_idx": 0
+        },
+        {
+            "teller": "There should be water at the bottom of the mountains",
+            "drawer": "hows that looking",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The mountains shouldn't be that big. The clouds shouldn't cover the entire sky. You should see some blue",
+            "drawer": "be that big in what way?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "They're not that tall",
+            "drawer": "How about now?>",
+            "turn_idx": 3
+        },
+        {
+            "teller": "better. The clouds should be fluffy",
+            "drawer": "You CANNOT control the COLOR or STYLE of your images. Only the POSITION and SIZE. ",
+            "turn_idx": 4
+        },
+        {
+            "teller": "I'm just telling you what it should look like. Make them more visible",
+            "drawer": "I just mean it's hand to manipulate the shape of how it renders them sorry. I tried fooling around with it I'm not sure it has changed much",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA17TKHT8FEVH0R3ZPBJO59KP1DK7D9TRRHWOE5OX7DH13WJEQKOXA824IPPJ7SXUE0QSM5EA1X",
+        "turn_idx": 6,
+        "image_name": "8f1d68e3.jpg"
+    }
+}

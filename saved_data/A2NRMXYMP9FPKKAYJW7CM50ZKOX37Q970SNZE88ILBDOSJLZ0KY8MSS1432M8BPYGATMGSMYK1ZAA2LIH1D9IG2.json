@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "Grass in the lower 25%",
+            "drawer": "got it",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Blue sky in the top 25%, a low mountain in between",
+            "drawer": "what",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Not bad, but the grass is greener and the sky is bluer with a couple tiny clouds. The mountain is further right and is closer.",
+            "drawer": "I don't have any control over the color. I just pick Grass and then  brush size.",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Got it. Last one was better. If you can get less sky and more mountain (or hill), great. Otherwise go back and let's submit this thing.  ",
+            "drawer": "Got it. I have a cartoon like drawing until I hit Send. How's this?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "It's getting less like what I see, ha. Grass in the lower 25%, sky in top 25%, full of background green and a mountain in between.",
+            "drawer": "Okay. Sorry, my options are limited for the green background. I can do grass, trees, or bushes. They all look like the mountain.",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A2NRMXYMP9FPKKAYJW7CM50ZKOX37Q970SNZE88ILBDOSJLZ0KY8MSS1432M8BPYGATMGSMYK1ZAA2LIH1D9IG2",
+        "turn_idx": 5,
+        "image_name": "84985d44.jpg"
+    }
+}

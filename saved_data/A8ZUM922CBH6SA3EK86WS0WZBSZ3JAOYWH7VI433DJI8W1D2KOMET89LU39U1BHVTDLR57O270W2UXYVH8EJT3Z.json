@@ -1,0 +1,88 @@
+{
+    "dialog": [
+        {
+            "teller": "hello",
+            "drawer": "hi there. feeling confident?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "yes",
+            "drawer": "lets do this",
+            "turn_idx": 1
+        },
+        {
+            "teller": "okay",
+            "drawer": "think of the picture as split into four squares and let me know what to do",
+            "turn_idx": 2
+        },
+        {
+            "teller": "mountain",
+            "drawer": "where and how big",
+            "turn_idx": 3
+        },
+        {
+            "teller": "below river",
+            "drawer": "okay",
+            "turn_idx": 4
+        },
+        {
+            "teller": "four split square first split half mountain",
+            "drawer": "like that?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "no half mountain with tree flowers and other second split two mountain with grass tree",
+            "drawer": "okay",
+            "turn_idx": 6
+        },
+        {
+            "teller": "3rd below left split and 4th split there should be river and rocks",
+            "drawer": "okay",
+            "turn_idx": 7
+        },
+        {
+            "teller": "in first above split mountain should be greenish pleasant with pink flowers",
+            "drawer": "pleasant?",
+            "turn_idx": 8
+        },
+        {
+            "teller": "greenish freshly tree",
+            "drawer": "okay",
+            "turn_idx": 9
+        },
+        {
+            "teller": "mountain with river bank",
+            "drawer": "another mountain?",
+            "turn_idx": 10
+        },
+        {
+            "teller": "no same mountain with river bank ",
+            "drawer": "okay",
+            "turn_idx": 11
+        },
+        {
+            "teller": "mountain should cover with trees",
+            "drawer": "okay",
+            "turn_idx": 12
+        },
+        {
+            "teller": "three mountain should be near",
+            "drawer": "okay",
+            "turn_idx": 13
+        },
+        {
+            "teller": "there should be small gap between sky and mountain and sky should be light sky blue",
+            "drawer": "cant change sky color. running out of time",
+            "turn_idx": 14
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 15
+        }
+    ],
+    "taskData": {
+        "task_id": "A8ZUM922CBH6SA3EK86WS0WZBSZ3JAOYWH7VI433DJI8W1D2KOMET89LU39U1BHVTDLR57O270W2UXYVH8EJT3Z",
+        "turn_idx": 15,
+        "image_name": "d2951b5f.jpg"
+    }
+}

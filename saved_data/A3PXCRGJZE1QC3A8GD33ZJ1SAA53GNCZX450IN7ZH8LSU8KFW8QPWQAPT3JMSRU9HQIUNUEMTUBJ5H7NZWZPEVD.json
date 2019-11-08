@@ -1,0 +1,68 @@
+{
+    "dialog": [
+        {
+            "teller": "The ski has a lot of clouds",
+            "drawer": "what else?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "There's a mountain range that starts on the right at about a third up from the bottom. The first is almost to the top of the page",
+            "drawer": "keep going",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The bit mountain is on the right side, sorry I forgot to mention that, and it's lower on the bottom.",
+            "drawer": "what else",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Crap, I mean the left side. Sorry. That first mountain slopes downward from left to right",
+            "drawer": "What's under the mountain?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "There is a river that is full at the bottom of the page and it gets smaller until it disappears into the other mountains.",
+            "drawer": "how many mountain peaks are there?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "Six including the first one, which slopes much lower than you have, the rest are smaller",
+            "drawer": "tell me more details",
+            "turn_idx": 5
+        },
+        {
+            "teller": "The river should go straight up the middle and end about half way up the page",
+            "drawer": "does the river just go straight up?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "Yes but should take the whole bottom and gradually get smaller",
+            "drawer": "are we getting closer?",
+            "turn_idx": 7
+        },
+        {
+            "teller": "The river is much wider. and curves slightly to the right",
+            "drawer": "what next",
+            "turn_idx": 8
+        },
+        {
+            "teller": "There are tree tops in the foreground about five the first goes up to the top, the others half way or smaller",
+            "drawer": "your instructions are so vague. I have to draw this from your instructions. Write in details with exact measurements.",
+            "turn_idx": 9
+        },
+        {
+            "teller": "I'm out of time",
+            "drawer": "hit submit",
+            "turn_idx": 10
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 11
+        }
+    ],
+    "taskData": {
+        "task_id": "A3PXCRGJZE1QC3A8GD33ZJ1SAA53GNCZX450IN7ZH8LSU8KFW8QPWQAPT3JMSRU9HQIUNUEMTUBJ5H7NZWZPEVD",
+        "turn_idx": 11,
+        "image_name": "8e977386.jpg"
+    }
+}

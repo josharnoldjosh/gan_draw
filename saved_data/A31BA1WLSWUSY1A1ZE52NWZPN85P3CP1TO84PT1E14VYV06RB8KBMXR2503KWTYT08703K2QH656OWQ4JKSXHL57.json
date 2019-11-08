@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "okay. the entire bottom half of the square is grass and colorful shrubs",
+            "drawer": "In the left corner is that the shrubs?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "the entire grass section is covered in purple and yellow shrubs in horizontal lines",
+            "drawer": "is that too far up? Does it look alright on the bottom?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "starting at the VERY left mountain starts goes up right, but never touches the top of the square. ",
+            "drawer": "now",
+            "turn_idx": 2
+        },
+        {
+            "teller": "preview is broken so I trust you. Between grass and mountains there is tall trees. High on left, short in middle",
+            "drawer": "got it",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A31BA1WLSWUSY1A1ZE52NWZPN85P3CP1TO84PT1E14VYV06RB8KBMXR2503KWTYT08703K2QH656OWQ4JKSXHL57",
+        "turn_idx": 4,
+        "image_name": "a4e87873.jpg"
+    }
+}

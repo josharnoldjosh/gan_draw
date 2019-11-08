@@ -1,0 +1,48 @@
+{
+    "dialog": [
+        {
+            "teller": "Okay",
+            "drawer": "what image should i draw?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "First off, the water is on the bottom of the drawing, filling up to about a quarter of the image.",
+            "drawer": "does the water fill the entire bottom of the frame?  what is above the water?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The water fills up the entire bottom of the frame. However, there are a multitude of trees above the water, and more trees in the far right",
+            "drawer": "is there anything above the trees, or do they fill the rest of the space?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "The trees above the water are bountiful in the top left,the amount of trees go down further down to right. The sky fills up the right corner",
+            "drawer": "is there anything else in the photo besides the water and trees and sky?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "There is a branch with leaves up close in the top left corner of the image. Also, all of the trees and leaves are a darker green.",
+            "drawer": " if thats everything, I think you can hit the finish task button",
+            "turn_idx": 4
+        },
+        {
+            "teller": "Okay",
+            "drawer": "were you able to submit the hit?  nothing happened on my end ",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        },
+        {
+            "teller": "done",
+            "drawer": "[RETURNED]",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A1WRS3267IB72XAS7D4MNIH56ND33CID57104THOBU2RN03B7L0ECXL3A3P4RDNWND56QJOOL95VDZYAXT5PIJ5",
+        "turn_idx": 7,
+        "image_name": "251e79f4.jpg"
+    }
+}

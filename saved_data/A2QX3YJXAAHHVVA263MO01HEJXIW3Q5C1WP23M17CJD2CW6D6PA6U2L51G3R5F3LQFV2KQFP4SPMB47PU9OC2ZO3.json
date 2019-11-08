@@ -1,0 +1,58 @@
+{
+    "dialog": [
+        {
+            "teller": "Hey there, there's a very small bit of grass at the bottom, then trees that go to 40% height",
+            "drawer": "Trees, not bushes?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Trees , look like tall noes but basically just straight across same thickness",
+            "drawer": "How much is a very small bit? ",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Slightly thinner than that size, make the trees cover a bit more, reduce it by a third",
+            "drawer": "I have about a twentieth of page in grass. Is that too little?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "double current size and its good, the top of the trees needs to come down about a tenth of the page. ",
+            "drawer": "Is that too much grass?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "its good. there's a mountain, middle right that goes to almost the top of the image, ",
+            "drawer": "How much of the page does the mountain cover?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "leaves a fifth of the top sky, but its more on the right, so there's some space on the left, it slopes down",
+            "drawer": "Is it more sharp of an angle on the slopes?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "That pretty good, lower the height very slightly and make the right side go straight across to the edge of image",
+            "drawer": "Is the right side flat? or more inclined?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "That's pretty good, the left has a more gentle slope, the sky is all clouds",
+            "drawer": "how far down does the left side go?",
+            "turn_idx": 7
+        },
+        {
+            "teller": "there's a smaller mountain on the left, the peak is cut in half by the edge of the image",
+            "drawer": "how tall is the smaller peak in relation to the larger?",
+            "turn_idx": 8
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 9
+        }
+    ],
+    "taskData": {
+        "task_id": "A2QX3YJXAAHHVVA263MO01HEJXIW3Q5C1WP23M17CJD2CW6D6PA6U2L51G3R5F3LQFV2KQFP4SPMB47PU9OC2ZO3",
+        "turn_idx": 9,
+        "image_name": "2343176f.jpg"
+    }
+}

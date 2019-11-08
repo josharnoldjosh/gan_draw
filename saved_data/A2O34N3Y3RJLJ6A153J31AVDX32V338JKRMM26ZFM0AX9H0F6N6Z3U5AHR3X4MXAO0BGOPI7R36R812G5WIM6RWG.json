@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "It was a nature picture",
+            "drawer": "please describe the features",
+            "turn_idx": 0
+        },
+        {
+            "teller": "A mountain was fully covered with mist and the the river is present in the bottom of the mountain",
+            "drawer": "please tell me the positions and sizes of the mountain and the river",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Half picture covered by river and some trees are present then the back side mountains are happen.",
+            "drawer": "could you expand on the trees and the river?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Yes trees are happening between the river and the mountain",
+            "drawer": "what percentage of the vertical space do the trees occupy?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "It was 80 percentage",
+            "drawer": "I painted the three features as horizontal blocks...the actual picture probably didn't have perfectly-horizontal blocks of each feature...",
+            "turn_idx": 4
+        },
+        {
+            "teller": "what do we do?",
+            "drawer": "I can paint additions in case a feature (trees, river, or mountains) wasn't horizontal",
+            "turn_idx": 5
+        },
+        {
+            "teller": "it was horizontal",
+            "drawer": "I am done; the preview doesn't make sense, so you can't provide feedback; please submit.",
+            "turn_idx": 6
+        },
+        {
+            "teller": "okay thanks",
+            "drawer": "no problem",
+            "turn_idx": 7
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 8
+        }
+    ],
+    "taskData": {
+        "task_id": "A2O34N3Y3RJLJ6A153J31AVDX32V338JKRMM26ZFM0AX9H0F6N6Z3U5AHR3X4MXAO0BGOPI7R36R812G5WIM6RWG",
+        "turn_idx": 8,
+        "image_name": "d3d2f1f6.jpg"
+    }
+}

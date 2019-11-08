@@ -1,0 +1,48 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a mountain behind",
+            "drawer": "what else",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Trees in front ",
+            "drawer": "tree action updated",
+            "turn_idx": 1
+        },
+        {
+            "teller": "In front of the trees there is a lake ",
+            "drawer": "tried to add some water in front",
+            "turn_idx": 2
+        },
+        {
+            "teller": "There is a reflection of the trees in the lake ",
+            "drawer": "hard to control something like that",
+            "turn_idx": 3
+        },
+        {
+            "teller": "The sky is blue and misty",
+            "drawer": "Sorry I can't control the style or color. I updated the sky a bit though.",
+            "turn_idx": 4
+        },
+        {
+            "teller": "that is all",
+            "drawer": "whenever you are satisfied it's up to you to accept for us.",
+            "turn_idx": 5
+        },
+        {
+            "teller": "Fine  accepted ",
+            "drawer": "There should be a green button some where on your screen to click",
+            "turn_idx": 6
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 7
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA2DNCU1H95HCBS3CTOC39K37QTU47PQERG89KOFEFJ7Q33CID57104THOBU2RN03B7L0E1ZL3Q",
+        "turn_idx": 7,
+        "image_name": "eb06b1f8.jpg"
+    }
+}

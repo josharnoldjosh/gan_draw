@@ -1,0 +1,63 @@
+{
+    "dialog": [
+        {
+            "teller": "Hi, this is a real picture of a meadow, some mountains, and river. Let's start",
+            "drawer": "Okay",
+            "turn_idx": 0
+        },
+        {
+            "teller": "In the foreground, half of bottom image, there is a green grassy meadow. If the picture was a clock, this meadow covers nine to four",
+            "drawer": "okay",
+            "turn_idx": 1
+        },
+        {
+            "teller": "within the meadow, there are large boulders, mostly around nine o'clock",
+            "drawer": "okay",
+            "turn_idx": 2
+        },
+        {
+            "teller": "that's it for the meadow part. At the three to four o'clock sliver, there is river or lake. ",
+            "drawer": "okay",
+            "turn_idx": 3
+        },
+        {
+            "teller": "Above the left side of the boulders, nine o'clock, there are four to five tall skinny evergreen trees that extend to the top of the photo. ",
+            "drawer": "Sounds good",
+            "turn_idx": 4
+        },
+        {
+            "teller": "now for the background, behind the trees and above the water",
+            "drawer": "okay is what?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "fist third is green hillside, middle third is brown rocky mountains",
+            "drawer": "gotcha",
+            "turn_idx": 6
+        },
+        {
+            "teller": "the top most third is light blue clouds and sky, that's it",
+            "drawer": "cool",
+            "turn_idx": 7
+        },
+        {
+            "teller": "okay if I complete task?",
+            "drawer": "I think I did the best I could do. I think you did too.",
+            "turn_idx": 8
+        },
+        {
+            "teller": "same, been fun. ",
+            "drawer": "sorry I am bad artist",
+            "turn_idx": 9
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 10
+        }
+    ],
+    "taskData": {
+        "task_id": "A3PGUPNMOU5BPWAIZB8FVJ5OB9F3LPW2N6LKT2NLG40EKGXHRF35ZG5UD31N2WW6R9RQVOJK65CX5GUGGHGAF3Y",
+        "turn_idx": 10,
+        "image_name": "f82a3757.jpg"
+    }
+}

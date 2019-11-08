@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "river bank filled with grasses and pine trees at the far back",
+            "drawer": "How large is each area?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "the river is one third of the picture, the grasses another third and the trees another third",
+            "drawer": "done",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The river doesn't run through the whole bottom. It starts about a centimeter from the left",
+            "drawer": "replace it with grass?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "yeah, and there is blue sky with few clouds",
+            "drawer": "how large is the sky area?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "about a third of the picture, sorry i was only focusing on the land area initially",
+            "drawer": "Done, I updated the drawing",
+            "turn_idx": 4
+        },
+        {
+            "teller": "can you move the river boundary on the right higher till about half of the line",
+            "drawer": "Done",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A2RDNYV4SH5E89A34FN7NR8AALJ8378XPAWRUCDFIVLHFZI06Z7E3JSAIG3OLQQLKKNSPE3JMZDM5MEJC51DFJEW",
+        "turn_idx": 6,
+        "image_name": "f2a8e0de.jpg"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "Hello it looks like the bottom half of the image is water, perhaps a lake or ocean. ",
+            "drawer": "[RETURNED]",
+            "turn_idx": 0
+        },
+        {
+            "teller": "What?",
+            "drawer": "[RETURNED]",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Test!",
+            "drawer": "[RETURNED]",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Hello!",
+            "drawer": "[RETURNED]",
+            "turn_idx": 3
+        },
+        {
+            "teller": "How are you!",
+            "drawer": "[RETURNED]",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        },
+        {
+            "teller": "done",
+            "drawer": "[RETURNED]",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "ARL7HOWLEHNOPA263MO01HEJXIW3NGI5ARFTT5B5TVLWBFR4VFNL2M1PY3ND9UOO81K2EF9WQ17B5G4WXC5TLWI",
+        "turn_idx": 6,
+        "image_name": "95adf2a2.jpg"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "The image is of a mountain in the distance",
+            "drawer": "how much of the image does the mountain take up roughly?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "about two thirds. sorry it wont let me type out an answer as long as i need it to be",
+            "drawer": "what else is there?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "There are threes in front of the mountain in the foreground, and some clouds to the left of it",
+            "drawer": "are the clouds high up or just anywhere on the left?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "They are on the left and go all the way up",
+            "drawer": "Are there any other elements?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "There is some ice at the top of the mountain. The trees are also closer than what i see drawn, they take up more of the image",
+            "drawer": "I can't really adjust how close they are",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A1TGV7LT6LTIQUA3EW7EOWG8L6FI3OVR4I9USPJDX4TJJ6DI2YC02GB4QU3R8YZBNQ9HIAGRB2L4BP5AWATI2Q71",
+        "turn_idx": 5,
+        "image_name": "d181cb04.jpg"
+    }
+}

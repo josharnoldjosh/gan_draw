@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "Hello. The image is half blue sky with clouds, half deep green grassy field.",
+            "drawer": "Hi, are the clouds large or small, and how many?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "three masses. One top left, one halfway down the frame, one on the right one third of the way from the top of the photo",
+            "drawer": "alright, I finished that. Is there any vegetation such as trees or bushes?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "nice. grass is deep green and there is a cluster of little trees on right side of the frame",
+            "drawer": "That's finished.",
+            "turn_idx": 2
+        },
+        {
+            "teller": "trees are farther back along the horizon and come over until halfway through frame",
+            "drawer": "is the mass of trees larger or bigger. the tree tool is not very intuitive",
+            "turn_idx": 3
+        },
+        {
+            "teller": "it's about that big, but farther back if you can, against the right edge",
+            "drawer": "hows that?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "looks good!",
+            "drawer": "alright if you are ready to submit go ahead. great working with you\\",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A3T01NM4993LZEA1A1ZXUVSV4YR83O7L7BFSHEPI882TV4KM2IX5OVSEIB3OJSZ2ATDSWLN5S41CNM7Z1JXMI758",
+        "turn_idx": 6,
+        "image_name": "2ea80f3a.jpg"
+    }
+}

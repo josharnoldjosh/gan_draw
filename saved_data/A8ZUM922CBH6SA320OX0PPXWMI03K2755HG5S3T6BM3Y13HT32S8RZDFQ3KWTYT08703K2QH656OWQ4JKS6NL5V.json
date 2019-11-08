@@ -1,0 +1,68 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a green mountain in the background on the right",
+            "drawer": "okay",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Then there is a smaller green hill in front of it, with a small water fall on the right. The hill stretches across the whole picture",
+            "drawer": "does the green on hill and mountain look like trees or grass?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "grass",
+            "drawer": "hows this",
+            "turn_idx": 2
+        },
+        {
+            "teller": "good. The hill is a little taller, and the mountain is wider (goes off the right side of the screen)",
+            "drawer": "okay?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "Yeah the left side of the hill goes off the left of the picture. There is a wide river in front of the hill",
+            "drawer": "okay",
+            "turn_idx": 4
+        },
+        {
+            "teller": "left side of the hill is even taller. almost as tall as the mountain.",
+            "drawer": "like that?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "yeah. good. then in the foreground, there is a patch of grass. it goes across the whole image, and the left is higher than the right",
+            "drawer": "okay?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "yeah, and finally there is a green tree on the left of the patch of grass. The left side goes off the image",
+            "drawer": "doesn't look much like a tree, but it is",
+            "turn_idx": 7
+        },
+        {
+            "teller": "okay, then there are rocks in the river, like mild rapids. can the mountain be even wider? it only slopes in from the right?",
+            "drawer": "okay",
+            "turn_idx": 8
+        },
+        {
+            "teller": "okay, then the sky is very blue, but has two big clouds. one on the left and one in the middle",
+            "drawer": "that is the best I can do. I can't make the sky blue and I drew two clouds and it came up with this",
+            "turn_idx": 9
+        },
+        {
+            "teller": "okay looks good to me. we gave it our best shot. ",
+            "drawer": "great. you did a great job describing. thanks",
+            "turn_idx": 10
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 11
+        }
+    ],
+    "taskData": {
+        "task_id": "A8ZUM922CBH6SA320OX0PPXWMI03K2755HG5S3T6BM3Y13HT32S8RZDFQ3KWTYT08703K2QH656OWQ4JKS6NL5V",
+        "turn_idx": 11,
+        "image_name": "0cd59522.jpg"
+    }
+}

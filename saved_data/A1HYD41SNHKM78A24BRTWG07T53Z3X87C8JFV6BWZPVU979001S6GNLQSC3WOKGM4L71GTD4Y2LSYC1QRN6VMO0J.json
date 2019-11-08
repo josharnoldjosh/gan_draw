@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a big mountain wall with a tall waterfall to the right.",
+            "drawer": "Okay, what next?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "On the top of the image the sky is barely visible.",
+            "drawer": "okay",
+            "turn_idx": 1
+        },
+        {
+            "teller": "now, on the left and going all the way to the bottom of the mountain there are green trees and bushes",
+            "drawer": "okay",
+            "turn_idx": 2
+        },
+        {
+            "teller": "That is about it.",
+            "drawer": "Good",
+            "turn_idx": 3
+        },
+        {
+            "teller": "Have a great one!",
+            "drawer": "Submit the task by clicking the green finish task",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A1HYD41SNHKM78A24BRTWG07T53Z3X87C8JFV6BWZPVU979001S6GNLQSC3WOKGM4L71GTD4Y2LSYC1QRN6VMO0J",
+        "turn_idx": 5,
+        "image_name": "805d3243.jpg"
+    }
+}
