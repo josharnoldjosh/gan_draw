@@ -523,7 +523,7 @@ class DrawerUI extends React.Component {
 
 class OnboardingDrawerUI extends React.Component {
 
-        state = {color:'#3c53a3', image:undefined, loading:"", disableConvert:false}
+    state = {color:'#3c53a3', image:undefined, loading:"", disableConvert:false}
 
     changeColor = (color) => {
         this.setState({color:color})
@@ -639,6 +639,20 @@ class TellerDescribeImageView extends React.Component {
     }
 }
 
+class TellerDescribeSemanticImageView extends React.Component {
+    render() {
+        return (
+            <div style={{display:'flex', justifyContent:'center', flexDirection:'column', alignItems:'center', marginLeft:'30px'}}>
+                <Title text={"Labeled Image"} />
+                <Subtitle text={"This is the image with labels for extra clarity."} />                
+                <p>{this.props.loading}</p>
+                <img src={this.props.image} style={{width:'430px', height:'300px', backgroundColor:'#f9f9f9', marginBottom:'20px'}} />
+                <button style={{width:'100px', marginBottom:'100px'}} onClick={() => this.props.loadImage()}>Load Image</button>                           
+            </div>
+        );
+    }
+}
+
 class TellerUI extends React.Component {
 
     state = {loading:'', image:undefined, imageLoading:'', peekImage:undefined, peeked:false, alertShown:false}
@@ -654,6 +668,10 @@ class TellerUI extends React.Component {
 
         axios.post("https://language.cs.ucdavis.edu/get_image", data).then((response) => {            
             this.setState({image:response['data'], imageLoading:''})
+        });  
+
+        axios.post("https://language.cs.ucdavis.edu/get_semantic", data).then((response) => {            
+            this.setState({semanticImage:response['data'], imageLoading:''})
         });  
     }
 
@@ -686,7 +704,7 @@ class TellerUI extends React.Component {
                 backgroundColor: 'white',
                 padding: '30px',
                 overflow: 'auto',
-                width:'700px'
+                width:'1250px'
             };        
         let pane_size = this.props.is_cover_page ? 'col-xs-12' : 'col-xs-4';
 
@@ -695,6 +713,7 @@ class TellerUI extends React.Component {
                 <div style={{display: 'flex', flexDirection:'column'}}>
                     <div style={{display:'flex', flexDirection:'row'}}>
                         <TellerDescribeImageView image={this.state.image} loadImage={this.loadImage} loading={this.state.imageLoading} />
+                        <TellerDescribeSemanticImageView image={this.state.semanticImage} loadImage={this.loadImage} loading={this.state.imageLoading} />
                         <TellerImageView loading={this.state.loading} image={this.state.peekImage} peek={this.peek} peeked={this.state.peeked} />
                     </div>
                     <button type="button" style={{color:'white', border: 'none', padding:"15px 25px", backgroundColor: '#4CAF50', textAlgin:'center'}} onClick={this.tryToFinishTask}>Finish Task</button>

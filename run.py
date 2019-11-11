@@ -44,7 +44,7 @@ def main():
 
     # Max duration is now 2.5 hours instead of 30min
     opt["assignment_duration_in_seconds"] = int(60*60*2.5) # 2.5 hours
-    opt["assignment_duration_in_seconds"] = int(10) # 10 minutes for testing
+    opt["assignment_duration_in_seconds"] = int(60*10) # 10 minutes for testing
 
     # Only allows masters to complete our task! Optional
     opt["only_masters"] = True
