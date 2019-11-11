@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "There are clouds in the sky, but clear sky in the middle",
+            "drawer": "what else",
+            "turn_idx": 0
+        },
+        {
+            "teller": "field at the bottom of the screen, pink and green mostly.  shrubbery.",
+            "drawer": "Can't control the colors but added some grass and bushes",
+            "turn_idx": 1
+        },
+        {
+            "teller": "by where the land meets the sky there is a line of trees",
+            "drawer": "hows that?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "looks good.  more clouds in the sky thought.  just a small blue patch in the center",
+            "drawer": "Sky is covered with cloud brush it just looks like it isn't",
+            "turn_idx": 3
+        },
+        {
+            "teller": "the land should be slightly higher on the left.  can the clouds be made more defined?",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA2A0M8N8ZCZBBL3L6L49WXW0XO4IALZEPF4NH96MW45T3ZSANO2JCF7Z805LVRY6O2OS9WCFST",
+        "turn_idx": 20,
+        "image_name": "d5beae95.jpg"
+    }
+}

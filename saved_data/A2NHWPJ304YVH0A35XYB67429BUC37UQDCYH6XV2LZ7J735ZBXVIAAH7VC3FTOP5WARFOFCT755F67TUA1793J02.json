@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a mountain in the background.",
+            "drawer": "THAT IS FINE",
+            "turn_idx": 0
+        },
+        {
+            "teller": "There is a river in the foreground.",
+            "drawer": "[RETURNED]",
+            "turn_idx": 1
+        },
+        {
+            "teller": "There is a river in the foreground.",
+            "drawer": "[RETURNED]",
+            "turn_idx": 2
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 3
+        },
+        {
+            "teller": "done",
+            "drawer": "[RETURNED]",
+            "turn_idx": 3
+        }
+    ],
+    "taskData": {
+        "task_id": "A2NHWPJ304YVH0A35XYB67429BUC37UQDCYH6XV2LZ7J735ZBXVIAAH7VC3FTOP5WARFOFCT755F67TUA1793J02",
+        "turn_idx": 4,
+        "image_name": "fc3f511a.jpg"
+    }
+}

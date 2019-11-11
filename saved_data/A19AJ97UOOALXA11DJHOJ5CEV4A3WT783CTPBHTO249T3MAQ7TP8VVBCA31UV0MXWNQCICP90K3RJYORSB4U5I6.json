@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "Clear blue skies with three mountain below. One in the center and the other two on each side but closer to the front",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 0
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 1
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 2
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 3
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A19AJ97UOOALXA11DJHOJ5CEV4A3WT783CTPBHTO249T3MAQ7TP8VVBCA31UV0MXWNQCICP90K3RJYORSB4U5I6",
+        "turn_idx": 20,
+        "image_name": "7884f66c.jpg"
+    }
+}

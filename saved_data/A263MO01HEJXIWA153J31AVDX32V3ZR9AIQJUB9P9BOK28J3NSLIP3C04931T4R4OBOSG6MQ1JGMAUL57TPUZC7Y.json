@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "This picture like a river or pond in that backside some mountains are present ",
+            "drawer": "Hey there try to describe a bit more exactly where they are positioned for me to draw",
+            "turn_idx": 0
+        },
+        {
+            "teller": "In a bottom of a image 50 percentage of the image have river or some water ",
+            "drawer": "How's this looking?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "It was looking good and the mirror of the image is presented in a river",
+            "drawer": "I can't really do that kind of thing I think. It's about getting positioning correct",
+            "turn_idx": 2
+        },
+        {
+            "teller": "All of your drawing is correct mountain is little small thats it",
+            "drawer": "LEt me know how that mountain looks. I could change it a bit. It's up to you to accept when you think it's appropriate",
+            "turn_idx": 3
+        },
+        {
+            "teller": "No bro i said you can change the mountain size into small size",
+            "drawer": "tried to make it smaller",
+            "turn_idx": 4
+        },
+        {
+            "teller": "okay bro thats looking good complete the task",
+            "drawer": "Only you can complete it, you have the button",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA153J31AVDX32V3ZR9AIQJUB9P9BOK28J3NSLIP3C04931T4R4OBOSG6MQ1JGMAUL57TPUZC7Y",
+        "turn_idx": 6,
+        "image_name": "731b7433.jpg"
+    }
+}

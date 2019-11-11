@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "the picture is full of trees",
+            "drawer": "is there any land or water showing? just pine trees",
+            "turn_idx": 0
+        },
+        {
+            "teller": "there is snow below the trees and a sunset above the trees",
+            "drawer": "click the finish task button",
+            "turn_idx": 1
+        },
+        {
+            "teller": "are you able to do a sunset with clouds above the trees?",
+            "drawer": "no there is no sunset option but it said colors don't matter ",
+            "turn_idx": 2
+        },
+        {
+            "teller": "this looks good",
+            "drawer": "okay! can you hit the green finish task button?",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A179URMT8HPJMKA1RRMINTJ8BHKG3KGTPGBS6XLVMJLDW1EZJKCRLPQU223DBQWDE4Y6YAQQKRHJ4B3WN9X3P5NN",
+        "turn_idx": 4,
+        "image_name": "a545ea3c.jpg"
+    }
+}

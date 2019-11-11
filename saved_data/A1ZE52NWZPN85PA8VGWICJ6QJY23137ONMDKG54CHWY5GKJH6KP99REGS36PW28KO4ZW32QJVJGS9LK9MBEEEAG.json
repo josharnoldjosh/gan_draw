@@ -1,0 +1,38 @@
+{
+    "dialog": [
+        {
+            "teller": "there is a mountain in the background",
+            "drawer": "hows that?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "nice. there are trees in front of the mountain",
+            "drawer": "like this?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "tall pine trees. and snow on the mountain",
+            "drawer": "okay",
+            "turn_idx": 2
+        },
+        {
+            "teller": "there's a lot of purple and green grass on the ground below the trees",
+            "drawer": "grass. got it",
+            "turn_idx": 3
+        },
+        {
+            "teller": "nice. there's a small bush on the lower left corner",
+            "drawer": "Added a bush",
+            "turn_idx": 4
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 5
+        }
+    ],
+    "taskData": {
+        "task_id": "A1ZE52NWZPN85PA8VGWICJ6QJY23137ONMDKG54CHWY5GKJH6KP99REGS36PW28KO4ZW32QJVJGS9LK9MBEEEAG",
+        "turn_idx": 5,
+        "image_name": "a4e87873.jpg"
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "dialog": [
+        {
+            "teller": "Draw a mountain in the background",
+            "drawer": "done",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Smooth out the mountain and in the forefront there is an ocean.",
+            "drawer": "hows this",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The sky is gray.",
+            "drawer": "cant change the color sorry",
+            "turn_idx": 2
+        },
+        {
+            "teller": "The mountain is shaped somewhat different.",
+            "drawer": "okay got it",
+            "turn_idx": 3
+        },
+        {
+            "teller": "The mountain is high on the left and low on the right.",
+            "drawer": "okay nailed it",
+            "turn_idx": 4
+        },
+        {
+            "teller": "Mountain is like in the shadows",
+            "drawer": "perfect what else?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "The mountain needs to be smooth.",
+            "drawer": "alright hows that",
+            "turn_idx": 6
+        },
+        {
+            "teller": "It needs to be gray.",
+            "drawer": "cant change color sorry ",
+            "turn_idx": 7
+        },
+        {
+            "teller": "The mountain needs to be farther away.",
+            "drawer": "okay hows that",
+            "turn_idx": 8
+        },
+        {
+            "teller": "Can you get it farther away?",
+            "drawer": "i tried",
+            "turn_idx": 9
+        },
+        {
+            "teller": "Put a black rock on the left side of the water.",
+            "drawer": "okay got it",
+            "turn_idx": 10
+        },
+        {
+            "teller": "Erase that.",
+            "drawer": "okay perfect",
+            "turn_idx": 11
+        },
+        {
+            "teller": "It is in the late afternoon.",
+            "drawer": "okay hows that",
+            "turn_idx": 12
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 13
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA1OSRB1Q63XXWZ3CPLWGV3MOZTRDM3K9HSFCSBJ049NG3SKEMFQBZ35S52IQI4JYNOGW5ZHK8X",
+        "turn_idx": 13,
+        "image_name": "eb5df14a.jpg"
+    }
+}

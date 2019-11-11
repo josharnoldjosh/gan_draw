@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "hello the bottom half looks to be a lake, thin bit of grass above it,",
+            "drawer": "next",
+            "turn_idx": 0
+        },
+        {
+            "teller": "the grass is much higher, slightly higher than half way up, whole bottom half is water. ",
+            "drawer": "hows is this?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "It's good. Add some trees on the grass, they are taller on the left and get shorter towards the right",
+            "drawer": "any in the middle?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Yea they go across the whole part of the grass. Make them a bit shorter than you did ",
+            "drawer": "all of #them shorter?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "Yes just by like 10-15%",
+            "drawer": "better?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "Yes thats great! I think I will accept now",
+            "drawer": "cool click green finish button",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A2T9KCQM1ZNANPA263MO01HEJXIW336YQZE83VE488ZR5IPBQHY9S3X5ML3LOTDFNYA7ZSFHMUFW87LRRDFZOFW4",
+        "turn_idx": 6,
+        "image_name": "88c9e154.jpg"
+    }
+}

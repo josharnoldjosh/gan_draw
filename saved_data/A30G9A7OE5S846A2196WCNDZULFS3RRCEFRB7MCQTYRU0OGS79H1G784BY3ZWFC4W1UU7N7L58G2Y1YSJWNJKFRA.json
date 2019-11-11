@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "There is ocean water on the bottom half of the picture.",
+            "drawer": "what is the next step",
+            "turn_idx": 0
+        },
+        {
+            "teller": "The ocean water is choppy, and it's hitting against about five rocks in the right side of the water.",
+            "drawer": "done. what's next step",
+            "turn_idx": 1
+        },
+        {
+            "teller": "I'm an idiot, and I'm really sorry. They are on the left side, and they are spaced out from the top of the water to the bottom. Sorry",
+            "drawer": "done. whats next step",
+            "turn_idx": 2
+        },
+        {
+            "teller": "black mountain the left. starts about three fourths of the way up the picture then gets shorter as it goes across the whole picture.",
+            "drawer": "done. what's next step",
+            "turn_idx": 3
+        },
+        {
+            "teller": "We're not getting a bonus, laugh out loud. The sky is overcast and cloudy",
+            "drawer": "is it okay now.?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "Better, we're almost out of time.",
+            "drawer": "yeah. More cloudy?",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A30G9A7OE5S846A2196WCNDZULFS3RRCEFRB7MCQTYRU0OGS79H1G784BY3ZWFC4W1UU7N7L58G2Y1YSJWNJKFRA",
+        "turn_idx": 6,
+        "image_name": "eb5df14a.jpg"
+    }
+}

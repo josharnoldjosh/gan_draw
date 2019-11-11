@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "There are three tall mountains in the distance",
+            "drawer": "How's this?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "The three mountains are wider at their base, and almost pointed",
+            "drawer": "Hows that for pointed  ",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Closer, but they're a lot wider, like normal mountains.",
+            "drawer": "Tried to widen them up a bit",
+            "turn_idx": 2
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 3
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA2T11H7YI7QPGD39ZSFO5CA8WVSFJL3MKRI1Y8NYAJU83AQF3RZ558IUL27OOEV3NXS0R5AF6Y",
+        "turn_idx": 20,
+        "image_name": "d2951b5f.jpg"
+    }
+}

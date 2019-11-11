@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "Draw a blue sky on the top of screen about one fourth of scree",
+            "drawer": "okay",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Add some white cirrus clouds mostly of left side on the fourth blue sky with just a little white cloud on right",
+            "drawer": "Okay",
+            "turn_idx": 1
+        },
+        {
+            "teller": "next two fourths of screen add mountain peaks across. Peaks on the right are rocky and smaller, on the left one main peak ",
+            "drawer": "got it",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Add dark green grass to peak on left",
+            "drawer": "okay ",
+            "turn_idx": 3
+        },
+        {
+            "teller": "On final fourth of screen at very bottom add tall pine trees across with hill going up on right then add a lake behind it to meet peak",
+            "drawer": "the water isn't showing up nicely ",
+            "turn_idx": 4
+        },
+        {
+            "teller": "can you make it dark blue",
+            "drawer": "It won't let me change the color but it says color doesn't matter only placement",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A179URMT8HPJMKA2TKHXY755FAM3F1567XTNW5EUAZV0199J6NGOAVQ9M3X66WABAJWI12JG1GW3NYFGSIVCG30",
+        "turn_idx": 6,
+        "image_name": "70fd9643.jpg"
+    }
+}

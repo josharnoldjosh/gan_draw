@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "draw water across the bottom half of the image. ",
+            "drawer": "Next instruction",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Draw a mountain. Start it from the left side from about one quarter of the way slope it 45 degrees or so right to the edge on the right",
+            "drawer": "is it above the water?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "Yes. On the left side, it starts about one quarter of the way from the top,slopes down all the way to the right edge",
+            "drawer": "next instruction",
+            "turn_idx": 2
+        },
+        {
+            "teller": "awesome! Now use medium brush to draw a rock blob dead in the middle right at the bottom of the photo in the water",
+            "drawer": "next instruction",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A3GSJTSSIJJHBNA3PXCRGJZE1QC337TRT2X24QRGWGAF3V3WDB6KYGABJW3DI28L7YXAE7826VNXZGAJGJ7WNE1V",
+        "turn_idx": 4,
+        "image_name": "eb5df14a.jpg"
+    }
+}

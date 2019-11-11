@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "everyone is mountain but the top one fifth, there's water in the bottom left corner",
+            "drawer": "what next?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 1
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 2
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 3
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A1CYSGVB90E67SA263MO01HEJXIW3Z7VU45IPYH5JXXRJKDTVTH1V2M1ZE38F5OAUN5NCX3YCZ2EOVWW492Y6H72",
+        "turn_idx": 20,
+        "image_name": "e08b5c9b.jpg"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "There are trees in the background",
+            "drawer": "Be more specific and tell me where in the page to draw. For example halfway up. one quarter up etc. Start with the foreground. ",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Across the back there are trees and on the left side in the back you can see the tree trunks",
+            "drawer": "what's in the front",
+            "turn_idx": 1
+        },
+        {
+            "teller": "in the middle there are rocks with a waterfall and in the very from there are flat rocks",
+            "drawer": "what is a very from? ",
+            "turn_idx": 2
+        },
+        {
+            "teller": "sorry I meant very front of the picture there are flat rocks",
+            "drawer": "is the waterfall the entire length of the picture? where does it start relative to the top and where does it end relative to the bottom?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "the water starts about three quarters way up the page in the middle and flows down toward the right about two inches ",
+            "drawer": "Is there any sky in the photo?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "only tiny spots in the upper right corner",
+            "drawer": "so the photo is mostly trees and the waterfall and some rocks? is there anything else?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "on the right the flat rocks in the front have some green moss on them",
+            "drawer": "anything else?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "no thats it",
+            "drawer": "\\ hit finish task",
+            "turn_idx": 7
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 8
+        }
+    ],
+    "taskData": {
+        "task_id": "A3PXCRGJZE1QC3A3LRG7LUVGYEAF3QHK8ZVMIMIMR6YF6GF9TQJC24BBLS30JNVC0OR9K79GHEYDX1WNL47N1QHA",
+        "turn_idx": 8,
+        "image_name": "c54a444d.jpg"
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "bottom has white ground. starts a third of the way down on right & slopes down on left",
+            "drawer": "done",
+            "turn_idx": 0
+        },
+        {
+            "teller": "sorry I messed up. its basically just the bottom third. then slopes down to RIGHT",
+            "drawer": "oh okay, i don't really think I can change anything though",
+            "turn_idx": 1
+        },
+        {
+            "teller": "mountains in the upper half. purple mountain in front and orange behind.",
+            "drawer": "which mountain is on the left?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "both are on left side and stretch almost all the way to right side. cloudy sky behind",
+            "drawer": "Is one mountain to the left of the other, or is the orange one directly behind the purple one?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "orange is directly behind",
+            "drawer": "how are the clouds positioned?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "its kind of just like one big cloud. The whole sky just looks cloudy",
+            "drawer": "done",
+            "turn_idx": 5
+        },
+        {
+            "teller": "there is a pool of water that is in the bottom half. it stretches out from the right side and almost reaches the right",
+            "drawer": "[RETURNED]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A379B9EZKP7Q28A8ZUM922CBH6S3JBT3HLQF8280PGT4MOJWPZZY6PZPP3AUQQEL7U5TO3O7ZM4KQWILV2N70VJ",
+        "turn_idx": 20,
+        "image_name": "3150485f.jpg"
+    }
+}

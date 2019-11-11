@@ -1,0 +1,569 @@
+14:26:10,535 git.cmd DEBUG Popen(['git', 'rev-parse', 'HEAD'], cwd=/home/jarnold9/ParlAI, universal_newlines=False, shell=None)
+14:26:10,544 git.cmd DEBUG Popen(['git', 'rev-parse', 'HEAD'], cwd=/home/jarnold9/ParlAI/parlai_internal, universal_newlines=False, shell=None)
+14:26:11,869 botocore.session DEBUG Setting config variable for profile to 'parlai_mturk'
+14:26:11,869 botocore.session DEBUG Loading variable profile from instance vars with value 'parlai_mturk'.
+14:26:11,870 botocore.session DEBUG Loading variable config_file from defaults.
+14:26:11,872 botocore.session DEBUG Loading variable credentials_file from defaults.
+14:26:11,873 botocore.session DEBUG Loading variable data_path from defaults.
+14:26:11,879 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,879 botocore.session DEBUG Loading variable config_file from defaults.
+14:26:11,879 botocore.session DEBUG Loading variable credentials_file from defaults.
+14:26:11,880 botocore.session DEBUG Loading variable data_path from defaults.
+14:26:11,880 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,881 botocore.session DEBUG Loading variable ca_bundle from defaults.
+14:26:11,881 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,881 botocore.session DEBUG Loading variable api_versions from defaults.
+14:26:11,881 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,881 botocore.session DEBUG Loading variable credentials_file from defaults.
+14:26:11,881 botocore.session DEBUG Loading variable config_file from defaults.
+14:26:11,881 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,881 botocore.session DEBUG Loading variable metadata_service_timeout from defaults.
+14:26:11,882 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,882 botocore.session DEBUG Loading variable metadata_service_num_attempts from defaults.
+14:26:11,883 botocore.session DEBUG Loading variable profile from defaults.
+14:26:11,883 botocore.credentials DEBUG Looking for credentials via: env
+14:26:11,883 botocore.credentials DEBUG Looking for credentials via: assume-role
+14:26:11,883 botocore.credentials DEBUG Looking for credentials via: shared-credentials-file
+14:26:11,884 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+14:26:11,884 botocore.loaders DEBUG Loading JSON file: /usr/local/lib/python3.6/site-packages/botocore/data/endpoints.json
+14:26:11,890 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,890 botocore.hooks DEBUG Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f5346c58510>
+14:26:11,897 botocore.loaders DEBUG Loading JSON file: /usr/local/lib/python3.6/site-packages/botocore/data/mturk/2017-01-17/service-2.json
+14:26:11,905 botocore.hooks DEBUG Event creating-client-class.mturk: calling handler <function add_generate_presigned_url at 0x7f5346c92ea0>
+14:26:11,906 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+14:26:11,910 botocore.endpoint DEBUG Setting mturk-requester timeout as (60, 60)
+14:26:11,910 botocore.loaders DEBUG Loading JSON file: /usr/local/lib/python3.6/site-packages/botocore/data/_retry.json
+14:26:11,911 botocore.client DEBUG Registering retry handlers for service: mturk
+14:26:11,912 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,912 botocore.session DEBUG Loading variable ca_bundle from defaults.
+14:26:11,912 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,912 botocore.session DEBUG Loading variable api_versions from defaults.
+14:26:11,912 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:26:11,912 botocore.hooks DEBUG Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f5346c58510>
+14:26:11,913 botocore.hooks DEBUG Event creating-client-class.mturk: calling handler <function add_generate_presigned_url at 0x7f5346c92ea0>
+14:26:11,913 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+14:26:11,915 botocore.endpoint DEBUG Setting mturk-requester timeout as (60, 60)
+14:26:11,915 botocore.client DEBUG Registering retry handlers for service: mturk
+14:26:11,916 botocore.hooks DEBUG Event before-parameter-build.mturk-requester.GetAccountBalance: calling handler <function generate_idempotent_uuid at 0x7f5346c69a60>
+14:26:11,916 botocore.endpoint DEBUG Making request for OperationModel(name=GetAccountBalance) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'X-Amz-Target': 'MTurkRequesterServiceV20170117.GetAccountBalance', 'Content-Type': 'application/x-amz-json-1.1', 'User-Agent': 'Boto3/1.7.19 Python/3.6.5 Linux/4.4.0-154-generic Botocore/1.10.19'}, 'body': b'{}', 'url': 'https://mturk-requester.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f53446c9e80>, 'has_streaming_input': False, 'auth_type': None}}
+14:26:11,917 botocore.hooks DEBUG Event request-created.mturk-requester.GetAccountBalance: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f53446c9e48>>
+14:26:11,917 botocore.hooks DEBUG Event choose-signer.mturk-requester.GetAccountBalance: calling handler <function set_operation_specific_signer at 0x7f5346c69950>
+14:26:11,917 botocore.auth DEBUG Calculating signature using v4 auth.
+14:26:11,917 botocore.auth DEBUG CanonicalRequest:
+POST
+/
+
+content-type:application/x-amz-json-1.1
+host:mturk-requester.us-east-1.amazonaws.com
+x-amz-date:20191103T222611Z
+x-amz-target:MTurkRequesterServiceV20170117.GetAccountBalance
+
+content-type;host;x-amz-date;x-amz-target
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+14:26:11,917 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20191103T222611Z
+20191103/us-east-1/mturk-requester/aws4_request
+262c9ff9f2091e80d42036a9d8b74f88e5a9633d5cbeeffbd6633bda727a85c4
+14:26:11,918 botocore.auth DEBUG Signature:
+b3723f87097534f3b7dd9d40cae6440d1ff04a7800f6b2fdf213381e02fea1b3
+14:26:11,919 botocore.endpoint DEBUG Sending http request: <PreparedRequest [POST]>
+14:26:11,920 botocore.vendored.requests.packages.urllib3.connectionpool INFO Starting new HTTPS connection (1): mturk-requester.us-east-1.amazonaws.com
+14:26:12,340 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "POST / HTTP/1.1" 200 30
+14:26:12,342 botocore.parsers DEBUG Response headers: {'x-amzn-requestid': 'c9a14832-2007-4646-add6-42f94b26517c', 'content-type': 'application/x-amz-json-1.1', 'content-length': '30', 'date': 'Sun, 03 Nov 2019 22:23:53 GMT'}
+14:26:12,342 botocore.parsers DEBUG Response body:
+b'{"AvailableBalance":"1225.10"}'
+14:26:12,343 botocore.hooks DEBUG Event needs-retry.mturk-requester.GetAccountBalance: calling handler <botocore.retryhandler.RetryHandler object at 0x7f534466d198>
+14:26:12,343 botocore.retryhandler DEBUG No retry needed.
+14:26:26,782 urllib3.connectionpool DEBUG Starting new HTTP connection (1): mturk.parl.ai
+14:26:27,736 urllib3.connectionpool DEBUG http://mturk.parl.ai:80 "POST /mturk/mturk_notice/live HTTP/1.1" 200 None
+14:26:28,21 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>: starting process
+14:26:28,29 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: started process
+14:26:28,32 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw', pid 22782>: process started
+14:26:28,32 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: acquiring wait lock to wait for completion
+14:26:28,32 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: got wait lock
+14:26:28,32 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: exit code not set, waiting on pid
+14:26:28,34 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: <sh.StreamReader object at 0x7f534440b320> ready to be read from
+14:26:28,34 sh.command.process.streamreader DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>.stdout: got errno 5, done reading
+14:26:28,35 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: <sh.StreamReader object at 0x7f534440be48> ready to be read from
+14:26:28,35 sh.streamreader DEBUG got no chunk, done reading
+14:26:28,35 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:26:28,35 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:26:28,35 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:26:28,35 sh.command.process.streamreader DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 22782 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>.stdout: got chunk size 0 to flush: b''
+14:26:28,35 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:26:28,35 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:26:28,35 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:26:28,35 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:26:28,36 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw', pid 22782>: process completed
+14:26:28,42 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>: starting process
+14:26:28,49 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>: started process
+14:26:28,51 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components', pid 22786>: process started
+14:26:28,51 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>: acquiring wait lock to wait for completion
+14:26:28,51 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>: got wait lock
+14:26:28,51 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>: exit code not set, waiting on pid
+14:26:28,54 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>: <sh.StreamReader object at 0x7f534440b518> ready to be read from
+14:26:28,54 sh.command.process.streamreader DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>.stdout: got errno 5, done reading
+14:26:28,55 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>: <sh.StreamReader object at 0x7f534440bb70> ready to be read from
+14:26:28,55 sh.streamreader DEBUG got no chunk, done reading
+14:26:28,55 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:26:28,55 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:26:28,55 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:26:28,55 sh.command.process.streamreader DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components'>.<Process 22786 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components']>.stdout: got chunk size 0 to flush: b''
+14:26:28,56 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:26:28,56 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:26:28,56 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:26:28,56 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:26:28,56 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/dev/components/built_custom_components', pid 22786>: process completed
+14:27:36,270 sh.command INFO <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>: starting process
+14:27:36,278 sh.command.process DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>: started process
+14:27:36,280 sh.command INFO <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static', pid 23119>: process started
+14:27:36,281 sh.command.process DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>: acquiring wait lock to wait for completion
+14:27:36,281 sh.command.process DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>: got wait lock
+14:27:36,281 sh.command.process DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>: exit code not set, waiting on pid
+14:27:36,282 sh.command.process DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>: <sh.StreamReader object at 0x7f534440bfd0> ready to be read from
+14:27:36,283 sh.command.process.streamreader DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>.stdout: got errno 5, done reading
+14:27:36,283 sh.command.process DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>: <sh.StreamReader object at 0x7f534440b6d8> ready to be read from
+14:27:36,283 sh.streamreader DEBUG got no chunk, done reading
+14:27:36,283 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:36,283 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:36,283 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:36,283 sh.command.process.streamreader DEBUG <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static'>.<Process 23119 [b'/bin/mv', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static']>.stdout: got chunk size 0 to flush: b''
+14:27:36,284 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:36,284 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:36,284 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:36,284 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:27:36,284 sh.command INFO <Command '/bin/mv /home/jarnold9/ParlAI/parlai/mturk/tmp/hit_config.json /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw/server/static', pid 23119>: process completed
+14:27:36,285 sh.command INFO <Command '/usr/bin/git init'>: starting process
+14:27:36,290 sh.command.process DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>: started process
+14:27:36,291 sh.command INFO <Command '/usr/bin/git init', pid 23124>: process started
+14:27:36,292 sh.command.process DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>: acquiring wait lock to wait for completion
+14:27:36,292 sh.command.process DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>: got wait lock
+14:27:36,292 sh.command.process DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>: exit code not set, waiting on pid
+14:27:36,296 sh.command.process DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>: <sh.StreamReader object at 0x7f53444205c0> ready to be read from
+14:27:36,296 sh.command.process.streamreader DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>.stdout: got chunk size 119: b'Initialized empty Git reposito'
+14:27:36,296 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:36,296 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:36,297 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:36,297 sh.command.process.streamreader DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>.stdout: putting chunk onto pipe: b'Initialized empty Git reposito'
+14:27:36,297 sh.command.process DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>: <sh.StreamReader object at 0x7f53444205c0> ready to be read from
+14:27:36,297 sh.command.process.streamreader DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>.stdout: got errno 5, done reading
+14:27:36,297 sh.command.process DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>: <sh.StreamReader object at 0x7f5344420668> ready to be read from
+14:27:36,297 sh.streamreader DEBUG got no chunk, done reading
+14:27:36,297 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:36,297 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:36,297 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:36,297 sh.command.process.streamreader DEBUG <Command '/usr/bin/git init'>.<Process 23124 [b'/usr/bin/git', b'init']>.stdout: got chunk size 0 to flush: b''
+14:27:36,297 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:36,297 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:36,297 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:36,297 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:27:36,298 sh.command INFO <Command '/usr/bin/git init', pid 23124>: process completed
+14:27:41,114 sh.command INFO <Command '/usr/bin/git add -A'>: starting process
+14:27:41,123 sh.command.process DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>: started process
+14:27:41,124 sh.command INFO <Command '/usr/bin/git add -A', pid 23255>: process started
+14:27:41,124 sh.command.process DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>: acquiring wait lock to wait for completion
+14:27:41,124 sh.command.process DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>: got wait lock
+14:27:41,125 sh.command.process DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>: exit code not set, waiting on pid
+14:27:41,331 sh.command.process DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>: <sh.StreamReader object at 0x7f5344420f60> ready to be read from
+14:27:41,332 sh.command.process.streamreader DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>.stdout: got errno 5, done reading
+14:27:41,332 sh.command.process DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>: <sh.StreamReader object at 0x7f5344426048> ready to be read from
+14:27:41,332 sh.streamreader DEBUG got no chunk, done reading
+14:27:41,332 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:41,332 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:41,332 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:41,333 sh.command.process.streamreader DEBUG <Command '/usr/bin/git add -A'>.<Process 23255 [b'/usr/bin/git', b'add', b'-A']>.stdout: got chunk size 0 to flush: b''
+14:27:41,333 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:41,333 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:41,333 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:41,333 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:27:41,333 sh.command INFO <Command '/usr/bin/git add -A', pid 23255>: process completed
+14:27:41,334 sh.command INFO <Command '/usr/bin/git commit -m app'>: starting process
+14:27:41,342 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: started process
+14:27:41,344 sh.command INFO <Command '/usr/bin/git commit -m app', pid 23261>: process started
+14:27:41,344 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: acquiring wait lock to wait for completion
+14:27:41,344 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: got wait lock
+14:27:41,344 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: exit code not set, waiting on pid
+14:27:41,349 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: <sh.StreamReader object at 0x7f5344426908> ready to be read from
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: got chunk size 521: b'[master (root-commit) 5664810]'
+14:27:41,350 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:41,350 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:41,350 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'[master (root-commit) 5664810]'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' Committer: root <root@interac'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'Your name and email address we'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'on your username and hostname.'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'You can suppress this message '
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'following command and follow t'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'your configuration file:\n'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'\n'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'    git config --global --edit'
+14:27:41,350 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'\n'
+14:27:41,351 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'After doing this, you may fix '
+14:27:41,351 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'\n'
+14:27:41,351 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'    git commit --amend --reset'
+14:27:41,351 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b'\n'
+14:27:41,361 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: <sh.StreamReader object at 0x7f5344426908> ready to be read from
+14:27:41,361 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: got chunk size 255: b' 6 files changed, 5901 inserti'
+14:27:41,361 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:41,361 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:41,361 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:41,361 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' 6 files changed, 5901 inserti'
+14:27:41,361 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' create mode 100644 package.js'
+14:27:41,361 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' create mode 100644 server.js\n'
+14:27:41,362 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' create mode 100644 static/bun'
+14:27:41,362 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' create mode 100644 static/hit'
+14:27:41,362 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' create mode 100644 static/ind'
+14:27:41,362 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: putting chunk onto pipe: b' create mode 100644 static/not'
+14:27:41,362 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: <sh.StreamReader object at 0x7f5344426908> ready to be read from
+14:27:41,362 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: got errno 5, done reading
+14:27:41,362 sh.command.process DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>: <sh.StreamReader object at 0x7f53444269b0> ready to be read from
+14:27:41,362 sh.streamreader DEBUG got no chunk, done reading
+14:27:41,362 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:41,362 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:41,362 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:41,362 sh.command.process.streamreader DEBUG <Command '/usr/bin/git commit -m app'>.<Process 23261 [b'/usr/bin/git', b'commit', b'-m', b'app']>.stdout: got chunk size 0 to flush: b''
+14:27:41,362 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:27:41,362 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:27:41,363 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:27:41,363 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:27:41,363 sh.command INFO <Command '/usr/bin/git commit -m app', pid 23261>: process completed
+14:27:41,364 sh.command INFO <Command '/usr/bin/git push -f heroku master'>: starting process
+14:27:41,370 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: started process
+14:27:41,372 sh.command INFO <Command '/usr/bin/git push -f heroku master', pid 23265>: process started
+14:27:41,372 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: acquiring wait lock to wait for completion
+14:27:41,372 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: got wait lock
+14:27:41,372 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: exit code not set, waiting on pid
+14:27:44,66 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:44,66 sh.streamreader DEBUG got chunk size 35: b'remote: Compressing source fil'
+14:27:44,66 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:44,66 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:44,66 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:44,586 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:44,586 sh.streamreader DEBUG got chunk size 15: b' done.        \n'
+14:27:44,586 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:44,586 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:44,586 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:44,586 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:44,586 sh.streamreader DEBUG got chunk size 33: b'remote: Building source:      '
+14:27:44,587 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:44,587 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:44,587 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:46,33 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:46,33 sh.streamreader DEBUG got chunk size 9: b'remote: \n'
+14:27:46,36 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:46,36 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:46,36 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:46,133 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:46,133 sh.streamreader DEBUG got chunk size 44: b'remote: -----> Node.js app det'
+14:27:46,133 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:46,133 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:46,133 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:46,233 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:46,233 sh.streamreader DEBUG got chunk size 281: b'remote:                \nremote'
+14:27:46,233 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:46,233 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:46,233 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:46,253 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:46,253 sh.streamreader DEBUG got chunk size 232: b'remote:                \nremote'
+14:27:46,253 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:46,253 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:46,253 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:46,273 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:46,273 sh.streamreader DEBUG got chunk size 58: b'remote:        Resolving node '
+14:27:46,273 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:46,273 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:46,273 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:46,633 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:46,633 sh.streamreader DEBUG got chunk size 65: b'remote:        Downloading and'
+14:27:46,633 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:46,633 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:46,633 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:48,133 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:48,133 sh.streamreader DEBUG got chunk size 57: b'remote:        Using default n'
+14:27:48,133 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:48,133 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:48,133 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:48,893 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:48,893 sh.streamreader DEBUG got chunk size 71: b'remote:                \nremote'
+14:27:48,893 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:48,893 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:48,893 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:48,913 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:48,913 sh.streamreader DEBUG got chunk size 62: b'remote:        Installing node'
+14:27:48,913 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:48,913 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:48,913 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:27:58,913 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:27:58,913 sh.streamreader DEBUG got chunk size 8: b'remote: '
+14:27:58,914 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:27:58,914 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:27:58,914 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:00,733 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:00,733 sh.streamreader DEBUG got chunk size 255: b'       added 333 packages from'
+14:28:00,734 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:00,734 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:00,734 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:00,793 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:00,793 sh.streamreader DEBUG got chunk size 53: b'remote:                \nremote'
+14:28:00,793 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:00,793 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:00,793 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:00,813 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:00,813 sh.streamreader DEBUG got chunk size 71: b'remote:                \nremote'
+14:28:00,813 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:00,813 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:00,813 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:04,913 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:04,914 sh.streamreader DEBUG got chunk size 217: b'remote:        audited 1352 pa'
+14:28:04,914 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:04,914 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:04,914 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:04,993 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:04,993 sh.streamreader DEBUG got chunk size 99: b'remote:                \nremote'
+14:28:04,993 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:04,994 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:04,994 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:05,773 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:05,774 sh.streamreader DEBUG got chunk size 64: b'remote:                \nremote'
+14:28:05,774 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:05,774 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:05,774 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:06,854 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:06,854 sh.streamreader DEBUG got chunk size 215: b'remote: -----> Discovering pro'
+14:28:06,854 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:06,854 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:06,854 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:11,178 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:11,178 sh.streamreader DEBUG got chunk size 35: b'remote:        Done: 36.4M    '
+14:28:11,178 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:11,178 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:11,178 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:12,179 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:12,179 sh.streamreader DEBUG got chunk size 36: b'remote: -----> Launching...   '
+14:28:12,179 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:12,179 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:12,179 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:12,919 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:12,920 sh.streamreader DEBUG got chunk size 140: b'remote:        Released v3    '
+14:28:12,920 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:12,920 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:12,920 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:13,734 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:13,734 sh.streamreader DEBUG got chunk size 27: b'remote: Verifying deploy...'
+14:28:13,734 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:13,735 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:13,735 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:13,966 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:13,966 sh.streamreader DEBUG got chunk size 15: b' done.        \n'
+14:28:13,966 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:13,966 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:13,966 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:14,211 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:14,211 sh.streamreader DEBUG got chunk size 99: b'To https://git.heroku.com/root'
+14:28:14,211 sh.stream_bufferer DEBUG acquiring buffering lock to process chunk (buffering: 1)
+14:28:14,211 sh.stream_bufferer DEBUG got buffering lock to process chunk (buffering: 1)
+14:28:14,211 sh.stream_bufferer DEBUG released buffering lock for processing chunk (buffering: 1)
+14:28:14,245 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f53444292e8> ready to be read from
+14:28:14,245 sh.command.process.streamreader DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>.stdout: got errno 5, done reading
+14:28:14,245 sh.command.process DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>: <sh.StreamReader object at 0x7f5344429390> ready to be read from
+14:28:14,246 sh.streamreader DEBUG got no chunk, done reading
+14:28:14,246 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:28:14,246 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:28:14,246 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:28:14,246 sh.command.process.streamreader DEBUG <Command '/usr/bin/git push -f heroku master'>.<Process 23265 [b'/usr/bin/git', b'push', b'-f', b'heroku', b'master']>.stdout: got chunk size 0 to flush: b''
+14:28:14,246 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:28:14,246 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:28:14,246 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:28:14,246 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:28:14,246 sh.command INFO <Command '/usr/bin/git push -f heroku master', pid 23265>: process completed
+14:28:16,166 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>: starting process
+14:28:16,175 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: started process
+14:28:16,177 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw', pid 23426>: process started
+14:28:16,178 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: acquiring wait lock to wait for completion
+14:28:16,178 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: got wait lock
+14:28:16,178 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: exit code not set, waiting on pid
+14:28:16,745 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: <sh.StreamReader object at 0x7f5344426b70> ready to be read from
+14:28:16,745 sh.command.process.streamreader DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>.stdout: got errno 5, done reading
+14:28:16,745 sh.command.process DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>: <sh.StreamReader object at 0x7f5344426a58> ready to be read from
+14:28:16,745 sh.streamreader DEBUG got no chunk, done reading
+14:28:16,746 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:28:16,746 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:28:16,746 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:28:16,746 sh.command.process.streamreader DEBUG <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw'>.<Process 23426 [b'/bin/rm', b'-rf', b'/home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw']>.stdout: got chunk size 0 to flush: b''
+14:28:16,746 sh.stream_bufferer DEBUG acquiring buffering lock for flushing buffer
+14:28:16,746 sh.stream_bufferer DEBUG got buffering lock for flushing buffer
+14:28:16,746 sh.stream_bufferer DEBUG released buffering lock for flushing buffer
+14:28:16,746 sh.streamreader DEBUG got chunk size 0 to flush: b''
+14:28:16,746 sh.command INFO <Command '/bin/rm -rf /home/jarnold9/ParlAI/parlai/mturk/tmp/heroku_server_13be2370-gandraw', pid 23426>: process completed
+14:28:16,749 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:28:16,749 botocore.session DEBUG Loading variable ca_bundle from defaults.
+14:28:16,749 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:28:16,749 botocore.session DEBUG Loading variable api_versions from defaults.
+14:28:16,750 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:28:16,750 botocore.hooks DEBUG Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f5346c58510>
+14:28:16,751 botocore.loaders DEBUG Loading JSON file: /usr/local/lib/python3.6/site-packages/botocore/data/sns/2010-03-31/service-2.json
+14:28:16,756 botocore.hooks DEBUG Event creating-client-class.sns: calling handler <function add_generate_presigned_url at 0x7f5346c92ea0>
+14:28:16,756 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+14:28:16,761 botocore.endpoint DEBUG Setting sns timeout as (60, 60)
+14:28:16,762 botocore.client DEBUG Registering retry handlers for service: sns
+14:28:16,763 botocore.hooks DEBUG Event before-parameter-build.sns.CreateTopic: calling handler <function generate_idempotent_uuid at 0x7f5346c69a60>
+14:28:16,763 botocore.endpoint DEBUG Making request for OperationModel(name=CreateTopic) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.7.19 Python/3.6.5 Linux/4.4.0-154-generic Botocore/1.10.19'}, 'body': {'Action': 'CreateTopic', 'Version': '2010-03-31', 'Name': 'gan_draw'}, 'url': 'https://sns.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f53443f7128>, 'has_streaming_input': False, 'auth_type': None}}
+14:28:16,763 botocore.hooks DEBUG Event request-created.sns.CreateTopic: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f53443f70f0>>
+14:28:16,763 botocore.hooks DEBUG Event choose-signer.sns.CreateTopic: calling handler <function set_operation_specific_signer at 0x7f5346c69950>
+14:28:16,764 botocore.auth DEBUG Calculating signature using v4 auth.
+14:28:16,764 botocore.auth DEBUG CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sns.us-east-1.amazonaws.com
+x-amz-date:20191103T222816Z
+
+content-type;host;x-amz-date
+d9cb11a9b554c9827124d73a05d3abdfd871f13d041349133df817f2bbb69658
+14:28:16,765 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20191103T222816Z
+20191103/us-east-1/sns/aws4_request
+aa307a9f172740c50f6b18c7e1e57401b11879eb20d80c71ce019ee8a6c622ae
+14:28:16,765 botocore.auth DEBUG Signature:
+c2715ef09b74407e9f22289e11d53f5114e3b387507bddc551fd63829dd025b1
+14:28:16,765 botocore.endpoint DEBUG Sending http request: <PreparedRequest [POST]>
+14:28:16,766 botocore.vendored.requests.packages.urllib3.connectionpool INFO Starting new HTTPS connection (1): sns.us-east-1.amazonaws.com
+14:28:17,710 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "POST / HTTP/1.1" 200 315
+14:28:17,712 botocore.parsers DEBUG Response headers: {'x-amzn-requestid': '533575cb-d21a-597a-8309-23f2842c99a9', 'content-type': 'text/xml', 'content-length': '315', 'date': 'Sun, 03 Nov 2019 22:25:58 GMT'}
+14:28:17,712 botocore.parsers DEBUG Response body:
+b'<CreateTopicResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">\n  <CreateTopicResult>\n    <TopicArn>arn:aws:sns:us-east-1:767164987038:gan_draw</TopicArn>\n  </CreateTopicResult>\n  <ResponseMetadata>\n    <RequestId>533575cb-d21a-597a-8309-23f2842c99a9</RequestId>\n  </ResponseMetadata>\n</CreateTopicResponse>\n'
+14:28:17,712 botocore.hooks DEBUG Event needs-retry.sns.CreateTopic: calling handler <botocore.retryhandler.RetryHandler object at 0x7f53443f7668>
+14:28:17,713 botocore.retryhandler DEBUG No retry needed.
+14:28:17,713 botocore.hooks DEBUG Event before-parameter-build.sns.Subscribe: calling handler <function generate_idempotent_uuid at 0x7f5346c69a60>
+14:28:17,713 botocore.endpoint DEBUG Making request for OperationModel(name=Subscribe) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.7.19 Python/3.6.5 Linux/4.4.0-154-generic Botocore/1.10.19'}, 'body': {'Action': 'Subscribe', 'Version': '2010-03-31', 'TopicArn': 'arn:aws:sns:us-east-1:767164987038:gan_draw', 'Protocol': 'https', 'Endpoint': 'https://root-13be2370-gandraw-b44db795.herokuapp.com/sns_posts?task_group_id=gan_draw_1572820096'}, 'url': 'https://sns.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f53443f7128>, 'has_streaming_input': False, 'auth_type': None}}
+14:28:17,713 botocore.hooks DEBUG Event request-created.sns.Subscribe: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f53443f70f0>>
+14:28:17,714 botocore.hooks DEBUG Event choose-signer.sns.Subscribe: calling handler <function set_operation_specific_signer at 0x7f5346c69950>
+14:28:17,715 botocore.auth DEBUG Calculating signature using v4 auth.
+14:28:17,715 botocore.auth DEBUG CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sns.us-east-1.amazonaws.com
+x-amz-date:20191103T222817Z
+
+content-type;host;x-amz-date
+01a994649ce1e9eaee6d138e2bc44b8365976a4f71b8a3fa91f1d277d67188b6
+14:28:17,715 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20191103T222817Z
+20191103/us-east-1/sns/aws4_request
+a946a5d1d57be6c621acaceb9316ee5c2c8bf4bdaa684374bc46bff4a87e6b0f
+14:28:17,715 botocore.auth DEBUG Signature:
+1b8986afd2cb6d6cb2da3c267f8c6054c32a1a07e1f9710e70c444d3cc06cf65
+14:28:17,716 botocore.endpoint DEBUG Sending http request: <PreparedRequest [POST]>
+14:28:18,120 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "POST / HTTP/1.1" 200 298
+14:28:18,121 botocore.parsers DEBUG Response headers: {'x-amzn-requestid': '1dcc064f-1ec4-535e-9e0f-507648f3538d', 'content-type': 'text/xml', 'content-length': '298', 'date': 'Sun, 03 Nov 2019 22:25:59 GMT'}
+14:28:18,121 botocore.parsers DEBUG Response body:
+b'<SubscribeResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">\n  <SubscribeResult>\n    <SubscriptionArn>pending confirmation</SubscriptionArn>\n  </SubscribeResult>\n  <ResponseMetadata>\n    <RequestId>1dcc064f-1ec4-535e-9e0f-507648f3538d</RequestId>\n  </ResponseMetadata>\n</SubscribeResponse>\n'
+14:28:18,121 botocore.hooks DEBUG Event needs-retry.sns.Subscribe: calling handler <botocore.retryhandler.RetryHandler object at 0x7f53443f7668>
+14:28:18,121 botocore.retryhandler DEBUG No retry needed.
+14:28:18,122 botocore.hooks DEBUG Event before-parameter-build.sns.GetTopicAttributes: calling handler <function generate_idempotent_uuid at 0x7f5346c69a60>
+14:28:18,122 botocore.endpoint DEBUG Making request for OperationModel(name=GetTopicAttributes) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.7.19 Python/3.6.5 Linux/4.4.0-154-generic Botocore/1.10.19'}, 'body': {'Action': 'GetTopicAttributes', 'Version': '2010-03-31', 'TopicArn': 'arn:aws:sns:us-east-1:767164987038:gan_draw'}, 'url': 'https://sns.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f53443f7128>, 'has_streaming_input': False, 'auth_type': None}}
+14:28:18,122 botocore.hooks DEBUG Event request-created.sns.GetTopicAttributes: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f53443f70f0>>
+14:28:18,122 botocore.hooks DEBUG Event choose-signer.sns.GetTopicAttributes: calling handler <function set_operation_specific_signer at 0x7f5346c69950>
+14:28:18,123 botocore.auth DEBUG Calculating signature using v4 auth.
+14:28:18,123 botocore.auth DEBUG CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sns.us-east-1.amazonaws.com
+x-amz-date:20191103T222818Z
+
+content-type;host;x-amz-date
+a946610cc4a4121bb029ec9f668a17d09db7d2acf8596b2c9103ff988c595a3b
+14:28:18,123 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20191103T222818Z
+20191103/us-east-1/sns/aws4_request
+648598bbec0b64d822201113dd05229c87fbd6ff7a634e30c19391d1cc2a3e57
+14:28:18,124 botocore.auth DEBUG Signature:
+25099089f3f3522d47365ded0fb55c5faf30b57547010ba7bfa8817a4f5f9dee
+14:28:18,124 botocore.endpoint DEBUG Sending http request: <PreparedRequest [POST]>
+14:28:18,224 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "POST / HTTP/1.1" 200 2133
+14:28:18,224 botocore.parsers DEBUG Response headers: {'x-amzn-requestid': 'bbac494e-4a92-594d-b0f3-1f771ca5b99e', 'content-type': 'text/xml', 'content-length': '2133', 'vary': 'Accept-Encoding', 'date': 'Sun, 03 Nov 2019 22:25:59 GMT'}
+14:28:18,225 botocore.parsers DEBUG Response body:
+b'<GetTopicAttributesResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">\n  <GetTopicAttributesResult>\n    <Attributes>\n      <entry>\n        <key>Policy</key>\n        <value>{&quot;Version&quot;:&quot;2008-10-17&quot;,&quot;Id&quot;:&quot;__default_policy_ID&quot;,&quot;Statement&quot;:[{&quot;Sid&quot;:&quot;__default_statement_ID&quot;,&quot;Effect&quot;:&quot;Allow&quot;,&quot;Principal&quot;:{&quot;AWS&quot;:&quot;*&quot;},&quot;Action&quot;:[&quot;SNS:GetTopicAttributes&quot;,&quot;SNS:SetTopicAttributes&quot;,&quot;SNS:AddPermission&quot;,&quot;SNS:RemovePermission&quot;,&quot;SNS:DeleteTopic&quot;,&quot;SNS:Subscribe&quot;,&quot;SNS:ListSubscriptionsByTopic&quot;,&quot;SNS:Publish&quot;,&quot;SNS:Receive&quot;],&quot;Resource&quot;:&quot;arn:aws:sns:us-east-1:767164987038:gan_draw&quot;,&quot;Condition&quot;:{&quot;StringEquals&quot;:{&quot;AWS:SourceOwner&quot;:&quot;767164987038&quot;}}}]}</value>\n      </entry>\n      <entry>\n        <key>Owner</key>\n        <value>767164987038</value>\n      </entry>\n      <entry>\n        <key>SubscriptionsPending</key>\n        <value>0</value>\n      </entry>\n      <entry>\n        <key>TopicArn</key>\n        <value>arn:aws:sns:us-east-1:767164987038:gan_draw</value>\n      </entry>\n      <entry>\n        <key>EffectiveDeliveryPolicy</key>\n        <value>{&quot;http&quot;:{&quot;defaultHealthyRetryPolicy&quot;:{&quot;minDelayTarget&quot;:20,&quot;maxDelayTarget&quot;:20,&quot;numRetries&quot;:3,&quot;numMaxDelayRetries&quot;:0,&quot;numNoDelayRetries&quot;:0,&quot;numMinDelayRetries&quot;:0,&quot;backoffFunction&quot;:&quot;linear&quot;},&quot;disableSubscriptionOverrides&quot;:false}}</value>\n      </entry>\n      <entry>\n        <key>SubscriptionsConfirmed</key>\n        <value>0</value>\n      </entry>\n      <entry>\n        <key>DisplayName</key>\n        <value/>\n      </entry>\n      <entry>\n        <key>SubscriptionsDeleted</key>\n        <value>0</value>\n      </entry>\n    </Attributes>\n  </GetTopicAttributesResult>\n  <ResponseMetadata>\n    <RequestId>bbac494e-4a92-594d-b0f3-1f771ca5b99e</RequestId>\n  </ResponseMetadata>\n</GetTopicAttributesResponse>\n'
+14:28:18,225 botocore.hooks DEBUG Event needs-retry.sns.GetTopicAttributes: calling handler <botocore.retryhandler.RetryHandler object at 0x7f53443f7668>
+14:28:18,225 botocore.retryhandler DEBUG No retry needed.
+14:28:18,226 botocore.hooks DEBUG Event before-parameter-build.sns.SetTopicAttributes: calling handler <function generate_idempotent_uuid at 0x7f5346c69a60>
+14:28:18,226 botocore.endpoint DEBUG Making request for OperationModel(name=SetTopicAttributes) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.7.19 Python/3.6.5 Linux/4.4.0-154-generic Botocore/1.10.19'}, 'body': {'Action': 'SetTopicAttributes', 'Version': '2010-03-31', 'TopicArn': 'arn:aws:sns:us-east-1:767164987038:gan_draw', 'AttributeName': 'Policy', 'AttributeValue': '{\n    "Version": "2008-10-17",\n    "Id": "arn:aws:sns:us-east-1:767164987038:gan_draw/MTurkOnlyPolicy",\n    "Statement": [\n        {\n            "Sid": "MTurkOnlyPolicy",\n            "Effect": "Allow",\n            "Principal": {\n                "Service": "mturk-requester.amazonaws.com"\n            },\n            "Action": "SNS:Publish",\n            "Resource": "arn:aws:sns:us-east-1:767164987038:gan_draw"\n        }\n    ]}'}, 'url': 'https://sns.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f53443f7128>, 'has_streaming_input': False, 'auth_type': None}}
+14:28:18,226 botocore.hooks DEBUG Event request-created.sns.SetTopicAttributes: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f53443f70f0>>
+14:28:18,226 botocore.hooks DEBUG Event choose-signer.sns.SetTopicAttributes: calling handler <function set_operation_specific_signer at 0x7f5346c69950>
+14:28:18,228 botocore.auth DEBUG Calculating signature using v4 auth.
+14:28:18,228 botocore.auth DEBUG CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sns.us-east-1.amazonaws.com
+x-amz-date:20191103T222818Z
+
+content-type;host;x-amz-date
+2f515d7c5d6b9348c50b62717bc9960d220fb05814c61c6cc00c2b09848fc93b
+14:28:18,228 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20191103T222818Z
+20191103/us-east-1/sns/aws4_request
+8bca312a3d0024ec600fd5ad8cf1c3d90c31f835fe202df16d7001d85b49f0a2
+14:28:18,228 botocore.auth DEBUG Signature:
+178b62d4e28c0fab4d90bc2a5a77d1cf639d0ee56324be0351a309553a1215bd
+14:28:18,229 botocore.endpoint DEBUG Sending http request: <PreparedRequest [POST]>
+14:28:18,348 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "POST / HTTP/1.1" 200 215
+14:28:18,349 botocore.parsers DEBUG Response headers: {'x-amzn-requestid': 'c74a1f1a-9836-55df-aff3-4923ce01e50c', 'content-type': 'text/xml', 'content-length': '215', 'date': 'Sun, 03 Nov 2019 22:25:59 GMT'}
+14:28:18,350 botocore.parsers DEBUG Response body:
+b'<SetTopicAttributesResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">\n  <ResponseMetadata>\n    <RequestId>c74a1f1a-9836-55df-aff3-4923ce01e50c</RequestId>\n  </ResponseMetadata>\n</SetTopicAttributesResponse>\n'
+14:28:18,350 botocore.hooks DEBUG Event needs-retry.sns.SetTopicAttributes: calling handler <botocore.retryhandler.RetryHandler object at 0x7f53443f7668>
+14:28:18,350 botocore.retryhandler DEBUG No retry needed.
+14:28:51,752 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:28:51,752 botocore.session DEBUG Loading variable ca_bundle from defaults.
+14:28:51,752 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:28:51,753 botocore.session DEBUG Loading variable api_versions from defaults.
+14:28:51,753 botocore.session DEBUG Loading variable profile from environment with value 'parlai_mturk'.
+14:28:51,753 botocore.hooks DEBUG Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f5346c58510>
+14:28:51,754 botocore.hooks DEBUG Event creating-client-class.sns: calling handler <function add_generate_presigned_url at 0x7f5346c92ea0>
+14:28:51,754 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+14:28:51,758 botocore.endpoint DEBUG Setting sns timeout as (60, 60)
+14:28:51,758 botocore.client DEBUG Registering retry handlers for service: sns
+14:28:51,759 botocore.hooks DEBUG Event before-parameter-build.sns.DeleteTopic: calling handler <function generate_idempotent_uuid at 0x7f5346c69a60>
+14:28:51,759 botocore.endpoint DEBUG Making request for OperationModel(name=DeleteTopic) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.7.19 Python/3.6.5 Linux/4.4.0-154-generic Botocore/1.10.19'}, 'body': {'Action': 'DeleteTopic', 'Version': '2010-03-31', 'TopicArn': 'arn:aws:sns:us-east-1:767164987038:gan_draw'}, 'url': 'https://sns.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f534439b9e8>, 'has_streaming_input': False, 'auth_type': None}}
+14:28:51,759 botocore.hooks DEBUG Event request-created.sns.DeleteTopic: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f534439be80>>
+14:28:51,760 botocore.hooks DEBUG Event choose-signer.sns.DeleteTopic: calling handler <function set_operation_specific_signer at 0x7f5346c69950>
+14:28:51,760 botocore.auth DEBUG Calculating signature using v4 auth.
+14:28:51,761 botocore.auth DEBUG CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sns.us-east-1.amazonaws.com
+x-amz-date:20191103T222851Z
+
+content-type;host;x-amz-date
+4bdbba389efb2b675674cb83ef0d34d6e4e4d5f425ded55b08746eeccf227474
+14:28:51,761 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20191103T222851Z
+20191103/us-east-1/sns/aws4_request
+7b2d053d72758621a8b6cf492bd3b7e2fb81d39e4ba93925b383b5a0029d8fef
+14:28:51,761 botocore.auth DEBUG Signature:
+e785283234627281562235fa5c1907060c5cca421fe19958e605034664c9e61e
+14:28:51,762 botocore.endpoint DEBUG Sending http request: <PreparedRequest [POST]>
+14:28:51,762 botocore.vendored.requests.packages.urllib3.connectionpool INFO Starting new HTTPS connection (1): sns.us-east-1.amazonaws.com
+14:28:52,328 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "POST / HTTP/1.1" 200 201
+14:28:52,329 botocore.parsers DEBUG Response headers: {'x-amzn-requestid': 'dbda835a-3310-5520-9ffd-d5636549664a', 'content-type': 'text/xml', 'content-length': '201', 'date': 'Sun, 03 Nov 2019 22:26:33 GMT'}
+14:28:52,329 botocore.parsers DEBUG Response body:
+b'<DeleteTopicResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">\n  <ResponseMetadata>\n    <RequestId>dbda835a-3310-5520-9ffd-d5636549664a</RequestId>\n  </ResponseMetadata>\n</DeleteTopicResponse>\n'
+14:28:52,330 botocore.hooks DEBUG Event needs-retry.sns.DeleteTopic: calling handler <botocore.retryhandler.RetryHandler object at 0x7f534439b668>
+14:28:52,330 botocore.retryhandler DEBUG No retry needed.
+14:28:52,336 urllib3.connectionpool DEBUG Starting new HTTP connection (1): mturk.parl.ai
+14:28:52,481 urllib3.connectionpool DEBUG http://mturk.parl.ai:80 "POST /mturk/mturk_stats/ HTTP/1.1" 302 None
+14:28:52,582 urllib3.connectionpool DEBUG http://mturk.parl.ai:80 "GET / HTTP/1.1" 200 None

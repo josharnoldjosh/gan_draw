@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 0
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 1
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 2
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 3
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A3T01NM4993LZEASXRRKY1HG2OC345LHZDEDXSK71HW01S42UHJR1P3UH3A4NIXBJ76ZIAX2CX55I76U6E1CMLL",
+        "turn_idx": 20,
+        "image_name": "28d9365a.jpg"
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "view from top of hill looking down, there is a beech on the right and a hill in the background",
+            "drawer": "please expand on hill location and size",
+            "turn_idx": 0
+        },
+        {
+            "teller": "the hill is at the bottom and you are taking a photo on it",
+            "drawer": "for this observer hill, tell me at what vertical percentage it terminates and what's in it (grass?)",
+            "turn_idx": 1
+        },
+        {
+            "teller": "grass hill, downward view of beech and ocean",
+            "drawer": "at what vertical percentage does this hill terminate (where the beach begins?)",
+            "turn_idx": 2
+        },
+        {
+            "teller": "beech begins in the middle of the picture 35 percent vertical ",
+            "drawer": "thanks, please tell me the vertical extent of the beach (sand?) in percentage",
+            "turn_idx": 3
+        },
+        {
+            "teller": "sand, 100 percent of the left of image, 35 percent in middle, zero percent on right as its only sand",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A2O34N3Y3RJLJ6A2T9KCQM1ZNANP32AT8R96GL9ORI2BQGT5A2PVJ96US23TVSS0C0E102YM4VAGDW2V6E68VTWP",
+        "turn_idx": 20,
+        "image_name": "186d33f1.jpg"
+    }
+}

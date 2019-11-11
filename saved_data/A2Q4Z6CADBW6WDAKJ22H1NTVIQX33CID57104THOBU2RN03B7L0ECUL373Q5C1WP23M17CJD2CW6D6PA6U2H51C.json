@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "here is image of a valley full of snow, with pine trees dotting the landscape",
+            "drawer": "how's that?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "not bad the very back background there are mountains touching some clouds with a blue tint to it",
+            "drawer": "All right. Next?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "you have most of it. but the trees are too blurry and they must have snow covering them. but most be visible pine tree",
+            "drawer": "i can't make them less blurry, but i tried to add snow",
+            "turn_idx": 2
+        },
+        {
+            "teller": "not bad I would take that as pretty close thanks",
+            "drawer": "All right.  Thanks!",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A2Q4Z6CADBW6WDAKJ22H1NTVIQX33CID57104THOBU2RN03B7L0ECUL373Q5C1WP23M17CJD2CW6D6PA6U2H51C",
+        "turn_idx": 4,
+        "image_name": "b2c2f0a6.jpg"
+    }
+}

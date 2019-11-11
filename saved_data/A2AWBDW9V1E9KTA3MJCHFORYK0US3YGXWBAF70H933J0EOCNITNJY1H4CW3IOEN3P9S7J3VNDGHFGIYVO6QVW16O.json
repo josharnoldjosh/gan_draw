@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "hello... anyone e",
+            "drawer": "Hello",
+            "turn_idx": 0
+        },
+        {
+            "teller": "2.2 of the page down is water",
+            "drawer": "What else?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "sorry, i meant 2.2 out of five. then one-third of the upper part are land and mountains with one tipping up.",
+            "drawer": "What side is the one tipping up?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "the mountains... the one in the middle has a tipped up top. i can't see anything i described in the peeked image you have",
+            "drawer": "Is the land grass or trees? And is the water sea or river?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "the base of the mountains are trees.",
+            "drawer": "Life this?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "i think we are good like this",
+            "drawer": "Okay",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A2AWBDW9V1E9KTA3MJCHFORYK0US3YGXWBAF70H933J0EOCNITNJY1H4CW3IOEN3P9S7J3VNDGHFGIYVO6QVW16O",
+        "turn_idx": 6,
+        "image_name": "3afc3831.jpg"
+    }
+}

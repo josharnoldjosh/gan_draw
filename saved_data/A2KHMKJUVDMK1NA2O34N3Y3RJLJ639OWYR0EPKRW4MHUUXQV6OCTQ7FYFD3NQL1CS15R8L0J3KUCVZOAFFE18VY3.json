@@ -1,0 +1,58 @@
+{
+    "dialog": [
+        {
+            "teller": "Hello, please draw water (river) on the bottom of the image, occupying about 47% of the total vertical space.",
+            "drawer": "Done. What's next?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "imagine the remaining space on the top being divided into three equal portions...in the left and",
+            "drawer": "Okay, please continue.",
+            "turn_idx": 1
+        },
+        {
+            "teller": "right portions, please draw trees, leaving the center one blank for now",
+            "drawer": "done",
+            "turn_idx": 2
+        },
+        {
+            "teller": "good; now within the center portion, please draw trees in the lower-right part of it, and a mountain in the lower-left part of it",
+            "drawer": "done!",
+            "turn_idx": 3
+        },
+        {
+            "teller": "good; now on the bottom (river), there are to areas of rock; one rock is near the bottom, taking up like 12% of the river area",
+            "drawer": "is it bottom center, bottom left, or bottom right?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "I meant two areas of rock.  Within river area, it is near-bottom-center.",
+            "drawer": "done. where's the second rock area?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "it is at the top-left, going from left edge to center of image, and vertically spanning like 18% of total vertical space",
+            "drawer": "done!",
+            "turn_idx": 6
+        },
+        {
+            "teller": "there are large clouds above the mountain",
+            "drawer": "how many, and do they cover most of the sky above the mountain?",
+            "turn_idx": 7
+        },
+        {
+            "teller": "yes, like 85%, just one cloud; please submit after this",
+            "drawer": "okay, all set for you",
+            "turn_idx": 8
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 9
+        }
+    ],
+    "taskData": {
+        "task_id": "A2KHMKJUVDMK1NA2O34N3Y3RJLJ639OWYR0EPKRW4MHUUXQV6OCTQ7FYFD3NQL1CS15R8L0J3KUCVZOAFFE18VY3",
+        "turn_idx": 9,
+        "image_name": "12e28b3d.jpg"
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a landscape with a mountain in the background",
+            "drawer": "What is the landscape?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "It is a steep mountain with a lake  and lake shore below.  ",
+            "drawer": "How is that?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "The left of the image is water and on the right is the river bank with a grassy area for the bank",
+            "drawer": "Is that better?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "worse",
+            "drawer": "What should I do first? GIve me one step",
+            "turn_idx": 3
+        },
+        {
+            "teller": "the lake covers the front right part of the scene",
+            "drawer": "Like that?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "all i see now is water",
+            "drawer": "What about that?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "No that shows mountain in front and no water",
+            "drawer": "Where should be the mountain?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "The mountains are in the background of the picture, highest on left side",
+            "drawer": "Good?",
+            "turn_idx": 7
+        },
+        {
+            "teller": "better but need gradual decline in mountain and across whole back",
+            "drawer": "Better?",
+            "turn_idx": 8
+        },
+        {
+            "teller": "need mountain bottom to start higher half up screen and extend horizontally across screen",
+            "drawer": "Like that?",
+            "turn_idx": 9
+        },
+        {
+            "teller": "yes - now across left side of screen in front of mountain is a grassy river bank",
+            "drawer": "That's the best I could do",
+            "turn_idx": 10
+        },
+        {
+            "teller": "I mean the entire right side of screen, not just directly in front of mountain",
+            "drawer": "Good enough?",
+            "turn_idx": 11
+        },
+        {
+            "teller": "no - my bad i meant front left",
+            "drawer": "there",
+            "turn_idx": 12
+        },
+        {
+            "teller": "better but bank should come all the way forward covering the left one third or so",
+            "drawer": "there",
+            "turn_idx": 13
+        },
+        {
+            "teller": "The bank is windy.  In the front left screen quadrant , if you cut the screen in half vertically the bottom  left is grass",
+            "drawer": "[RETURNED]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A17TKHT8FEVH0RAO2KZRK3DQ2WD336YQZE83VE488ZR5IPBQHY9S2F5M137UQDCYH6XV2LZ7J735ZBXVIA1MV7N",
+        "turn_idx": 20,
+        "image_name": "34ee5947.jpg"
+    }
+}

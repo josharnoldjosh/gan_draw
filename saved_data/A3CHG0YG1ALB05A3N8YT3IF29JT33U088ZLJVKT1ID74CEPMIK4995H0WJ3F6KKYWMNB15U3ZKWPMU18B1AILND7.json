@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "the bottom fourth of the image is deep blue clouds",
+            "drawer": "left or right",
+            "turn_idx": 0
+        },
+        {
+            "teller": "above that is a gray mountain in the center that takes up about ten percent vertical space and sixty percent horizontal space",
+            "drawer": "a cloud on the bottom? Do you mean a sea or a lake?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "yes the peak of the mountain comes out of the clouds. the bottom of the picture is the cloud line",
+            "drawer": "Okay",
+            "turn_idx": 2
+        },
+        {
+            "teller": "above the clouds the sky is deep blue with stratus clouds",
+            "drawer": "Okay",
+            "turn_idx": 3
+        },
+        {
+            "teller": "the clouds don't obscure the mountain they are only below it but they are dense",
+            "drawer": "Okay",
+            "turn_idx": 4
+        },
+        {
+            "teller": "try to take the clouds off the mountain and make it more dense at the bottom. otherwise pretty good so far",
+            "drawer": "I'm not sure that I can make the clouds denser",
+            "turn_idx": 5
+        },
+        {
+            "teller": "that's fine. the sky is a really deep royal blue and the clouds cut out for the top ten percent and the sky gets even bluer",
+            "drawer": "Okay",
+            "turn_idx": 6
+        },
+        {
+            "teller": "the left side of the mountain is orange from sunlight. not sure if you can change that. otherwise you nailed it",
+            "drawer": "I can't add sunlight",
+            "turn_idx": 7
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 8
+        }
+    ],
+    "taskData": {
+        "task_id": "A3CHG0YG1ALB05A3N8YT3IF29JT33U088ZLJVKT1ID74CEPMIK4995H0WJ3F6KKYWMNB15U3ZKWPMU18B1AILND7",
+        "turn_idx": 8,
+        "image_name": "ae65bfa5.jpg"
+    }
+}

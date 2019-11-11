@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a field of grass in the very bottom of the image",
+            "drawer": "grass. got it",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Now in the foreground there are trees. they go from one end of the picture to the other.",
+            "drawer": "added trees",
+            "turn_idx": 1
+        },
+        {
+            "teller": "there is a hill cascading up the left side. from the middle, up to the left. Behind that is a large mountain range, ",
+            "drawer": "like this?",
+            "turn_idx": 2
+        },
+        {
+            "teller": "bring the hill down to halfway up the left side. ",
+            "drawer": "moved the hill some",
+            "turn_idx": 3
+        },
+        {
+            "teller": "the mountain range starts at the top of that hill, and goes up and to the right. nothing behind hill",
+            "drawer": "mountain starts at the top going right. trees removed from hill",
+            "turn_idx": 4
+        },
+        {
+            "teller": "now put the trees in the absolute foreground, like half an inch from the bottom of the picture",
+            "drawer": "added them. my preview is going crazy",
+            "turn_idx": 5
+        },
+        {
+            "teller": "yeah same. now put clouds in the sky and darken the image at the top left corner",
+            "drawer": "added it",
+            "turn_idx": 6
+        },
+        {
+            "teller": "i think we're good",
+            "drawer": "I think you say we're done",
+            "turn_idx": 7
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 8
+        }
+    ],
+    "taskData": {
+        "task_id": "A1ZE52NWZPN85PA1DSXW5H14SOB43YT88D1N08Y645CK6NO2W78LP1KK3C3UOUJI6MTDEWNZOAKQZS9A6NYNIUXI",
+        "turn_idx": 8,
+        "image_name": "2343176f.jpg"
+    }
+}

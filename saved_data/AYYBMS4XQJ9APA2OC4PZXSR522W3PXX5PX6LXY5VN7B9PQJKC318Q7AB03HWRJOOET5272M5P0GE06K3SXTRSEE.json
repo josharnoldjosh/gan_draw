@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "its a picture looking at  lake on the side of a pine tree covered set of hills ",
+            "drawer": "Are you able to see my previews or is it only through questions?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "I have a peek button to see what you draw",
+            "drawer": "is the lake on the left or right of the hill?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "it may be a river and its on the right at the bottom then moves a bit left with trees now on both sides , hills on left ",
+            "drawer": "i think i have it",
+            "turn_idx": 2
+        },
+        {
+            "teller": "good, now widen the water and extend the trees on left to top and the left side is a hill ",
+            "drawer": "the convert button doesn't work well ",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "AYYBMS4XQJ9APA2OC4PZXSR522W3PXX5PX6LXY5VN7B9PQJKC318Q7AB03HWRJOOET5272M5P0GE06K3SXTRSEE",
+        "turn_idx": 4,
+        "image_name": "ba4c845c.jpg"
+    }
+}

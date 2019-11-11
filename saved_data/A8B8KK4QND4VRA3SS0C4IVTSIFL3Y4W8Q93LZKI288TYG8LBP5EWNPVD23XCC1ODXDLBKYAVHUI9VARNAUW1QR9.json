@@ -1,0 +1,53 @@
+{
+    "dialog": [
+        {
+            "teller": "there is snow capped mountain in the background with three sharp peaks it covers about 60% of the left side of the screen",
+            "drawer": "only on the left of the screen?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "there is a smaller round mountain of the right about a third the height of the higher mountain",
+            "drawer": "okay. is there snow on the smaller mountain",
+            "turn_idx": 1
+        },
+        {
+            "teller": "YES AND THERE IS LAKE WITH RIPPLES IN FRONT OF THE MOUNTAINS",
+            "drawer": "okay. next.",
+            "turn_idx": 2
+        },
+        {
+            "teller": "there is a sky with sun setting orange with clouds and rays of light ",
+            "drawer": "I can't make a sun or the rays of light.",
+            "turn_idx": 3
+        },
+        {
+            "teller": "The sun is behind the clouds",
+            "drawer": "Okay. A lot of clouds? Only at the top?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "they cover the top third of the image",
+            "drawer": "Okay. Next",
+            "turn_idx": 5
+        },
+        {
+            "teller": "there is a lot of orange in the lake and the sky",
+            "drawer": "Okay.",
+            "turn_idx": 6
+        },
+        {
+            "teller": "looks good",
+            "drawer": "Okay. I think you have to type done if we are all set.",
+            "turn_idx": 7
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 8
+        }
+    ],
+    "taskData": {
+        "task_id": "A8B8KK4QND4VRA3SS0C4IVTSIFL3Y4W8Q93LZKI288TYG8LBP5EWNPVD23XCC1ODXDLBKYAVHUI9VARNAUW1QR9",
+        "turn_idx": 8,
+        "image_name": "95adf2a2.jpg"
+    }
+}

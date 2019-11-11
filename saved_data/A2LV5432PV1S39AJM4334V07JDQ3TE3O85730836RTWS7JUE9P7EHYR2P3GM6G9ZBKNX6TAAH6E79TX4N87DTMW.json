@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "there is an green field with forest behind it.",
+            "drawer": "This looks similar.",
+            "turn_idx": 0
+        },
+        {
+            "teller": "and blue sky.",
+            "drawer": "Beautiful!",
+            "turn_idx": 1
+        },
+        {
+            "teller": "the field is green to yellow, and the forest is dark green with light blue sky.",
+            "drawer": "That looks nice.",
+            "turn_idx": 2
+        },
+        {
+            "teller": "no, the field is about 70% of the picture, forest about 20% and sky is 10%, so in the picture the most surface is covered by green field.",
+            "drawer": "That's great!",
+            "turn_idx": 3
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 4
+        }
+    ],
+    "taskData": {
+        "task_id": "A2LV5432PV1S39AJM4334V07JDQ3TE3O85730836RTWS7JUE9P7EHYR2P3GM6G9ZBKNX6TAAH6E79TX4N87DTMW",
+        "turn_idx": 4,
+        "image_name": "b85ce449.jpg"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "dialog": [
+        {
+            "teller": "Lake in the foreground",
+            "drawer": "what else",
+            "turn_idx": 0
+        },
+        {
+            "teller": "mountain in the background",
+            "drawer": "okay what else",
+            "turn_idx": 1
+        },
+        {
+            "teller": "clouds in the sky above the mountain, snow on the mountain",
+            "drawer": "okay what else",
+            "turn_idx": 2
+        },
+        {
+            "teller": "clouds above the mounting, not in front",
+            "drawer": "thats the snow it just looks that way for some reason",
+            "turn_idx": 3
+        },
+        {
+            "teller": "shoreline on the other side of the lake before the mountain has from brown and green foliage",
+            "drawer": "like that?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "yes, there is more blue in the sky and water",
+            "drawer": "okay got it!",
+            "turn_idx": 5
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 6
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWACRBWXKQ2E8F53XC1O3LBOSMMNSSW626UTKPY8C7TLY32M8BPYGATMGSMYK1ZAA2LIH1E4GIX",
+        "turn_idx": 6,
+        "image_name": "ffdec1a0.jpg"
+    }
+}

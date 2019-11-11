@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "There is a mountain slightly below center left of the canvas",
+            "drawer": "hoping this is what you meant",
+            "turn_idx": 0
+        },
+        {
+            "teller": "below the mountain is the ocean there are some large rocks on the left side of the canvas the sky is gloomy",
+            "drawer": "alright, rocks ocean and clouds added",
+            "turn_idx": 1
+        },
+        {
+            "teller": "THe horizon is in the right spot. Have the ocean go all the way to the left side of the canvas\\.  ",
+            "drawer": "like this",
+            "turn_idx": 2
+        },
+        {
+            "teller": "the entire bottom of the canvas should be ocean.  the mountain should go to the other side of the canvas at about a 45 degree angle",
+            "drawer": "[RETURNED]",
+            "turn_idx": 3
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[RETURNED]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A1DSXW5H14SOB4A2UFPHKKI7ONO23A4TN5196KI3FF7VTVW6CIWN3XUHC43OVR4I9USPJDX4TJJ6DI2YC0279Q4W",
+        "turn_idx": 20,
+        "image_name": "eb5df14a.jpg"
+    }
+}

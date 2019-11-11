@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "It is an image taken from the shore of the lake, overlooking the lake with some trees on the far shore",
+            "drawer": "click the green finish task button",
+            "turn_idx": 0
+        },
+        {
+            "teller": "need to do at least three turns of drawing. The sky is white. the tree line starts at approximately half way up the canvas",
+            "drawer": "[RETURNED]",
+            "turn_idx": 1
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 2
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 3
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 4
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 5
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 6
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[DISCONNECT]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A1VRR1CEYLJ77PA2AXP68AJJ3B943LPW2N6LKT2NLG40EKGXHRF35O3U533FTOP5WARFOFCT755F67TUA170S0JQ",
+        "turn_idx": 20,
+        "image_name": "27c92257.jpg"
+    }
+}

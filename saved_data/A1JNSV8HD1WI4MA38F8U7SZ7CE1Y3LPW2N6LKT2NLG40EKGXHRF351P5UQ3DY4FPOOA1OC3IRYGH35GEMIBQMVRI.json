@@ -1,0 +1,48 @@
+{
+    "dialog": [
+        {
+            "teller": "draw  a tree with mountain above of it ",
+            "drawer": "is the mountain centered? How big are they?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "yeah it has to be centered, about two third  ",
+            "drawer": "can you see what i draw and is it good?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "its nice ",
+            "drawer": "okay whats next",
+            "turn_idx": 2
+        },
+        {
+            "teller": "draw snow falling on a tree ",
+            "drawer": "like that?",
+            "turn_idx": 3
+        },
+        {
+            "teller": "no ",
+            "drawer": "how? is the tree correct?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "we are good with the first picture , ask you to draw a tree with snow falling on it the leaves ",
+            "drawer": "i am not exactly sure what you mean. do i clear what i have and start over?",
+            "turn_idx": 5
+        },
+        {
+            "teller": "yes",
+            "drawer": "is that good",
+            "turn_idx": 6
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 7
+        }
+    ],
+    "taskData": {
+        "task_id": "A1JNSV8HD1WI4MA38F8U7SZ7CE1Y3LPW2N6LKT2NLG40EKGXHRF351P5UQ3DY4FPOOA1OC3IRYGH35GEMIBQMVRI",
+        "turn_idx": 7,
+        "image_name": "7717237c.jpg"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "dialog": [
+        {
+            "teller": "Hello! the Bottom half is water or a lake, tree line above that ",
+            "drawer": "[RETURNED]",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Excuse me",
+            "drawer": "[RETURNED]",
+            "turn_idx": 1
+        },
+        {
+            "teller": "What now?",
+            "drawer": "[RETURNED]",
+            "turn_idx": 2
+        },
+        {
+            "system": "TASK COMPLETE",
+            "turn_idx": 3
+        },
+        {
+            "teller": "done",
+            "drawer": "[RETURNED]",
+            "turn_idx": 3
+        }
+    ],
+    "taskData": {
+        "task_id": "A382B9A51K5EXIA263MO01HEJXIW39OWYR0EPKRW4MHUUXQV6OCTQH7YFP3NS0A6KXC482NCNU13YW2GL7XQAZGF",
+        "turn_idx": 4,
+        "image_name": "86f364af.jpg"
+    }
+}

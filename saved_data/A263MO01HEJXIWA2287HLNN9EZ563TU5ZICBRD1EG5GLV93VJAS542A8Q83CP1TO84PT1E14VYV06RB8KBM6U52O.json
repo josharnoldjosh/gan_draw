@@ -1,0 +1,109 @@
+{
+    "dialog": [
+        {
+            "teller": "There are dark clouds filling the top half of the picture.",
+            "drawer": "Nice, is it just grass on the bottom half?",
+            "turn_idx": 0
+        },
+        {
+            "teller": "Mostly grass on the bottom half. But trees in the very center.",
+            "drawer": "What about this my friend?",
+            "turn_idx": 1
+        },
+        {
+            "teller": "there is a river that curves from the left just under the trees, and back into the center of the tree area after it hits the right side",
+            "drawer": "Sorry not sure I quite understood other than the under the tree part. How's what",
+            "turn_idx": 2
+        },
+        {
+            "teller": "Just under where the trees are there is a river. And it starts in between the grass and trees from the left side of the picture,",
+            "drawer": "How's this I did it straight across",
+            "turn_idx": 3
+        },
+        {
+            "teller": "It's closer to the trees and more of a curve rather than a straight line",
+            "drawer": "Curved like this?",
+            "turn_idx": 4
+        },
+        {
+            "teller": "yes but skinnier, think like a macaroni noodle",
+            "drawer": "Hows this",
+            "turn_idx": 5
+        },
+        {
+            "teller": "Yea, now add a big tree in the bottom right corner and I think we will be as close as we can get. This was harder than I imagined.",
+            "drawer": "Added the tree but it does not look much like a tree, hows the position?",
+            "turn_idx": 6
+        },
+        {
+            "teller": "It's a little fatter. but good position.",
+            "drawer": "tried to",
+            "turn_idx": 7
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 8
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 9
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 10
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 11
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 12
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 13
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 14
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 15
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 16
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 17
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 18
+        },
+        {
+            "teller": "[DISCONNECT]",
+            "drawer": "[RETURNED]",
+            "turn_idx": 19
+        }
+    ],
+    "taskData": {
+        "task_id": "A263MO01HEJXIWA2287HLNN9EZ563TU5ZICBRD1EG5GLV93VJAS542A8Q83CP1TO84PT1E14VYV06RB8KBM6U52O",
+        "turn_idx": 20,
+        "image_name": "aa0aa420.jpg"
+    }
+}
