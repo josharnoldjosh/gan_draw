@@ -53,7 +53,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.mturk_agents = mturk_agents
         for agent in mturk_agents:
             self.assignment_id = agent.assignment_id
-            print(agent.assignment_id)
+            # print(agent.assignment_id)
             if agent.demo_role == 'Drawer':
                 self.drawer = agent
             elif agent.demo_role == 'Teller':
@@ -62,10 +62,13 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.turn_idx = 0
         self.dialog = []
         self.should_pay_bonus = False
+        self.drawer_rating_from_teller = -1
+        self.teller_rating_from_drawer = -1
 
         self.selectImageForTask()
 
         self.unique_task_id = self.drawer.worker_id + self.teller.worker_id + self.teller.assignment_id + self.drawer.assignment_id
+        print("Starting task with id", self.unique_task_id)
         return
 
     def taskData(self):        
@@ -78,7 +81,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
             self.image_file = random.choice(os.listdir(path_ext))
             if "semantic" not in self.image_file and "DS_Store" not in self.image_file:
                 break
-        print(self.image_file)
+        # print(self.image_file)
 
     def pay_bonus(self):
         self.should_pay_bonus = True        
@@ -87,7 +90,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
     def get_scores(self):
         r = requests.post('https://language.cs.ucdavis.edu/get_score', data={'unique_id':self.unique_task_id, "turn_idx":self.turn_idx})
-        print(r.status_code, r.reason)
+        # print(r.status_code, r.reason)
         if r.status_code != 200: return "0% Unfortunately you did not qualify for the bonus."              
         data = r.json()
         score_result = data["co_draw"]
@@ -106,9 +109,60 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
     def try_finish_task(self, teller_act):
         if "done" in validate(teller_act)['text'].lower():
+            # First, get the users to rate each other
+            self.get_user_ratings()
+
+            # Next, finish the task
             self.dialog.append({"system":"TASK COMPLETE", "turn_idx":self.turn_idx})
             self.save_data()
-            self.force_finish_task()        
+            self.force_finish_task() 
+
+
+    def parse_rating(self, act):
+        text = act["text"]       
+        if "five" in text:
+            return 5
+        if "four" in text:
+            return 4
+        if "three" in text:
+            return 3
+        if "two" in text:
+            return 2
+        if "one" in text:
+            return 1
+        return 3
+
+    def get_user_ratings(self):
+        drawer_message = """
+                Thank you for completing the task.
+                How would you rate your partner's performance on a scale of one to five?
+                A five indicates they gave clear descriptions of the image.
+                A one indicates they failed to provide a description of the image.
+                Please enter a single number, either one, two, three, four or five.
+                """
+        ad = {'id': 'System', 'text': drawer_message, "task_data":self.taskData()}
+        self.drawer.observe(ad)
+        drawer_act = self.drawer.act()
+        self.teller_rating_from_drawer = self.parse_rating(drawer_act)        
+
+        teller_message = """
+                Thank you for completing the task.
+                How would you rate your partner's performance on a scale of one to five?
+                A five indicates they drew a decent quality image & made an effort.
+                A one indicates their drawn image doesn't look similar to the target image.
+                Please enter a single number, either one, two, three, four or five.
+                """
+        ad = {'id': 'System', 'text': teller_message, "task_data":self.taskData()}
+        self.teller.observe(ad)
+        teller_act = self.teller.act()
+        self.drawer_rating_from_teller = self.parse_rating(teller_act)
+
+        self.soft_block = []
+        if self.drawer_rating_from_teller < 3:
+            self.soft_block += [self.drawer.worker_id]
+        if self.teller_rating_from_drawer < 3:
+            self.soft_block += [self.teller.worker_id]
+        return
 
     def parley(self):
         # Inform the teller to start drawer & also how to end the task
@@ -153,7 +207,15 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
     def save_data(self):     
         with open("/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/saved_data/"+self.unique_task_id+'.json', 'w', encoding='utf-8') as f:
-            json.dump({"dialog":self.dialog, "taskData":self.taskData()}, f, ensure_ascii=False, indent=4)
+            json.dump({
+                "dialog":self.dialog, 
+                "taskData":self.taskData(),
+                "teller_rating_from_drawer":self.teller_rating_from_drawer,
+                "drawer_rating_from_teller":self.drawer_rating_from_teller,
+                "drawer_worker_id":self.drawer.worker_id,
+                "teller_worker_id":self.teller.worker_id,
+                "assignment_id":self.drawer.assignment_id
+                }, f, ensure_ascii=False, indent=4)
 
     def episode_done(self):
         return self.episodeDone
@@ -181,10 +243,4 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
                 pass
             else:
                 ag.approve_work()
-        Parallel(n_jobs=len(self.mturk_agents), backend='threading')(delayed(review_agent)(agent) for agent in self.mturk_agents)
-
-    def get_custom_task_data(self):
-        return       
-
-    def get_custom_task_data(self):
-        return
+        Parallel(n_jobs=len(self.mturk_agents), backend='threading')(delayed(review_agent)(agent) for agent in self.mturk_agents)    

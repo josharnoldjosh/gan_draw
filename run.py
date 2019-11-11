@@ -35,6 +35,26 @@ def main():
     # Select an agent_id that worker agents will be assigned in their world
     mturk_agent_roles = ['Drawer', 'Teller']
 
+    # Limit the # of people who can work at task at once to limit the load on our server
+    opt["max_connections"] = 20
+
+    # We soft block workers who disconnect from attempting our task again
+    opt['disconnect_qualification'] = 'disconnect_qualification' # these should automatically be replaced to actual value in underlying code?
+    opt['block_qualification'] = 'block_qualification' # these should automatically be replaced?
+
+    # Max duration is now 2.5 hours instead of 30min
+    opt["assignment_duration_in_seconds"] = int(60*60*2.5) # 2.5 hours
+    opt["assignment_duration_in_seconds"] = int(10) # 10 minutes for testing
+
+    # Only allows masters to complete our task! Optional
+    opt["only_masters"] = True
+
+    # Automatically approve all workers work
+    opt["auto_approve_delay"] = 0
+
+    # Hopefully this works to disable printing logs
+    opt["is_debug"] = False
+
     # Instantiate an MTurkManager with the given options and a maximum number
     # of agents per world of 1 (based on the length of mturk_agent_ids)
     mturk_manager = MTurkManager(
@@ -70,7 +90,7 @@ def main():
 
     agent_qualifications = [
         {'QualificationTypeId': '00000000000000000060','Comparator': 'Exists','RequiredToPreview': True}, # adult qualification
-        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [95], 'RequiredToPreview': True}, # percent assignments approved
+        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [93], 'RequiredToPreview': True}, # percent assignments approved
         # {'QualificationTypeId':'2F1QJWKUDD8XADTFD2Q0G6UTO95ALH', 'Comparator':'Exists', "ActionsGuarded":"DiscoverPreviewAndAccept", 'RequiredToPreview': True},
         # {'QualificationTypeId':'00000000000000000040', 'Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [20], 'RequiredToPreview': True, 'RequiredToPreview': True}
     ]
@@ -117,27 +137,39 @@ def main():
 
         def run_conversation(mturk_manager, opt, workers):
             # Create the task world
+            print("Starting world")
+
             world = MultiRoleAgentWorld(opt=opt, mturk_agents=workers)
             # run the world to completion
             while not world.episode_done():
                 world.parley()
+            
+            # review the work   
+            print("Reviewing work")                     
 
+            # Decide to pay bonus or not
             if (world.should_pay_bonus == True):
                 print("Image threshold met! Paying bonus!")
                 for ag in workers:
                     mturk_manager.pay_bonus(ag.worker_id, BONUS_PAY_AMOUNT, ag.assignment_id, "Successfully recreated an image to a high enough quality.", ag.assignment_id)
             else:
-                print("Failed to create the image to a high enough quality.")
+                print("Failed to create the image to a high enough quality. Not paying bonus.")
 
-            # shutdown and review the work
-            world.shutdown()
+            # Now we soft block workers >:D            
+            for ag_id in world.soft_block:
+                if not opt['is_sandbox']:
+                    mturk_manager.soft_block_worker(ag_id)
+                print("Soft blocked worker_id:", ag_id)
+
+            # review & shutdown
             world.review_work()
+            world.shutdown()
 
             # Return the contents for saving
             return world.prep_save_data(workers)
 
         # Begin the task, allowing mturk_manager to start running the task
-        # world on any workers who connect
+        # world on any workers who connect        
         mturk_manager.start_task(
             eligibility_function=eligibility_function,
             assign_role_function=assign_worker_roles,
