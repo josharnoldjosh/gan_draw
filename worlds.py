@@ -62,13 +62,14 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.turn_idx = 0
         self.dialog = []
         self.should_pay_bonus = False
-        self.drawer_rating_from_teller = -1
-        self.teller_rating_from_drawer = -1
+        self.drawer_rating_from_teller = 3
+        self.teller_rating_from_drawer = 3
+        self.soft_block = []
 
         self.selectImageForTask()
 
         self.unique_task_id = self.drawer.worker_id + self.teller.worker_id + self.teller.assignment_id + self.drawer.assignment_id
-        print("Starting task with id", self.unique_task_id)
+        print("\nStarting task with id", self.unique_task_id)
         return
 
     def taskData(self):        
@@ -104,8 +105,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         ad = {'id': 'System', 'text': "The task has been completed. Thank you for your time."}
         self.teller.observe(ad)
         ad['text'] += ' Your automatic score on the task is: ' + self.get_scores()
-        self.drawer.observe(ad)
-        self.shutdown()
+        self.drawer.observe(ad)        
 
     def try_finish_task(self, teller_act):
         if "done" in validate(teller_act)['text'].lower():
@@ -116,7 +116,8 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
             self.dialog.append({"system":"TASK COMPLETE", "turn_idx":self.turn_idx})
             self.save_data()
             self.force_finish_task() 
-
+            return True
+        return False
 
     def parse_rating(self, act):
         text = act["text"]       
@@ -156,8 +157,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.teller.observe(ad)
         teller_act = self.teller.act()
         self.drawer_rating_from_teller = self.parse_rating(teller_act)
-
-        self.soft_block = []
+        
         if self.drawer_rating_from_teller < 3:
             self.soft_block += [self.drawer.worker_id]
         if self.teller_rating_from_drawer < 3:
@@ -183,7 +183,9 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         teller_act["task_data"] = self.taskData()        
 
         # Optionally end the task
-        self.try_finish_task(teller_act)
+        should_finish = self.try_finish_task(teller_act)
+        if should_finish:
+            return
 
         # Let drawer see what the teller said
         self.drawer.observe(validate(teller_act))        

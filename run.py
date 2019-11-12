@@ -39,12 +39,12 @@ def main():
     opt["max_connections"] = 20
 
     # We soft block workers who disconnect from attempting our task again
-    opt['disconnect_qualification'] = 'disconnect_qualification' # these should automatically be replaced to actual value in underlying code?
-    opt['block_qualification'] = 'block_qualification' # these should automatically be replaced?
+    opt['disconnect_qualification'] = 'disconnect_qualification_29349273482464732928349247838838' # these should automatically be replaced to actual value in underlying code? They should be unique too
+    opt['block_qualification'] = 'block_qualification_012371927491668249742374868486328468234234' # these should automatically be replaced? They should be unique too
 
     # Max duration is now 2.5 hours instead of 30min
     opt["assignment_duration_in_seconds"] = int(60*60*2.5) # 2.5 hours
-    opt["assignment_duration_in_seconds"] = int(60*10) # 10 minutes for testing
+    # opt["assignment_duration_in_seconds"] = int(60*10) # 10 minutes for testing
 
     # Only allows masters to complete our task! Optional
     opt["only_masters"] = True
@@ -136,29 +136,45 @@ def main():
         global run_conversation
 
         def run_conversation(mturk_manager, opt, workers):
-            # Create the task world
-            print("Starting world")
-
             world = MultiRoleAgentWorld(opt=opt, mturk_agents=workers)
             # run the world to completion
             while not world.episode_done():
                 world.parley()
-            
-            # review the work   
-            print("Reviewing work")                     
 
+            # A folder to pay bonus later
+            if not os.path.exists('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/pay_bonus_later/'):
+                os.makedirs('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/pay_bonus_later/')
+            
             # Decide to pay bonus or not
             if (world.should_pay_bonus == True):
                 print("Image threshold met! Paying bonus!")
                 for ag in workers:
-                    mturk_manager.pay_bonus(ag.worker_id, BONUS_PAY_AMOUNT, ag.assignment_id, "Successfully recreated an image to a high enough quality.", ag.assignment_id)
+                    if not opt['is_sandbox']:
+                        try:
+                            mturk_manager.pay_bonus(ag.worker_id, BONUS_PAY_AMOUNT, ag.assignment_id, "Successfully recreated an image to a high enough quality.", ag.assignment_id)
+                        except Exception as error:
+                            print("Uh oh. There was an error paying a bonus.")
+                            try:
+                                with open('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/pay_bonus_later/'+ag.assignment_id+".txt", 'w') as f:
+                                    f.writelines([workers[0].worker_id, workers[1].worker_id])
+                            except:
+                                pass
             else:
                 print("Failed to create the image to a high enough quality. Not paying bonus.")
+            
+            if not os.path.exists('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/blocked_workers/'):
+                os.makedirs('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/blocked_workers/')
 
             # Now we soft block workers >:D            
             for ag_id in world.soft_block:
                 if not opt['is_sandbox']:
                     mturk_manager.soft_block_worker(ag_id)
+                    worker_id = ag_id
+                    try:
+                        with open('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/blocked_workers/'+worker_id+"_blocked.txt", 'w') as f:
+                            f.writelines(["Blocking worker with id:\n", worker_id])
+                    except Exception as error:
+                        print("Uh oh. There was an error:", error)
                 print("Soft blocked worker_id:", ag_id)
 
             # review & shutdown
