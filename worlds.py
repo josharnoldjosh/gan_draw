@@ -13,18 +13,15 @@ from io import BytesIO
 import base64
 import requests
 import parlai.mturk.core.mturk_utils as mturk_utils
-from joblib import Parallel, delayed
 
 class DrawerOnboardingWorld(MTurkOnboardWorld):
     def parley(self):
         ad = {}
         ad['id'] = 'System'
         ad['text'] = (
-            "Welcome onboard! You'll be playing the role of the Drawer.\n"            
-            "Please scroll down and watch the video to the left. After, please test out drawing on the canvas to the left.\n"
-            "If it is hard to see, please zoom out on your web browser.\n"
-            "Once you think you are comfortable with how to use the canvas to draw, please send any message"
-            " to continue. "            
+            "Welcome onboard! You'll be playing the role of the Drawer.\n"
+            "Please try drawing landscape images on the large canvas to the left. Use the convert button to see your image.\n"
+            "Once you think you are comfortable with how to use the canvas to draw, please send any message to continue."            
         )
 
         self.mturk_agent.observe(ad)
@@ -36,7 +33,7 @@ class TellerOnboardingWorld(MTurkOnboardWorld):
         ad = {}
         ad['id'] = 'System'
         ad['text'] = (
-            "Welcome onboard! You'll be playing the role of the Teller. You will see an image to your left. Please sequentially describe it to the drawer in a way in which it can be step-by-step recreated. For example, \"there is a mountain in the background\" then on your next turn, \"there is the ocean in the foreground\", then in your next turn, \"there is a tree to the left\", and so on. Please send any message to continue. NOTE: If you and your partner can successfully work together to draw an image that is similar enough to the one on your left, you will BOTH RECEIVE A $1 BONUS. It is in your best interest to assist your partner to draw the image well."
+            "Welcome onboard! You'll be playing the role of the Teller. You will see an image to your left. Please sequentially describe it to the drawer in a way in which it can be step-by-step recreated. For example, \"there is a mountain in the background\" then on your next turn, \"there is the ocean in the foreground\", then in your next turn, \"there is a tree to the left\", and so on. Please send any message to continue. NOTE: If you and your partner can successfully work together to draw an image that is similar enough to the one on your left, you will BOTH RECEIVE A BONUS. It is in your best interest to assist your partner to draw the image well!"
         )
         self.mturk_agent.observe(ad)
         self.mturk_agent.act()
@@ -62,7 +59,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         self.turn_idx = 0
         self.dialog = []
         self.should_pay_bonus = False
-        self.drawer_rating_from_teller = 3
+        self.drawer_rating_from_teller = 2 # most of the time, drawer disconnects, if they do, lets just soft block them
         self.teller_rating_from_drawer = 3
         self.soft_block = []
 
@@ -97,8 +94,8 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         score_result = data["co_draw"]
         if score_result >= 2.0:
             self.pay_bonus()
-            return str(score_result)+" out of 5. Congradulations, you qualify for the bonus! The $1 bonus should be paid instantly! Great work!" 
-        return str(score_result)+" out of 5. Unfortunately you did not qualify for the bonus."
+            return str(score_result)+" out of 5. Congradulations, you qualify for the bonus! The bonus should be paid ASAP! Great work!" 
+        return str(score_result)+" out of 5. Unfortunately you did not qualify for the bonus. Please try again!"
 
     def force_finish_task(self):
         self.episodeDone = True        
@@ -133,12 +130,18 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
             return 1
         return 3
 
+    def update_soft_block_array(self):
+        if self.drawer_rating_from_teller < 3:
+            self.soft_block += [self.drawer.worker_id]
+        if self.teller_rating_from_drawer < 3:
+            self.soft_block += [self.teller.worker_id]
+
     def get_user_ratings(self):
         drawer_message = """
                 Thank you for completing the task.
                 How would you rate your partner's performance on a scale of one to five?
-                A five indicates they gave clear descriptions of the image.
-                A one indicates they failed to provide a description of the image.
+                A FIVE indicates they gave CLEAR descriptions of the image.
+                A ONE indicates they FAILED to provide a description of the image.
                 Please enter a single number, either one, two, three, four or five.
                 """
         ad = {'id': 'System', 'text': drawer_message, "task_data":self.taskData()}
@@ -149,8 +152,8 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         teller_message = """
                 Thank you for completing the task.
                 How would you rate your partner's performance on a scale of one to five?
-                A five indicates they drew a decent quality image & made an effort.
-                A one indicates their drawn image doesn't look similar to the target image.
+                A FIVE indicates they drew a GOOD quality image & MADE AN EFFORT.
+                A ONE indicates their drawn image doesn't look similar to the target image and is very POOR quality.
                 Please enter a single number, either one, two, three, four or five.
                 """
         ad = {'id': 'System', 'text': teller_message, "task_data":self.taskData()}
@@ -158,10 +161,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         teller_act = self.teller.act()
         self.drawer_rating_from_teller = self.parse_rating(teller_act)
         
-        if self.drawer_rating_from_teller < 3:
-            self.soft_block += [self.drawer.worker_id]
-        if self.teller_rating_from_drawer < 3:
-            self.soft_block += [self.teller.worker_id]
+        self.update_soft_block_array()
         return
 
     def parley(self):
@@ -175,7 +175,7 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
             ad = {'id': 'System', 'text': "Welcome to the task. Your goal is to collaborate with another turker to redraw an image as accurately as possible.", "task_data":self.taskData()}
             self.teller.observe(ad)
-            ad = {'id': 'System', 'text': "Please click LOAD IMAGE and then begin describing the image to your left. During the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. It is in your best interest to describe the image clearly in detail as you will receive an instant $1 bonus if you do well! FINALLY, press the \"FINISH TASK\" button at anytime to end & complete the task. However, please only end the task once you believe the image has been drawn accurately by the other turker in order to receive the instant bonus.", "task_data":self.taskData()}
+            ad = {'id': 'System', 'text': "Please click LOAD IMAGE and then begin describing the image to your left. During the task, you may \"peek\" at what the Drawer has drawn thus far, to aid you in your descriptions. It is in your best interest to describe the image clearly in detail as you will receive a bonus if you do well! FINALLY, press the \"FINISH TASK\" button at anytime to end & complete the task. However, please only end the task once you believe the image has been drawn accurately by the other turker in order to receive the instant bonus.\n\nPlease click the PEEK MULTIPLE TIMES to ensure the LATEST image has loaded.", "task_data":self.taskData()}
             self.teller.observe(ad)
         
         # Get the tellers description
@@ -204,7 +204,8 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
 
         self.save_data()        
 
-        if self.turn_idx >= 20:
+        if self.turn_idx >= 30:
+            self.update_soft_block_array()
             self.force_finish_task()
 
     def save_data(self):     
@@ -238,11 +239,10 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
         for t in threads:
             t.join()
 
-    def review_work(self):        
-        global review_agent
-        def review_agent(ag):           
-            if hasattr(ag, 'not_approve'):
-                pass
-            else:
-                ag.approve_work()
-        Parallel(n_jobs=len(self.mturk_agents), backend='threading')(delayed(review_agent)(agent) for agent in self.mturk_agents)    
+    def review_work(self):
+        try:
+            for agent in [self.drawer, self.teller]:
+                agent.approve_work()
+                print("Approved", agent.worker_id)
+        except Exception as error:
+            print("Uh oh. There was an error when reviewing work.", error)

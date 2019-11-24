@@ -303,18 +303,15 @@ class Toolbar extends React.Component {
 
   render() {
     return (
-      <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', margin:'5px', alignItems:'flex-start', marginTop:'10px', backgroundColor:"#f9f9f9"}}>
+      <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', margin:'5px', alignItems:'flex-start', marginTop:'10px', backgroundColor:"#f9f9f9"}}>
 
-        <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'center', margin:'10px', padding:'10px', width:'120px', marginTop:'0px'}}>
-            <Subtitle text={"Tools: "} />            
-            <button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedButton == 0 ? '5px' : '0px'}} onClick={() => {this.props.updateTool(Tools.Pencil); this.setState({selectedButton:0})}}>Pencil</button>            
-            <button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedButton == 1 ? '5px' : '0px'}} onClick={() => {this.props.updateTool(Tools.Line); this.setState({selectedButton:1})}}>Line</button>
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', margin:'10px', padding:'10px', width:'300px', marginTop:'0px'}}>                      
+            <button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedButton == 0 ? '5px' : '0px'}} onClick={() => {this.props.updateTool(Tools.Pencil); this.setState({selectedButton:0})}}>Pencil</button>                        
             <button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedButton == 2 ? '5px' : '0px'}} onClick={() => {this.props.updateTool(Tools.Rectangle); this.setState({selectedButton:2})}}>Rectangle</button>
-            <button style={{margin:'7px', backgroundColor:'white', borderWidth:'0px'}} onClick={() => this.props.undo()}>Undo</button>                
+            <button style={{margin:'7px', backgroundColor:'white', borderWidth:'0px'}} onClick={() => this.props.undo()}>Clear All</button>                
         </div>
 
-        <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'center', margin:'10px', padding:'10px', width:'120px', marginTop:'0px'}}>
-            <Subtitle text={"Brush size: "} />            
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', margin:'10px', padding:'10px', width:'300px', marginTop:'0px'}}>        
             <button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedSize == 0 ? '5px' : '0px'}} onClick={() => {this.props.updateBrushSize(1); this.setState({selectedSize:0})}}>Small</button>
             <button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedSize == 1 ? '5px' : '0px'}} onClick={() => {this.props.updateBrushSize(2); this.setState({selectedSize:1})}}>Medium</button>
             <button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedSize == 2 ? '5px' : '0px'}} onClick={() => {this.props.updateBrushSize(3); this.setState({selectedSize:2})}}>Large</button>            
@@ -324,48 +321,82 @@ class Toolbar extends React.Component {
   }
 }
 
+/* 
+<button style={{margin:'7px', backgroundColor:'white', borderColor:'red', borderWidth: this.state.selectedButton == 1 ? '5px' : '0px'}} onClick={() => {this.props.updateTool(Tools.Line); this.setState({selectedButton:1})}}>Line</button>
+*/
+
 class Palate extends React.Component {
 
-    state = {selectedButton:1}
+    state = {selectedButton:1, selectedStyle:1, imageStyle:'example5'}
 
     render() {
         return (
-            <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-            <Subtitle text={"Palate"} />            
-            <div  style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'flex-start', marginBottom:'100px'}} >    
+            <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                    
+              <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'flex-start', marginBottom:'100px'}} >    
 
-                <div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'center', width:'80px', margin:'0px'}}>                                
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 5 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#f2dae3'); this.setState({selectedButton:5})}} >Clouds</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#6eb4e8', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 0 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#6eb4e8'); this.setState({selectedButton:0})}} >Sky</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#3c53a3', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 1 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#3c53a3'); this.setState({selectedButton:1})}} >Sea</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#807761', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 2 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#807761'); this.setState({selectedButton:2})}} >Mountain</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#71cc2b', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 21 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#71cc2b'); this.setState({selectedButton:21})}} >Grass</button>                                                         
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#87ab6f', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 11 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#87ab6f'); this.setState({selectedButton:11})}} >Tree</button>
+                  <div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'center', width:'70px', margin:'10px'}}>                                
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 0 ? '5px':'0px'}} src="https://i.ibb.co/KwZnLm2/sunset.png" alt="sunset" onClick={() => {this.props.changeImageStyle('example3'); this.setState({imageStyle:'example3', selectedStyle:0})}} /></button>
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/SX1tqSV/fresh.png" alt="snow" onClick={() => {this.props.changeImageStyle('example5'); this.setState({imageStyle:'example5', selectedStyle:1})}} /></button>
 
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#526bd9', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 19 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#526bd9'); this.setState({selectedButton:19})}} >Water</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#65a398', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 9 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#65a398'); this.setState({selectedButton:9})}} >River</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#e6be30', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 20 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e6be30'); this.setState({selectedButton:20})}} >Flower</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#635f5d', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 3 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#635f5d'); this.setState({selectedButton:3})}} >Rock</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#469632', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 10 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#469632'); this.setState({selectedButton:10})}} >Bush</button>                    
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#ededed', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 8 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#ededed'); this.setState({selectedButton:8})}} >Snow</button>
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/4fV00MC/tree.png" alt="snow" onClick={() => {this.props.changeImageStyle('example0'); this.setState({imageStyle:'example0', selectedStyle:2})}} /></button>
 
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#d6c77c', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 6 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#d6c77c'); this.setState({selectedButton:6})}} >Sand</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#967e54', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 14 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#967e54'); this.setState({selectedButton:14})}} >Dirt</button>
-                    <button style={{width:'100px', margin:'5px', backgroundColor:'#e8d423', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 22 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e8d423'); this.setState({selectedButton:22})}} >Straw</button>
-                </div>                  
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/QmQW5qG/road.png" alt="snow" onClick={() => {this.props.changeImageStyle('example1'); this.setState({imageStyle:'example1', selectedStyle:3})}} /></button>
 
-            </div>
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/9tx2TVt/morning.png" alt="snow" onClick={() => {this.props.changeImageStyle('example2'); this.setState({imageStyle:'example2', selectedStyle:4})}} /></button>
+
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/9HyPz4z/red.png" alt="snow" onClick={() => {this.props.changeImageStyle('example4'); this.setState({imageStyle:'example4', selectedStyle:5})}} /></button>
+
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/swRPSnW/overcast.png" alt="snow" onClick={() => {this.props.changeImageStyle('example6'); this.setState({imageStyle:'example6', selectedStyle:6})}} /></button>
+
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/QnRNgQV/snow.png" alt="snow" onClick={() => {this.props.changeImageStyle('example7'); this.setState({imageStyle:'example7', selectedStyle:7})}} /></button>
+
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/PCjcn76/cloud.png" alt="snow" onClick={() => {this.props.changeImageStyle('example8'); this.setState({imageStyle:'example8', selectedStyle:8})}} /></button>
+
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/L1wgHcF/blue.png" alt="snow" onClick={() => {this.props.changeImageStyle('example9'); this.setState({imageStyle:'example9', selectedStyle:9})}} /></button>   
+
+                      <button> <img style={{width:'60px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedStyle == 1 ? '5px':'0px'}} src="https://i.ibb.co/t85gG34/afternoon.png" alt="snow" onClick={() => {this.props.changeImageStyle('example10'); this.setState({imageStyle:'example10', selectedStyle:10})}} /></button>                                        
+                  </div>                  
+              </div>
+                        
+              <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'flex-start', marginBottom:'100px'}} >    
+
+                  <div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'center', width:'80px', margin:'0px'}}>                                
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#f2dae3', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 5 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#f2dae3'); this.setState({selectedButton:5})}} >Clouds</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#6eb4e8', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 0 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#6eb4e8'); this.setState({selectedButton:0})}} >Sky</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#3c53a3', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 1 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#3c53a3'); this.setState({selectedButton:1})}} >Sea</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#807761', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 2 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#807761'); this.setState({selectedButton:2})}} >Mountain</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#71cc2b', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 21 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#71cc2b'); this.setState({selectedButton:21})}} >Grass</button>                                                         
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#87ab6f', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 11 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#87ab6f'); this.setState({selectedButton:11})}} >Tree</button>
+
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#526bd9', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 19 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#526bd9'); this.setState({selectedButton:19})}} >Water</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#65a398', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 9 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#65a398'); this.setState({selectedButton:9})}} >River</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#e6be30', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 20 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e6be30'); this.setState({selectedButton:20})}} >Flower</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#635f5d', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 3 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#635f5d'); this.setState({selectedButton:3})}} >Rock</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#469632', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 10 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#469632'); this.setState({selectedButton:10})}} >Bush</button>                    
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#ededed', color:'black', borderColor: 'red', borderWidth: this.state.selectedButton == 8 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#ededed'); this.setState({selectedButton:8})}} >Snow</button>
+
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#d6c77c', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 6 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#d6c77c'); this.setState({selectedButton:6})}} >Sand</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#967e54', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 14 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#967e54'); this.setState({selectedButton:14})}} >Dirt</button>
+                      <button style={{width:'100px', margin:'5px', backgroundColor:'#e8d423', color:'white', borderColor: 'red', borderWidth: this.state.selectedButton == 22 ? '5px':'0px'}} onClick={() => {this.props.changeColor('#e8d423'); this.setState({selectedButton:22})}} >Straw</button>
+                  </div>                  
+              </div>              
             </div>
         );
     }
 }
+
+/*
+<Title text={"Canvas"} />
+<Subtitle text={"This is where you draw your image."} />
+*/
 
 class Canvas extends React.Component {
 
   state = {
     tool: Tools.Pencil,
     color:'#6eb4e8',
-    brushSize:90,
+    brushSize:200,
     canUndo:false       
   };
 
@@ -377,15 +408,13 @@ class Canvas extends React.Component {
     var flexStyle = {display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}
 
     return (  
-      <div style={flexStyle}>
-        <Title text={"Canvas"} />
-        <Subtitle text={"This is where you draw your image."} />
+      <div style={flexStyle}>        
         <SketchField
           name="sketch"
           ref={c => (this._sketch = c)}
           style={{backgroundColor:'#6eb4e8'}}
-          width='300px' 
-          height='300px'
+          width='512px' 
+          height='512px'
           tool={this.state.tool}
           lineColor={this.props.color}
           fillColor={this.props.color}
@@ -399,11 +428,11 @@ class Canvas extends React.Component {
 
   changeBrushSize = (size) => {
     if (size == 1) {
-        this.setState({brushSize:15});    
+        this.setState({brushSize:50});    
     }else if (size == 2) {
-        this.setState({brushSize:30});    
+        this.setState({brushSize:100});    
     }else if (size == 3) {
-        this.setState({brushSize:90});    
+        this.setState({brushSize:200});    
     }
   };
 
@@ -416,15 +445,7 @@ class Canvas extends React.Component {
   };
 
   undo = () => {  
-    if (this.state.canUndo == true) {            
-        this._sketch.undo();            
-    }else{
-        this._sketch.clear();
-    }
-
-    this.setState({
-        canUndo: this._sketch.canUndo()        
-    }); 
+    this._sketch.clear();
   }  
 }
 
@@ -444,10 +465,15 @@ class Preview extends React.Component {
 
 class DrawerUI extends React.Component {
 
-    state = {color:'#3c53a3', image:undefined, loading:"", disableConvert:false}
+    state = {color:'#3c53a3', image:undefined, loading:"", disableConvert:false, imageStyle:'example5'}
 
     changeColor = (color) => {
         this.setState({color:color})
+    }
+
+
+    changeImageStyle = (style) => {
+      this.setState({imageStyle:style}, this.updateImage)      
     }
 
     updateImage = () => {
@@ -461,6 +487,7 @@ class DrawerUI extends React.Component {
         data.append('unique_id', this.props.task_data["task_id"])   
         data.append('turn_idx', this.props.task_data["turn_idx"]) 
         data.append('image_name', this.props.task_data["image_name"])
+        data.append('imageStyle', this.state.imageStyle)
 
         // Show the "Is loading" text
         this.setState({loading:"Loading image please be patient", disableConvert:true})
@@ -502,11 +529,18 @@ class DrawerUI extends React.Component {
         return (
             <div style={frame_style} id="left-pane" className={pane_size}>
                 <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>
-                    <Palate changeColor={this.changeColor} />
+                    <Palate changeColor={this.changeColor} changeImageStyle={this.changeImageStyle} />
                     <Canvas color={this.state.color} ref={c => (this._canvas = c)} />       
-                    <Preview image={this.state.image} convertImage={this.updateImage} loading={this.state.loading} disableConvert={this.state.disableConvert}/>
+                    <Preview image={this.state.image} convertImage={this.updateImage} loading={this.state.loading} disableConvert={this.state.disableConvert}/>                                    
+                </div>
+            </div>
+        );
+    }
+}
 
-                    <div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'center', width:'300px', margin:'10px'}}> 
+/*
+
+<div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'center', width:'300px', margin:'10px'}}> 
                         <p style={{color:'red'}}>READ BELOW CAREFULLY</p>
                         <ul>
                             <li style={{marginBottom:'10px'}}>Do NOT just draw outlines, please FILL IN your DRAWINGS completely</li>
@@ -514,19 +548,20 @@ class DrawerUI extends React.Component {
                             <li style={{marginBottom:'10px'}}>Only the other turker can submit the task for both of you. Just tell them to click the green "finish task" button</li>
                             <li style={{marginBottom:'10px'}}>You will likely get the bonus if you follow the above tips. Again, do NOT worry if your image color or texture isn't right, only worry about the POSITION and SIZE of the labels.</li>
                         </ul>
-                    </div>                  
-                </div>
-            </div>
-        );
-    }
-}
+                    </div>
+
+*/
 
 class OnboardingDrawerUI extends React.Component {
 
-    state = {color:'#3c53a3', image:undefined, loading:"", disableConvert:false}
+    state = {color:'#3c53a3', image:undefined, loading:"", disableConvert:false, imageStyle:'example5'}
 
     changeColor = (color) => {
         this.setState({color:color})
+    }
+
+    changeImageStyle = (style) => {
+      this.setState({imageStyle:style}, this.updateImage)      
     }
 
     updateImage = () => {
@@ -536,10 +571,12 @@ class OnboardingDrawerUI extends React.Component {
 
         // Create form data to send
         let data = new FormData();
+        
         data.append('file', image);
         data.append('unique_id', this.props.task_data["task_id"])   
         data.append('turn_idx', this.props.task_data["turn_idx"]) 
         data.append('image_name', this.props.task_data["image_name"])
+        data.append('imageStyle', this.state.imageStyle)
 
         // Show the "Is loading" text
         this.setState({loading:"Loading image please be patient", disableConvert:true})
@@ -561,34 +598,24 @@ class OnboardingDrawerUI extends React.Component {
         let frame_style = {
                 height: frame_height + 'px',
                 backgroundColor: 'white',
-                padding: '30px',
+                padding: '10px',
                 overflow: 'auto',
-                width:'1200px'
+                width:'1220px'
             };        
         let pane_size = this.props.is_cover_page ? 'col-xs-12' : 'col-xs-4';
 
         return (
             <div style={frame_style} id="left-pane" className={pane_size}>
                 <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>
-                    <Palate changeColor={this.changeColor} />
+                    <Palate changeColor={this.changeColor} changeImageStyle={this.changeImageStyle} />
                     <Canvas color={this.state.color} ref={c => (this._canvas = c)} />       
-                    <Preview image={this.state.image} convertImage={this.updateImage} loading={this.state.loading} disableConvert={this.state.disableConvert}/>
-
-                    <div style={{flexWrap:'wrap', display:'flex', justifyContent:'flex-start', alignItems:'center', width:'300px', margin:'10px'}}> 
-                        <p style={{color:'red'}}>READ BELOW CAREFULLY</p>
-                        <ul>
-                            <li>Do NOT just draw outlines, please FILL IN your DRAWINGS completely</li>
-                            <li>You CANNOT control the COLOR or STYLE of your images. Only the POSITION and SIZE. For example, don't worry about the color of the sea or clouds, only that you've drawn them in the right position.</li>                        
-                            <li>Only the other turker can submit the task for both of you. Just tell them to click the green "finish task" button</li>
-                            <li>You will likely get the bonus if you follow the above tips. Again, do NOT worry if your image color or texture isn't right, only worry about the POSITION and SIZE of the labels.</li>
-                        </ul>
-                    </div>
-
-                    <iframe src="https://drive.google.com/file/d/1ibp4C7JtNFJ_CiEtdCSnav85E3Y8yvGV/preview" width="1000" height="800"></iframe>
+                    <Preview image={this.state.image} convertImage={this.updateImage} loading={this.state.loading} disableConvert={this.state.disableConvert}/>                    
                 </div>
             </div>
         );
     }
+
+    // <iframe src="https://drive.google.com/file/d/1ibp4C7JtNFJ_CiEtdCSnav85E3Y8yvGV/preview" width="1000" height="800"></iframe>
 
     // render() {
     //     let frame_height = this.props.frame_height;

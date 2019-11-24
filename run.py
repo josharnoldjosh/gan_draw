@@ -36,14 +36,14 @@ def main():
     mturk_agent_roles = ['Drawer', 'Teller']
 
     # Limit the # of people who can work at task at once to limit the load on our server
-    opt["max_connections"] = 20
+    opt["max_connections"] = 200
 
     # We soft block workers who disconnect from attempting our task again
     opt['disconnect_qualification'] = 'disconnect_qualification_29349273482464732928349247838838' # these should automatically be replaced to actual value in underlying code? They should be unique too
     opt['block_qualification'] = 'block_qualification_012371927491668249742374868486328468234234' # these should automatically be replaced? They should be unique too
 
     # Max duration is now 2.5 hours instead of 30min
-    opt["assignment_duration_in_seconds"] = int(60*60*2.5) # 2.5 hours
+    opt["assignment_duration_in_seconds"] = int(60*60*0.67) # ~45 minutes
     # opt["assignment_duration_in_seconds"] = int(60*10) # 10 minutes for testing
 
     # Only allows masters to complete our task! Optional
@@ -90,7 +90,7 @@ def main():
 
     agent_qualifications = [
         {'QualificationTypeId': '00000000000000000060','Comparator': 'Exists','RequiredToPreview': True}, # adult qualification
-        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [93], 'RequiredToPreview': True}, # percent assignments approved
+        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [91], 'RequiredToPreview': True}, # percent assignments approved
         # {'QualificationTypeId':'2F1QJWKUDD8XADTFD2Q0G6UTO95ALH', 'Comparator':'Exists', "ActionsGuarded":"DiscoverPreviewAndAccept", 'RequiredToPreview': True},
         # {'QualificationTypeId':'00000000000000000040', 'Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [20], 'RequiredToPreview': True, 'RequiredToPreview': True}
     ]
@@ -140,6 +140,10 @@ def main():
             # run the world to completion
             while not world.episode_done():
                 world.parley()
+                
+            print("Conversation complete!")
+            # Review work
+            world.review_work()
 
             # A folder to pay bonus later
             if not os.path.exists('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/pay_bonus_later/'):
@@ -153,19 +157,19 @@ def main():
                         try:
                             mturk_manager.pay_bonus(ag.worker_id, BONUS_PAY_AMOUNT, ag.assignment_id, "Successfully recreated an image to a high enough quality.", ag.assignment_id)
                         except Exception as error:
-                            print("Uh oh. There was an error paying a bonus.")
+                            print("Uh oh. There was an error paying a bonus. Error:", error)
                             try:
                                 with open('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/pay_bonus_later/'+ag.assignment_id+".txt", 'w') as f:
-                                    f.writelines([workers[0].worker_id, workers[1].worker_id])
+                                    f.writelines([workers[0].worker_id+"\n", workers[1].worker_id])
                             except:
-                                pass
+                                print("Error writing file.")
             else:
                 print("Failed to create the image to a high enough quality. Not paying bonus.")
             
             if not os.path.exists('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/blocked_workers/'):
                 os.makedirs('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/blocked_workers/')
 
-            # Now we soft block workers >:D            
+            # Now we soft block workers (This is working)           
             for ag_id in world.soft_block:
                 if not opt['is_sandbox']:
                     mturk_manager.soft_block_worker(ag_id)
@@ -176,10 +180,9 @@ def main():
                     except Exception as error:
                         print("Uh oh. There was an error:", error)
                 print("Soft blocked worker_id:", ag_id)
-
-            # review & shutdown
-            world.review_work()
-            world.shutdown()
+                    
+            # Shutdown
+            world.shutdown()            
 
             # Return the contents for saving
             return world.prep_save_data(workers)
