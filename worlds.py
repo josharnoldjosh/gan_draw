@@ -13,6 +13,8 @@ from io import BytesIO
 import base64
 import requests
 import parlai.mturk.core.mturk_utils as mturk_utils
+import shutil
+from random import choice
 
 class DrawerOnboardingWorld(MTurkOnboardWorld):
     def parley(self):
@@ -72,14 +74,30 @@ class MultiRoleAgentWorld(MTurkTaskWorld):
     def taskData(self):        
         return {"task_id":self.unique_task_id, "turn_idx":self.turn_idx, 'image_name':self.image_file}
 
-    def selectImageForTask(self):        
-        path_ext = "/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/landscape_target/"
-        self.image_file = "semantic"
-        while True:
-            self.image_file = random.choice(os.listdir(path_ext))
-            if "semantic" not in self.image_file and "DS_Store" not in self.image_file:
-                break
-        # print(self.image_file)
+    def selectImageForTask(self):
+        (success, image) = self.select_target_image()
+        while not success:
+            (success, image) = self.select_target_image()        
+        # self.image_file = "/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/landscape_target/" + image
+        self.image_file = image        
+
+    def select_target_image(self):
+        folders = [x for x in os.listdir('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/fufill/') if ".jpg" in x]
+        if len(folders) == 0:
+            print("We finished!")
+            return (True, "0d23e510.jpg")
+        folder = choice(folders)    
+        times_left_to_fufill = ['/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/fufill/'+folder+'/'+x for x in os.listdir('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/fufill/'+folder+'/') if ".txt" in x]
+        if len(times_left_to_fufill) > 0:
+            image_to_choose = folder
+            try:
+                os.remove(times_left_to_fufill[0])
+                return (True, image_to_choose)
+            except:
+                return (False, "")
+        else:
+            shutil.rmtree('/home/jarnold9/ParlAI/parlai/mturk/tasks/react_task_demo/gan_draw/fufill/'+folder+'/')
+            return (False, "")        
 
     def pay_bonus(self):
         self.should_pay_bonus = True        

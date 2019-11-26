@@ -19,7 +19,6 @@ def main():
     """Handles setting up and running a ParlAI-MTurk task by instantiating
     an MTurk manager and configuring it for the qa_data_collection task
     """
-
     # Get relevant arguments
     argparser = ParlaiParser(False, False)
     argparser.add_parlai_data_path()
@@ -36,18 +35,18 @@ def main():
     mturk_agent_roles = ['Drawer', 'Teller']
 
     # Limit the # of people who can work at task at once to limit the load on our server
-    opt["max_connections"] = 200
+    opt["max_connections"] = 600
 
     # We soft block workers who disconnect from attempting our task again
     opt['disconnect_qualification'] = 'disconnect_qualification_29349273482464732928349247838838' # these should automatically be replaced to actual value in underlying code? They should be unique too
     opt['block_qualification'] = 'block_qualification_012371927491668249742374868486328468234234' # these should automatically be replaced? They should be unique too
 
     # Max duration is now 2.5 hours instead of 30min
-    opt["assignment_duration_in_seconds"] = int(60*60*0.67) # ~45 minutes
+    opt["assignment_duration_in_seconds"] = int(60*60*0.75) # ~45 minutes
     # opt["assignment_duration_in_seconds"] = int(60*10) # 10 minutes for testing
 
     # Only allows masters to complete our task! Optional
-    opt["only_masters"] = True
+    # opt["only_masters"] = True
 
     # Automatically approve all workers work
     opt["auto_approve_delay"] = 0
@@ -75,14 +74,14 @@ def main():
         role_index += 1
         worker.update_agent_id('Onboarding {}'.format(role))
         worker.demo_role = role
-        if role == 'Drawer':
-            world = DrawerOnboardingWorld(opt=opt, mturk_agent=worker)
-        elif role == 'Teller':
-            world = TellerOnboardingWorld(opt=opt, mturk_agent=worker)
-        while not world.episode_done():
-            world.parley()
-        world.shutdown()
-        return world.prep_save_data([worker])
+        # if role == 'Drawer':
+        #     world = DrawerOnboardingWorld(opt=opt, mturk_agent=worker)
+        # elif role == 'Teller':
+        #     world = TellerOnboardingWorld(opt=opt, mturk_agent=worker)
+        # while not world.episode_done():
+        #     world.parley()
+        # world.shutdown()
+        # return world.prep_save_data([worker])
 
     # If we want to use the above onboard function, we can replace the below
     # with set_onboard_function(onboard_function=run_onboard)
@@ -90,10 +89,10 @@ def main():
 
     agent_qualifications = [
         {'QualificationTypeId': '00000000000000000060','Comparator': 'Exists','RequiredToPreview': True}, # adult qualification
-        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [91], 'RequiredToPreview': True}, # percent assignments approved
+        {'QualificationTypeId': '000000000000000000L0','Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [95], 'RequiredToPreview': True}, # percent assignments approved
         # {'QualificationTypeId':'2F1QJWKUDD8XADTFD2Q0G6UTO95ALH', 'Comparator':'Exists', "ActionsGuarded":"DiscoverPreviewAndAccept", 'RequiredToPreview': True},
         # {'QualificationTypeId':'00000000000000000040', 'Comparator': 'GreaterThanOrEqualTo', 'IntegerValues': [20], 'RequiredToPreview': True, 'RequiredToPreview': True}
-    ]
+    ]    
 
     if opt["is_sandbox"] == True:
         agent_qualifications = []

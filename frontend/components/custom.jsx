@@ -396,7 +396,7 @@ class Canvas extends React.Component {
   state = {
     tool: Tools.Pencil,
     color:'#6eb4e8',
-    brushSize:200,
+    brushSize:175,
     canUndo:false       
   };
 
@@ -428,11 +428,11 @@ class Canvas extends React.Component {
 
   changeBrushSize = (size) => {
     if (size == 1) {
-        this.setState({brushSize:50});    
+        this.setState({brushSize:15});    
     }else if (size == 2) {
-        this.setState({brushSize:100});    
+        this.setState({brushSize:80});    
     }else if (size == 3) {
-        this.setState({brushSize:200});    
+        this.setState({brushSize:175});    
     }
   };
 
@@ -490,7 +490,7 @@ class DrawerUI extends React.Component {
         data.append('imageStyle', this.state.imageStyle)
 
         // Show the "Is loading" text
-        this.setState({loading:"Loading image please be patient", disableConvert:true})
+        this.setState({loading:"Please wait about 5 seconds.", disableConvert:false})
 
         // Send image        
         axios.post("https://language.cs.ucdavis.edu/", data, {
@@ -520,17 +520,20 @@ class DrawerUI extends React.Component {
         let frame_style = {
                 height: frame_height + 'px',
                 backgroundColor: 'white',
-                padding: '30px',
+                padding: '10px',
                 overflow: 'auto',
-                width:'1100px'
+                width:'750px'
             };        
         let pane_size = this.props.is_cover_page ? 'col-xs-12' : 'col-xs-4';
 
         return (
             <div style={frame_style} id="left-pane" className={pane_size}>
-                <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>
-                    <Palate changeColor={this.changeColor} changeImageStyle={this.changeImageStyle} />
-                    <Canvas color={this.state.color} ref={c => (this._canvas = c)} />       
+                <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>
+                    <Title text={"Please SCROLL DOWN to see everything."}/>
+                    <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                      <Palate changeColor={this.changeColor} changeImageStyle={this.changeImageStyle} />
+                      <Canvas color={this.state.color} ref={c => (this._canvas = c)} />                             
+                    </div>
                     <Preview image={this.state.image} convertImage={this.updateImage} loading={this.state.loading} disableConvert={this.state.disableConvert}/>                                    
                 </div>
             </div>
@@ -579,7 +582,7 @@ class OnboardingDrawerUI extends React.Component {
         data.append('imageStyle', this.state.imageStyle)
 
         // Show the "Is loading" text
-        this.setState({loading:"Loading image please be patient", disableConvert:true})
+        this.setState({loading:"Please wait about 5 seconds.", disableConvert:false})
 
         // Send image        
         axios.post("https://language.cs.ucdavis.edu/sandbox", data, {
@@ -716,8 +719,8 @@ class TellerUI extends React.Component {
     }
 
     tryToFinishTask = () => {
-        if (this.props.task_data["turn_idx"] < 2) {
-            alert("Please complete at least 3 turns of dialog before ending the task.");
+        if (this.props.task_data["turn_idx"] < 4) {
+            alert("Please complete at least 5 turns of dialog before ending the task.");
         }else{
             this.props.onMessageSend("done", {});    
             alert("If the task has not ended yet, it will end as soon as the Drawer (the other turker) sends the final message. Please be patient.");
@@ -731,14 +734,15 @@ class TellerUI extends React.Component {
                 backgroundColor: 'white',
                 padding: '30px',
                 overflow: 'auto',
-                width:'1250px'
+                width:'600px'
             };        
         let pane_size = this.props.is_cover_page ? 'col-xs-12' : 'col-xs-4';
 
         return (
             <div style={frame_style} id="left-pane" className={pane_size}>
                 <div style={{display: 'flex', flexDirection:'column'}}>
-                    <div style={{display:'flex', flexDirection:'row'}}>
+                  <Title text={"Please SCROLL DOWN to see everything."}/>
+                    <div style={{display:'flex', flexDirection:'column'}}>
                         <TellerDescribeImageView image={this.state.image} loadImage={this.loadImage} loading={this.state.imageLoading} />
                         <TellerDescribeSemanticImageView image={this.state.semanticImage} loadImage={this.loadImage} loading={this.state.imageLoading} />
                         <TellerImageView loading={this.state.loading} image={this.state.peekImage} peek={this.peek} peeked={this.state.peeked} />
